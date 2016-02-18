@@ -13,12 +13,11 @@ Details on specific student components of the group project are as follows:
 3)	Data provenance: Matthew Lau will be the primary mentor for this student. This student’s main project would be to apply the data provenance software ‘RData tracker’ to the SDM project and to the field samples, which will need to be spatially referenced. Further work could be done in developing specific software functions and data pipelines to improve data provenance software. This student will learn about data provenance and refine skills using R statistical software. General requirements for the project include: having experience using R statistical software and being willing to spend many hours working at a computer. On average the student can expect to spend most of their time inside doing data analysis, but will have opportunities to accompany the field based student or students working on other field projects in the field.
 
 Readings:
+
 Parmesan C (2006) Ecological and evolutionary responses to recent climate change. Annual Review of Ecology, Evolution, and Systematics
 37:637-669.
 
-Ikeda DH, Bothwell HM, Lau MK, O'Neill GA, Grady KC and Whitham TG (2013) A genetics-based Universal Community Transfer Function for
-predicting the impacts of climate change on future
-communities. Functional Ecology 28:65–74.
+Ikeda DH, Bothwell HM, Lau MK, O'Neill GA, Grady KC and Whitham TG (2013) A genetics-based Universal Community Transfer Function for predicting the impacts of climate change on future communities. Functional Ecology 28:65–74.
 
 Record S, Charney ND, Zakaria RM, Ellison AM (2013) Projecting global mangrove species and community distributions. Ecosphere 4:34.
 
