@@ -96,7 +96,7 @@ on other field projects in the field.
 
 Useful Links:
 
-![Species distribution modeling 101](http://rcastilho.pt/SDM101/SDM_files/SDM101_v1.pdf)
+Species distribution modeling 101: http://rcastilho.pt/SDM101/SDM_files/SDM101_v1.pdf
 
 References:
 
