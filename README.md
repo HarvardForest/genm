@@ -1,4 +1,10 @@
-# Genetic variance and Ecological Niche Models (GV-ENM)
+---
+title: "Genetic variance and Ecological Niche Models (GV-ENM)"
+output: html_document
+bibliography: docs/gv-enm.bib
+
+---
+
 
 Global atmospheric temperatures are currently following the worst case
 scenarios for climate projections. Studies of climate change impacts
@@ -6,9 +12,9 @@ on ecosystems often use Species Distribution Models (SDM) to predict
 how altered climatic regimes will shift species' ranges; however,
 processes, such as local adaptation, are known to generate variation
 within species @Parmesan2006 that could have community level impacts
-[Ikeda2014; @Record2013], which current SDMs employ species level
+[@Ikeda2014; @Record2013], which current SDMs employ species level
 data, which have historically averaged over this important
-intraspecific variation [Aitken2016; Fitzpatrick2015]. In this
+intraspecific variation [@Aitken2016; @Fitzpatrick2014]. In this
 project, a collaborative team of researchers will use two study
 systems, the carnivorous plant *Sarracenia purpurea* (the Northern
 Pitcher Plant) and Eastern North American ant assemblages, to:  1)
@@ -88,5 +94,10 @@ spend most of their time inside doing data analysis, but will have
 opportunities to accompany the field based student or students working
 on other field projects in the field.
 
+Useful Links:
+
 ![Species distribution modeling 101](http://rcastilho.pt/SDM101/SDM_files/SDM101_v1.pdf)
+
+References:
+
 
