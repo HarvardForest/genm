@@ -1,7 +1,7 @@
 ---
 title: "Genetic variance and Ecological Niche Models (GV-ENM)"
 output: md_document
-bibliography: docs/gv-enm.bib
+bibliography: gv-enm.bib
 
 ---
 
