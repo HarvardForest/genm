@@ -9,15 +9,15 @@ such as local adaptation, are known to generate variation within species
 Parmesan (2006) that could have community level impacts (Ikeda et al.
 2014; Record et al. 2013), which current SDMs employ species level data,
 which have historically averaged over this important intraspecific
-variation (Aitken and Bemmels 2016; Fitzpatrick and Keller 2014). In
-this project, a collaborative team of researchers will use two study
-systems, the carnivorous plant *Sarracenia purpurea* (the Northern
-Pitcher Plant) and Eastern North American ant assemblages, to: 1)
-collect and process field samples for genetic analyses; 2) test the
-sensitivity of SDM to intraspecific genetic variation through computer
-simulations; and 3) improve the transparency of SDM modeling through the
-application and development of data provenance software (Boose et al.
-2007).
+variation (Aitken and Bemmels 2016; Gotelli and Stanton-Geddes 2015;
+Fitzpatrick and Keller 2014). In this project, a collaborative team of
+researchers will use two study systems, the carnivorous plant
+*Sarracenia purpurea* (the Northern Pitcher Plant) and Eastern North
+American ant assemblages, to: 1) collect and process field samples for
+genetic analyses; 2) test the sensitivity of SDM to intraspecific
+genetic variation through computer simulations; and 3) improve the
+transparency of SDM modeling through the application and development of
+data provenance software (Boose et al. 2007).
 
 The students selected for this project will be co-mentored by Matthew
 Lau and Sydne Record. At the beginning of the project, mentors will have
@@ -109,6 +109,11 @@ genomics meets community-level modelling of biodiversity: mapping the
 genomic landscape of current and future environmental adaptation.”
 Edited by Mark Vellend. *Ecology Letters* 18 (1): n/a–/a.
 doi:[10.1111/ele.12376](http://dx.doi.org/10.1111/ele.12376).
+
+Gotelli, Nicholas J., and John Stanton-Geddes. 2015. “Climate change,
+genetic markers and species distribution modelling.” *Journal of
+Biogeography* 42 (9): 1577–85.
+doi:[10.1111/jbi.12562](http://dx.doi.org/10.1111/jbi.12562).
 
 Ikeda, Dana H., Helen M. Bothwell, Matthew K. Lau, Gregory A. O’Neill,
 Kevin C. Grady, and Thomas G. Whitham. 2014. “A genetics-based Universal

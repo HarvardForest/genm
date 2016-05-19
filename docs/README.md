@@ -15,7 +15,7 @@ processes, such as local adaptation, are known to generate variation
 within species @Parmesan2006 that could have community level impacts
 [@Ikeda2014; @Record2013], which current SDMs employ species level
 data, which have historically averaged over this important
-intraspecific variation [@Aitken2016; @Fitzpatrick2014]. In this
+intraspecific variation [@Aitken2016; @Gotelli2015; @Fitzpatrick2014]. In this
 project, a collaborative team of researchers will use two study
 systems, the carnivorous plant *Sarracenia purpurea* (the Northern
 Pitcher Plant) and Eastern North American ant assemblages, to:  1)
