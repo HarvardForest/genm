@@ -1,4 +1,4 @@
-Genetic variance and Ecological Niche Models (GV-ENM)
+Genetic variance and Ecological Niche Models (G-ENM)
 =====================================================
 
 Global atmospheric temperatures are currently following the worst case
