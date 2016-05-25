@@ -36,6 +36,7 @@ PatagoniaMap<-get_map(location=Patagonia_Location, source="stamen", maptype="wat
 #Plotting Your Map
 ggmap(myMap)
 geom_point(aes(x=Longitude, y=Latitude, size=sqrt(estArea)), data=data, alpha=.5, color="darkred", size=3) 
+#data=data doens't work. 
 
 
 
