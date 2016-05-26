@@ -20,8 +20,8 @@
 #Try_number_1B
 #Patagonia Map using Google and different maptypes
 
-Patagonia_Location<-c(lon=-68.081488, lat=-41.464458)
-PatagoniaMap<-get_map(location=Patagonia_Location, source="google", maptype="satellite")
+Patagonia_Location <- c(lon=-68.081488, lat=-41.464458)
+PatagoniaMap <- get_map(location=Patagonia_Location, source="google", maptype="satellite")
 PatagoniaMap<-get_map(location=Patagonia_Location, source="google", maptype="hybrid")
 PatagoniaMap<-get_map(location=Patagonia_Location, source="google", maptype="roadmap")
 
