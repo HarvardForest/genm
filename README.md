@@ -2,22 +2,24 @@ Genetic variance and Ecological Niche Models (gENM)
 =====================================================
 
 Global atmospheric temperatures are currently following the worst case
-scenarios for climate projections. Studies of climate change impacts on
-ecosystems often use Species Distribution Models (SDM) to predict how
-altered climatic regimes will shift species' ranges; however, processes,
-such as local adaptation, are known to generate variation within species
-Parmesan (2006) that could have community level impacts (Ikeda et al.
-2014; Record et al. 2013), which current SDMs employ species level data,
-which have historically averaged over this important intraspecific
-variation (Aitken and Bemmels 2016; Gotelli and Stanton-Geddes 2015;
-Fitzpatrick and Keller 2014). In this project, a collaborative team of
-researchers will use two study systems, the carnivorous plant
-*Sarracenia purpurea* (the Northern Pitcher Plant) and Eastern North
-American ant assemblages, to: 1) collect and process field samples for
-genetic analyses; 2) test the sensitivity of SDM to intraspecific
-genetic variation through computer simulations; and 3) improve the
-transparency of SDM modeling through the application and development of
-data provenance software (Boose et al. 2007).
+scenarios for climate projections. Studies of climate change impacts
+on ecosystems often use Species Distribution Models (SDM) to predict
+how altered climatic regimes will shift species' ranges; however,
+processes, such as local adaptation, are known to generate variation
+within species Parmesan (2006) that could have community level impacts
+(Ikeda et al.  2014; Record et al. 2013), which current SDMs employ
+species level data, which have historically averaged over this
+important intraspecific variation (Aitken and Bemmels 2016; Gotelli
+and Stanton-Geddes 2015; Fitzpatrick and Keller 2014). In this
+project, a collaborative team of researchers will use two study
+systems, the carnivorous plant *Sarracenia purpurea* (the Northern
+Pitcher Plant) and Eastern North American ant assemblages, to: 
+
+1. collect and process field samples for genetic analyses 
+2. test the sensitivity of SDM to intraspecific genetic variation
+through computer simulations
+3. improve the transparency of SDM modeling through the application
+and development of data provenance software (Boose et al. 2007).
 
 The students selected for this project will be co-mentored by Matthew
 Lau and Sydne Record. At the beginning of the project, mentors will have
