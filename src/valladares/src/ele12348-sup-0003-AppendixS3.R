@@ -3,9 +3,7 @@ Appendix S3 Supporting Information
 Climatic data used for the simulations of a virtual species in the grid cells covering the mapped area of Europe. Maximum temperatures for the period 1961–1991 ('baseline data) and future climate projections (2050 data) are shown. Future temperatures were derived for 2021-2050 from the climate model HadCM3. The modeled climate anomalies were scaled based on the A1FI scenario that describes a globalized world under rapid economic growth and global human population that peaks in mid-century and declines thereafter.
 
 "X"	"Y"	"maxTwarmest.baseline"	"maxTwarmest.2050"
-
-	
-52.083	14.7	16.1
+-10.25	52.083	14.7	16.1
 -10.25	51.917	14.7	16.1
 -10.25	52.083	14.8	16.2
 -10.25	52.25	14.1	15.4
