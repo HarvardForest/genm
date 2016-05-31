@@ -15,8 +15,9 @@ library(gtools)
 library(caTools)
 
 ## loading the environmental data
-clim <- read.table("a1fi_Hadcm3_max_Temp_warmest.txt",sep="\t",header=T)
+clim <- read.table("../data/a1fi_Hadcm3_max_Temp_warmest.txt",sep="\t",header=T)
 xy <- clim[,1:2]
+
 curClim <- clim$maxTwarmest.baseline
 futClim <- clim$maxTwarmest.2050
 
