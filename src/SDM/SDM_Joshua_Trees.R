@@ -1,10 +1,10 @@
 #If you don't already have these packages, install them (from CRAN)
-install.packages("mapproj")
-install.packages("mapdata")
-install.packages("sp")
-install.packages("maptools")
-install.packages("dismo")
-install.packages("JoTrPresence02202008.txt")
+#install.packages("mapproj")
+#install.packages("mapdata")
+#install.packages("sp")
+#install.packages("maptools")
+#install.packages("dismo")
+
 
 #require basically "loads" your R packages. 
 #But, I've read that "library" is the more correct way to do this.
