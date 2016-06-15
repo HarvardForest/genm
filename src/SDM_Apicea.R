@@ -10,7 +10,6 @@ setwd("/Users/annacalderon/Desktop/gENM/src/SDM F aserva/data")
 #install.packages("dismo")
 #install.packages("rJava")
 
-
 #require basically "loads" your R packages. 
 #But, I've read that "library" is the more correct way to do this.
 #Instead "require" TRYs to load the package from the library.
@@ -292,13 +291,3 @@ points(Apicea$lon, Apicea$lat, col="darkgreen", pch=20, cex=0.5)
 axis(1,las=1)
 axis(2,las=1)
 box()
-
-#install.packages("shape")
-#library(shape)
-
-##########################MAKING CLUSTERS####################################
-plotcircle(mid = c(-89, 39), r = 3.5, from = 0, to = 3*pi, arrow = FALSE, col = adjustcolor("lightblue", alpha.f=0.5))
-plotcircle(mid = c(-82.99, 35), r = 2, from = 0, to = 3*pi, arrow = FALSE, col = adjustcolor("lightblue", alpha.f=0.5))
-plotcircle(mid = c(-79.79, 40.89), r = 3.7, from = 0, to = 3*pi, arrow = FALSE, col = adjustcolor("lightblue", alpha.f=0.5))
-plotcircle(mid = c(-71.3, 42), r =1, from = 0, to = 3*pi, arrow = FALSE, col = adjustcolor("lightblue", alpha.f=0.5))
-
