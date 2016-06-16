@@ -1,4 +1,4 @@
-
+rm()
 ##############################     Setting your work station    #############################
 
 setwd("/Users/annacalderon/Desktop/gENM/data/")
@@ -21,7 +21,7 @@ library(rgbif)
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
-rawdata<- gbif(genus = '', species = '') 
+rawdata<- gbif(genus = 'Passerina', species = 'Ciris') 
 rawdata[,c('lat','lon')] 
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])

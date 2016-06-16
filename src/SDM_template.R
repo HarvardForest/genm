@@ -1,7 +1,7 @@
-
+#rm()
 ##############################     Setting your work station    #############################
 
-setwd("/Users/annacalderon/Desktop/gENM/data/")
+setwd("")
 
 #install.packages("rgbif")
 #install.packages("mapproj")
@@ -26,14 +26,14 @@ rawdata[,c('lat','lon')]
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])
 
-#range(Apicea[ ,'lon'])
-#range(Apicea[ , 'lat'])
+#range(Gspecies[ ,'lon'])
+#range(Gspecies[ , 'lat'])
 
 data(stateMapEnv)
 
 ######################    PLOTTING PRESENCE AND ABSENCE POINTS  ############################
 
-plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitude", ylab="latitude", xaxt="n", yaxt="n", type="n", main="")
+plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitude", ylab="latitude", xaxt="n", yaxt="n", type="n", main="Title")
 rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4], col="lightcyan")
 map("state", xlim=c(leftlon, rightlon), ylim=c(lowerlat, upperlat), fill=T, col="honeydew", add=T)
 
@@ -111,7 +111,7 @@ e
 pred_me = predict(me, BClim) 
 
 
-plot(pred_me, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Predicted Presence of A. picea")
+plot(pred_me, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="title")
 map("state", xlim=c(leftlon,rightlon), ylim=c(lowerlat,upperlat), fill=F, col="black", add=T)
 points(bg,col="snow",pch=1,cex=0.2)
 points(Gspecies$lon, Gspecies$lat, col="darkgreen", pch=20, cex=0.5)
