@@ -1,0 +1,2651 @@
+{
+"prefix": {
+"default": "http://example.org/default",
+"ex": "http://example.org/"
+},
+
+"entity": {
+"ex:environment": {
+"ex:architecture": {
+"$": "x86_64",
+"type": "xsd:string"
+},
+"ex:operatingSystem": {
+"$": "unix",
+"type": "xsd:string"
+},
+"ex:language": {
+"$": "R",
+"type": "xsd:string"
+},
+"ex:rVersion": {
+"$": "R version 3.2.3 (2015-12-10)",
+"type": "xsd:string"
+},
+"ex:script": {
+"$": "/Users/annacalderon/Desktop/gENM/src/SDM_Apicea.R",
+"type": "xsd:string"
+},
+"ex:scriptTimestamp": {
+"$": "2016-06-14T17.19.08EDT",
+"type": "xsd:string"
+},
+"ex:workingDirectory": {
+"$": "/Users/annacalderon/Desktop/gENM/src",
+"type": "xsd:string"
+},
+"ex:ddgDirectory": {
+"$": "/Users/annacalderon/Desktop/gENM/src/ddg",
+"type": "xsd:string"
+},
+"ex:ddgTimestamp": {
+"$": "2016-06-14T17.27.35EDT",
+"type": "xsd:string"
+},
+"ex:rdatatrackerVersion": {
+"$": "2.21",
+"type": "xsd:string"
+}
+},
+"ex:d1": {
+"ex:number": {
+"$": "1",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "Apicea_raw",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "1-Apicea_raw-PARTIAL.csv",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.26.40EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d2": {
+"ex:number": {
+"$": "2",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "Apicea",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "2-Apicea.csv",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.26.40EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d3": {
+"ex:number": {
+"$": "3",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Data",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "stateMapEnv",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "R_MAP_DATA_DIR",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "TRUE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d4": {
+"ex:number": {
+"$": "4",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "longrid",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "4-longrid.csv",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.26.41EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d5": {
+"ex:number": {
+"$": "5",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "latgrid",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "5-latgrid.csv",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.26.41EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d6": {
+"ex:number": {
+"$": "6",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Data",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "subs",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d7": {
+"ex:number": {
+"$": "7",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Data",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "i",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "724",
+"type": "xsd:decimal"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "TRUE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d8": {
+"ex:number": {
+"$": "8",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Data",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "j",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "438",
+"type": "xsd:decimal"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "TRUE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d9": {
+"ex:number": {
+"$": "9",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "gridsq",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "9-gridsq.csv",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "TRUE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.32EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d10": {
+"ex:number": {
+"$": "10",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "subs",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "10-subs.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.32EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d11": {
+"ex:number": {
+"$": "11",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "gridsq",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "11-gridsq.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.32EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d12": {
+"ex:number": {
+"$": "12",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "x",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "12-x.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.32EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d13": {
+"ex:number": {
+"$": "13",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "bg",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "13-bg.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.34EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d14": {
+"ex:number": {
+"$": "14",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "YbrevRange",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "14-YbrevRange.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.35EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d15": {
+"ex:number": {
+"$": "15",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "BClim",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "15-BClim.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "TRUE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.35EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d16": {
+"ex:number": {
+"$": "16",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Snapshot",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "BClim",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "16-BClim.txt",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "R_GlobalEnv",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.35EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d17": {
+"ex:number": {
+"$": "17",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Exception",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "error.msg",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "\"Error in file(fnamevals, \"wb\"): cannot open the connection \"",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "ddg.library",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+},
+"ex:d18": {
+"ex:number": {
+"$": "18",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "File",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "dev.off.18.pdf",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "18-dev.off.18.pdf",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "undefined",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "2016-06-14T17.27.35EDT",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "/Users/annacalderon/Desktop/gENM/src/dev.off.18.pdf",
+"type": "xsd:string"
+}
+},
+"ex:d19": {
+"ex:number": {
+"$": "19",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Exception",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "error.msg",
+"type": "xsd:string"
+},
+"ex:value": {
+"$": "No procedure node found for SDM_Apicea.R",
+"type": "xsd:string"
+},
+"ex:scope": {
+"$": "ddg.library",
+"type": "xsd:string"
+},
+"ex:fromEnv": {
+"$": "FALSE",
+"type": "xsd:string"
+},
+"ex:timestamp": {
+"$": "",
+"type": "xsd:string"
+},
+"ex:location": {
+"$": "",
+"type": "xsd:string"
+}
+}
+},
+
+"activity": {
+"ex:p1": {
+"ex:number": {
+"$": "1",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Start",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "SDM_Apicea.R",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.132000000000005",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "NA",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p2": {
+"ex:number": {
+"$": "2",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"setwd(\"/Users/annacalderon/Desktop/gENM/src\")\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.134",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "2",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p3": {
+"ex:number": {
+"$": "3",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(mapproj)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.140000000000001",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "18",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p4": {
+"ex:number": {
+"$": "4",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(mapdata)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.149000000000001",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "19",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p5": {
+"ex:number": {
+"$": "5",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(maptools)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.156999999999996",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "20",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p6": {
+"ex:number": {
+"$": "6",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(dismo)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.170000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "21",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p7": {
+"ex:number": {
+"$": "7",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(rJava)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.179000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "22",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p8": {
+"ex:number": {
+"$": "8",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "library(rgbif)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.188000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "23",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p9": {
+"ex:number": {
+"$": "9",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"Apicea_raw <- gbif(genus = \"Aphaenogaster\", species = \"picea\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.429000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "27",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p10": {
+"ex:number": {
+"$": "10",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"Apicea_raw[, c(\"lat\", \"lon\")]\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.472999999999985",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "29",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p11": {
+"ex:number": {
+"$": "11",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"na.omit(Apicea_raw[, c(\"lat\", \"lon\")])\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.48599999999999",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "32",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p12": {
+"ex:number": {
+"$": "12",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"Apicea <- na.omit(Apicea_raw[, c(\"lat\", \"lon\")])\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.502999999999986",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "34",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p13": {
+"ex:number": {
+"$": "13",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"range(Apicea[, \"lon\"])\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.531999999999996",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "38",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p14": {
+"ex:number": {
+"$": "14",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"range(Apicea[, \"lat\"])\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.543999999999997",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "39",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p15": {
+"ex:number": {
+"$": "15",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "data(stateMapEnv)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.561999999999983",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "42",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p16": {
+"ex:number": {
+"$": "16",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"plot(c(-99.2, -63), c(23.6, 45.5), mar = par(\"mar\"), xlab = \"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.59899999999999",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "49",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p17": {
+"ex:number": {
+"$": "17",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\")\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.616",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "50",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p18": {
+"ex:number": {
+"$": "18",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"map(\"state\", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fil\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.641999999999996",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "51",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p19": {
+"ex:number": {
+"$": "19",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -99.06, y = 31.72, \"Texas\", col = \"black\", cex = 0.\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.663999999999987",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "55",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p20": {
+"ex:number": {
+"$": "20",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -97.06, y = 35.02, \"Oklahoma\", col = \"black\", cex =\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.673000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "56",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p21": {
+"ex:number": {
+"$": "21",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -97.7, y = 38, \"Texas\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.680999999999997",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "57",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p22": {
+"ex:number": {
+"$": "22",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -98, y = 41, \"Nebraska\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.688999999999993",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "58",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p23": {
+"ex:number": {
+"$": "23",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -99, y = 44, \"South Dakota\", col = \"black\", cex = 0\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.698999999999984",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "59",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p24": {
+"ex:number": {
+"$": "24",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -100, y = 47, \"North Dakota\", col = \"black\", cex = \"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.706999999999994",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "60",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p25": {
+"ex:number": {
+"$": "25",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -94, y = 46, \"Minnesota\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.715999999999994",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "61",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p26": {
+"ex:number": {
+"$": "26",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -93, y = 42, \"Iowa\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.724999999999994",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "62",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p27": {
+"ex:number": {
+"$": "27",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -93, y = 38, \"Missouri\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.733999999999995",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "63",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p28": {
+"ex:number": {
+"$": "28",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -92, y = 35, \"Arkansas\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.741",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "64",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p29": {
+"ex:number": {
+"$": "29",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -89, y = 33, \"Mississippi\", col = \"black\", cex = 0.\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.751000000000005",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "65",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p30": {
+"ex:number": {
+"$": "30",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -86, y = 32, \"Alabama\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.759999999999991",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "66",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p31": {
+"ex:number": {
+"$": "31",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -83, y = 33, \"Gerogia\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.768999999999991",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "67",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p32": {
+"ex:number": {
+"$": "32",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -81, y = 27, \"Florida\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.775999999999996",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "68",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p33": {
+"ex:number": {
+"$": "33",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -86, y = 35, \"Tennessee\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.789000000000001",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "69",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p34": {
+"ex:number": {
+"$": "34",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -85, y = 37.5, \"Kentucky\", col = \"black\", cex = 0.3\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.798000000000002",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "70",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p35": {
+"ex:number": {
+"$": "35",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -89, y = 40, \"Illinois\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.806999999999988",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "71",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p36": {
+"ex:number": {
+"$": "36",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -89.5, y = 44, \"Wisconsin\", col = \"black\", cex = 0.\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.814999999999998",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "72",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p37": {
+"ex:number": {
+"$": "37",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -85, y = 43.5, \"Michigan\", col = \"black\", cex = 0.3\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.823999999999998",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "73",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p38": {
+"ex:number": {
+"$": "38",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -86, y = 40, \"Indiana\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.831999999999994",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "74",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p39": {
+"ex:number": {
+"$": "39",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -83, y = 40, \"Ohio\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.839999999999989",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "75",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p40": {
+"ex:number": {
+"$": "40",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -87, y = 36, \"Tennessee\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.847999999999999",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "76",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p41": {
+"ex:number": {
+"$": "41",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -81, y = 38, \"West Virginia\", col = \"black\", cex = \"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.858000000000004",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "77",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p42": {
+"ex:number": {
+"$": "42",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -78, y = 41, \"Pennsylvania\", col = \"black\", cex = 0\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.865999999999985",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "78",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p43": {
+"ex:number": {
+"$": "43",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -75, y = 43, \"New York\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.874999999999986",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "79",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p44": {
+"ex:number": {
+"$": "44",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -79, y = 37, \"Virginia\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.882999999999996",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "80",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p45": {
+"ex:number": {
+"$": "45",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -78, y = 35, \"North Carolina\", col = \"black\", cex =\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.893000000000001",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "81",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p46": {
+"ex:number": {
+"$": "46",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -80, y = 34, \"South Carolina\", col = \"black\", cex =\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.903999999999982",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "82",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p47": {
+"ex:number": {
+"$": "47",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -92, y = 31, \"Louisiana\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.914999999999992",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "83",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p48": {
+"ex:number": {
+"$": "48",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -69, y = 45, \"Maine\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.923999999999992",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "84",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p49": {
+"ex:number": {
+"$": "49",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -73, y = 44, \"VT\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.931999999999988",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "85",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p50": {
+"ex:number": {
+"$": "50",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -72, y = 43.6, \"NH\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.939999999999998",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "86",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p51": {
+"ex:number": {
+"$": "51",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -72, y = 42.2, \"MA\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.947999999999993",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "87",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p52": {
+"ex:number": {
+"$": "52",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -72, y = 41.7, \"CN\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.954999999999998",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "88",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p53": {
+"ex:number": {
+"$": "53",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"text(x = -74.5, y = 40, \"NJ\", col = \"black\", cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.962000000000003",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "89",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p54": {
+"ex:number": {
+"$": "54",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"points(Apicea$lon, Apicea$lat, col = \"darkolivegreen4\", pch \"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.971999999999994",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "92",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p55": {
+"ex:number": {
+"$": "55",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "axis(1, las = 1)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "0.992999999999981",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "95",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p56": {
+"ex:number": {
+"$": "56",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "axis(2, las = 1)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "1.00399999999999",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "96",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p57": {
+"ex:number": {
+"$": "57",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "box()",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "1.011",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "99",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p58": {
+"ex:number": {
+"$": "58",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "longrid = seq(-99.2, -63, 0.05)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "1.01599999999999",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "102",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p59": {
+"ex:number": {
+"$": "59",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "latgrid = seq(23.6, 45.5, 0.05)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "1.032",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "103",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p60": {
+"ex:number": {
+"$": "60",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "subs = c()",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "1.044",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "106",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p61": {
+"ex:number": {
+"$": "61",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "52.047",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "107",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p62": {
+"ex:number": {
+"$": "62",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "dim(subs)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "52.128",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "115",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p63": {
+"ex:number": {
+"$": "63",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "52.212",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "118",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p64": {
+"ex:number": {
+"$": "64",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border =",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "52.253",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "119",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p65": {
+"ex:number": {
+"$": "65",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "54.666",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "127",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p66": {
+"ex:number": {
+"$": "66",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "\"points(bg, col = \"khaki4\", pch = 1, cex = 0.3)\"",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "54.707",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "128",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p67": {
+"ex:number": {
+"$": "67",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "require(raster)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "54.717",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "135",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p68": {
+"ex:number": {
+"$": "68",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "YbrevRange = extent(-99.2, -63, 23.6, 45.5)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "54.727",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "139",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p69": {
+"ex:number": {
+"$": "69",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "BClim = crop(BClim, YbrevRange)",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "54.755",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "140",
+"type": "xsd:positiveInteger"
+}
+},
+"ex:p70": {
+"ex:number": {
+"$": "70",
+"type": "xsd:positiveInteger"
+},
+"ex:type": {
+"$": "Operation",
+"type": "xsd:string"
+},
+"ex:name": {
+"$": "tryCatch",
+"type": "xsd:string"
+},
+"ex:elapsedTime": {
+"$": "55.058",
+"type": "xsd:decimal"
+},
+"ex:scriptNum": {
+"$": "0",
+"type": "xsd:positiveInteger"
+},
+"ex:scriptLine": {
+"$": "141",
+"type": "xsd:positiveInteger"
+}
+}
+},
+
+"used": {
+"ex:in1": {
+"prov:entity": "ex:d1",
+"prov:activity": "ex:p10"
+},
+"ex:in2": {
+"prov:entity": "ex:d1",
+"prov:activity": "ex:p11"
+},
+"ex:in3": {
+"prov:entity": "ex:d1",
+"prov:activity": "ex:p12"
+},
+"ex:in4": {
+"prov:entity": "ex:d2",
+"prov:activity": "ex:p13"
+},
+"ex:in5": {
+"prov:entity": "ex:d2",
+"prov:activity": "ex:p14"
+},
+"ex:in6": {
+"prov:entity": "ex:d2",
+"prov:activity": "ex:p54"
+},
+"ex:in7": {
+"prov:entity": "ex:d2",
+"prov:activity": "ex:p61"
+},
+"ex:in8": {
+"prov:entity": "ex:d3",
+"prov:activity": "ex:p15"
+},
+"ex:in9": {
+"prov:entity": "ex:d4",
+"prov:activity": "ex:p61"
+},
+"ex:in10": {
+"prov:entity": "ex:d5",
+"prov:activity": "ex:p61"
+},
+"ex:in11": {
+"prov:entity": "ex:d7",
+"prov:activity": "ex:p61"
+},
+"ex:in12": {
+"prov:entity": "ex:d8",
+"prov:activity": "ex:p61"
+},
+"ex:in13": {
+"prov:entity": "ex:d10",
+"prov:activity": "ex:p62"
+},
+"ex:in14": {
+"prov:entity": "ex:d10",
+"prov:activity": "ex:p63"
+},
+"ex:in15": {
+"prov:entity": "ex:d12",
+"prov:activity": "ex:p64"
+},
+"ex:in16": {
+"prov:entity": "ex:d12",
+"prov:activity": "ex:p65"
+},
+"ex:in17": {
+"prov:entity": "ex:d13",
+"prov:activity": "ex:p66"
+},
+"ex:in18": {
+"prov:entity": "ex:d14",
+"prov:activity": "ex:p69"
+}
+},
+
+"wasGeneratedBy": {
+"ex:out1": {
+"prov:entity": "ex:d1",
+"prov:activity": "ex:p9"
+},
+"ex:out2": {
+"prov:entity": "ex:d2",
+"prov:activity": "ex:p12"
+},
+"ex:out3": {
+"prov:entity": "ex:d4",
+"prov:activity": "ex:p58"
+},
+"ex:out4": {
+"prov:entity": "ex:d5",
+"prov:activity": "ex:p59"
+},
+"ex:out5": {
+"prov:entity": "ex:d6",
+"prov:activity": "ex:p60"
+},
+"ex:out6": {
+"prov:entity": "ex:d10",
+"prov:activity": "ex:p61"
+},
+"ex:out7": {
+"prov:entity": "ex:d11",
+"prov:activity": "ex:p61"
+},
+"ex:out8": {
+"prov:entity": "ex:d12",
+"prov:activity": "ex:p63"
+},
+"ex:out9": {
+"prov:entity": "ex:d13",
+"prov:activity": "ex:p65"
+},
+"ex:out10": {
+"prov:entity": "ex:d14",
+"prov:activity": "ex:p68"
+},
+"ex:out11": {
+"prov:entity": "ex:d16",
+"prov:activity": "ex:p69"
+},
+"ex:out12": {
+"prov:entity": "ex:d17",
+"prov:activity": "ex:p70"
+},
+"ex:out13": {
+"prov:entity": "ex:d19",
+"prov:activity": "ex:p70"
+}
+}
+}
+

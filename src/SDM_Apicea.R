@@ -1,5 +1,5 @@
 
-setwd("/Users/annacalderon/Desktop/gENM/src/SDM F aserva/data")
+setwd("/Users/annacalderon/Desktop/gENM/src")
 
 #install.packages("rgbif")
 #If you don't already have these packages, install them (from CRAN)
@@ -133,14 +133,14 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 
 
 require(raster)
-#BClim = getData("worldclim", var="bio", res=2.5, path="/Users/annacalderon/Desktop/gENM/src/SDM A picea/data")
+#BClim = getData("worldclim", var="bio", res=2.5, path="/Users/annacalderon/Desktop/gENM/data")
 
 #if the data is unwiedly, crop it. 
 YbrevRange = extent(-99.2,-63,23.6, 45.5) # define the extent
 BClim = crop(BClim, YbrevRange)
-writeRaster(BClim, filename="/Users/annacalderon/Desktop/gENM/src/SDM A picea/data", overwrite=T)
+#writeRaster(BClim, filename="/Users/annacalderon/Desktop/gENM/data", overwrite=T)
 #....aaaaand, reload it from the file that contains the croped BClim data 
-BClim = brick("/Users/annacalderon/Desktop/gENM/src/SDM A picea/data/data.grd")
+BClim = brick("/Users/annacalderon/Desktop/gENM/data/data.grd")
 
 #Now you can start plotting your data! YEYYYYYYYY. 
 
@@ -291,3 +291,5 @@ points(Apicea$lon, Apicea$lat, col="darkgreen", pch=20, cex=0.5)
 axis(1,las=1)
 axis(2,las=1)
 box()
+
+ddg.run("SDM_Apicea.R")
