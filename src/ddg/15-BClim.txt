@@ -1,0 +1,10 @@
+class       : RasterBrick 
+dimensions  : 526, 869, 457094, 19  (nrow, ncol, ncell, nlayers)
+resolution  : 0.04166667, 0.04166667  (x, y)
+extent      : -99.20833, -63, 23.58333, 45.5  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0 
+data source : /Users/annacalderon/Desktop/gENM/data/data.grd 
+names       :  bio1,  bio2,  bio3,  bio4,  bio5,  bio6,  bio7,  bio8,  bio9, bio10, bio11, bio12, bio13, bio14, bio15, ... 
+min values  :    -4,    52,    23,  1914,   161,  -194,   123,   -57,  -115,   109,  -123,   443,    62,     7,     6, ... 
+max values  :   258,   156,    57, 12127,   380,   197,   486,   300,   287,   307,   232,  2043,   276,   154,    79, ... 
+

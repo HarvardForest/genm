@@ -1,0 +1,71 @@
+ddg.type	ddg.num	ddg.name	ddg.value	ddg.return.linked	ddg.auto.created	ddg.time	ddg.snum	ddg.lnum
+Start	1	SDM_Apicea.R	SDM_Apicea.R	FALSE	FALSE	0.132000000000005	0	NA
+Operation	2	setwd("/Users/annacalderon/Desktop/gENM/src")	setwd("/Users/annacalderon/Desktop/gENM/src")	FALSE	FALSE	0.134	0	2
+Operation	3	library(mapproj)	library(mapproj)	FALSE	FALSE	0.140000000000001	0	18
+Operation	4	library(mapdata)	library(mapdata)	FALSE	FALSE	0.149000000000001	0	19
+Operation	5	library(maptools)	library(maptools)	FALSE	FALSE	0.156999999999996	0	20
+Operation	6	library(dismo)	library(dismo)	FALSE	FALSE	0.170000000000002	0	21
+Operation	7	library(rJava)	library(rJava)	FALSE	FALSE	0.179000000000002	0	22
+Operation	8	library(rgbif)	library(rgbif)	FALSE	FALSE	0.188000000000002	0	23
+Operation	9	Apicea_raw <- gbif(genus = "Aphaenogaster", species = "picea	Apicea_raw <- gbif(genus = "Aphaenogaster", species = "picea	FALSE	FALSE	0.429000000000002	0	27
+Operation	10	Apicea_raw[, c("lat", "lon")]	Apicea_raw[, c("lat", "lon")]	FALSE	FALSE	0.472999999999985	0	29
+Operation	11	na.omit(Apicea_raw[, c("lat", "lon")])	na.omit(Apicea_raw[, c("lat", "lon")])	FALSE	FALSE	0.48599999999999	0	32
+Operation	12	Apicea <- na.omit(Apicea_raw[, c("lat", "lon")])	Apicea <- na.omit(Apicea_raw[, c("lat", "lon")])	FALSE	FALSE	0.502999999999986	0	34
+Operation	13	range(Apicea[, "lon"])	range(Apicea[, "lon"])	FALSE	FALSE	0.531999999999996	0	38
+Operation	14	range(Apicea[, "lat"])	range(Apicea[, "lat"])	FALSE	FALSE	0.543999999999997	0	39
+Operation	15	data(stateMapEnv)	data(stateMapEnv)	FALSE	FALSE	0.561999999999983	0	42
+Operation	16	plot(c(-99.2, -63), c(23.6, 45.5), mar = par("mar"), xlab = 	plot(c(-99.2, -63), c(23.6, 45.5), mar = par("mar"), xlab = 	FALSE	FALSE	0.59899999999999	0	49
+Operation	17	rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")	rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")	FALSE	FALSE	0.616	0	50
+Operation	18	map("state", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fil	map("state", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fil	FALSE	FALSE	0.641999999999996	0	51
+Operation	19	text(x = -99.06, y = 31.72, "Texas", col = "black", cex = 0.	text(x = -99.06, y = 31.72, "Texas", col = "black", cex = 0.	FALSE	FALSE	0.663999999999987	0	55
+Operation	20	text(x = -97.06, y = 35.02, "Oklahoma", col = "black", cex =	text(x = -97.06, y = 35.02, "Oklahoma", col = "black", cex =	FALSE	FALSE	0.673000000000002	0	56
+Operation	21	text(x = -97.7, y = 38, "Texas", col = "black", cex = 0.3)	text(x = -97.7, y = 38, "Texas", col = "black", cex = 0.3)	FALSE	FALSE	0.680999999999997	0	57
+Operation	22	text(x = -98, y = 41, "Nebraska", col = "black", cex = 0.3)	text(x = -98, y = 41, "Nebraska", col = "black", cex = 0.3)	FALSE	FALSE	0.688999999999993	0	58
+Operation	23	text(x = -99, y = 44, "South Dakota", col = "black", cex = 0	text(x = -99, y = 44, "South Dakota", col = "black", cex = 0	FALSE	FALSE	0.698999999999984	0	59
+Operation	24	text(x = -100, y = 47, "North Dakota", col = "black", cex = 	text(x = -100, y = 47, "North Dakota", col = "black", cex = 	FALSE	FALSE	0.706999999999994	0	60
+Operation	25	text(x = -94, y = 46, "Minnesota", col = "black", cex = 0.3)	text(x = -94, y = 46, "Minnesota", col = "black", cex = 0.3)	FALSE	FALSE	0.715999999999994	0	61
+Operation	26	text(x = -93, y = 42, "Iowa", col = "black", cex = 0.3)	text(x = -93, y = 42, "Iowa", col = "black", cex = 0.3)	FALSE	FALSE	0.724999999999994	0	62
+Operation	27	text(x = -93, y = 38, "Missouri", col = "black", cex = 0.3)	text(x = -93, y = 38, "Missouri", col = "black", cex = 0.3)	FALSE	FALSE	0.733999999999995	0	63
+Operation	28	text(x = -92, y = 35, "Arkansas", col = "black", cex = 0.3)	text(x = -92, y = 35, "Arkansas", col = "black", cex = 0.3)	FALSE	FALSE	0.741	0	64
+Operation	29	text(x = -89, y = 33, "Mississippi", col = "black", cex = 0.	text(x = -89, y = 33, "Mississippi", col = "black", cex = 0.	FALSE	FALSE	0.751000000000005	0	65
+Operation	30	text(x = -86, y = 32, "Alabama", col = "black", cex = 0.3)	text(x = -86, y = 32, "Alabama", col = "black", cex = 0.3)	FALSE	FALSE	0.759999999999991	0	66
+Operation	31	text(x = -83, y = 33, "Gerogia", col = "black", cex = 0.3)	text(x = -83, y = 33, "Gerogia", col = "black", cex = 0.3)	FALSE	FALSE	0.768999999999991	0	67
+Operation	32	text(x = -81, y = 27, "Florida", col = "black", cex = 0.3)	text(x = -81, y = 27, "Florida", col = "black", cex = 0.3)	FALSE	FALSE	0.775999999999996	0	68
+Operation	33	text(x = -86, y = 35, "Tennessee", col = "black", cex = 0.3)	text(x = -86, y = 35, "Tennessee", col = "black", cex = 0.3)	FALSE	FALSE	0.789000000000001	0	69
+Operation	34	text(x = -85, y = 37.5, "Kentucky", col = "black", cex = 0.3	text(x = -85, y = 37.5, "Kentucky", col = "black", cex = 0.3	FALSE	FALSE	0.798000000000002	0	70
+Operation	35	text(x = -89, y = 40, "Illinois", col = "black", cex = 0.3)	text(x = -89, y = 40, "Illinois", col = "black", cex = 0.3)	FALSE	FALSE	0.806999999999988	0	71
+Operation	36	text(x = -89.5, y = 44, "Wisconsin", col = "black", cex = 0.	text(x = -89.5, y = 44, "Wisconsin", col = "black", cex = 0.	FALSE	FALSE	0.814999999999998	0	72
+Operation	37	text(x = -85, y = 43.5, "Michigan", col = "black", cex = 0.3	text(x = -85, y = 43.5, "Michigan", col = "black", cex = 0.3	FALSE	FALSE	0.823999999999998	0	73
+Operation	38	text(x = -86, y = 40, "Indiana", col = "black", cex = 0.3)	text(x = -86, y = 40, "Indiana", col = "black", cex = 0.3)	FALSE	FALSE	0.831999999999994	0	74
+Operation	39	text(x = -83, y = 40, "Ohio", col = "black", cex = 0.3)	text(x = -83, y = 40, "Ohio", col = "black", cex = 0.3)	FALSE	FALSE	0.839999999999989	0	75
+Operation	40	text(x = -87, y = 36, "Tennessee", col = "black", cex = 0.3)	text(x = -87, y = 36, "Tennessee", col = "black", cex = 0.3)	FALSE	FALSE	0.847999999999999	0	76
+Operation	41	text(x = -81, y = 38, "West Virginia", col = "black", cex = 	text(x = -81, y = 38, "West Virginia", col = "black", cex = 	FALSE	FALSE	0.858000000000004	0	77
+Operation	42	text(x = -78, y = 41, "Pennsylvania", col = "black", cex = 0	text(x = -78, y = 41, "Pennsylvania", col = "black", cex = 0	FALSE	FALSE	0.865999999999985	0	78
+Operation	43	text(x = -75, y = 43, "New York", col = "black", cex = 0.3)	text(x = -75, y = 43, "New York", col = "black", cex = 0.3)	FALSE	FALSE	0.874999999999986	0	79
+Operation	44	text(x = -79, y = 37, "Virginia", col = "black", cex = 0.3)	text(x = -79, y = 37, "Virginia", col = "black", cex = 0.3)	FALSE	FALSE	0.882999999999996	0	80
+Operation	45	text(x = -78, y = 35, "North Carolina", col = "black", cex =	text(x = -78, y = 35, "North Carolina", col = "black", cex =	FALSE	FALSE	0.893000000000001	0	81
+Operation	46	text(x = -80, y = 34, "South Carolina", col = "black", cex =	text(x = -80, y = 34, "South Carolina", col = "black", cex =	FALSE	FALSE	0.903999999999982	0	82
+Operation	47	text(x = -92, y = 31, "Louisiana", col = "black", cex = 0.3)	text(x = -92, y = 31, "Louisiana", col = "black", cex = 0.3)	FALSE	FALSE	0.914999999999992	0	83
+Operation	48	text(x = -69, y = 45, "Maine", col = "black", cex = 0.3)	text(x = -69, y = 45, "Maine", col = "black", cex = 0.3)	FALSE	FALSE	0.923999999999992	0	84
+Operation	49	text(x = -73, y = 44, "VT", col = "black", cex = 0.3)	text(x = -73, y = 44, "VT", col = "black", cex = 0.3)	FALSE	FALSE	0.931999999999988	0	85
+Operation	50	text(x = -72, y = 43.6, "NH", col = "black", cex = 0.3)	text(x = -72, y = 43.6, "NH", col = "black", cex = 0.3)	FALSE	FALSE	0.939999999999998	0	86
+Operation	51	text(x = -72, y = 42.2, "MA", col = "black", cex = 0.3)	text(x = -72, y = 42.2, "MA", col = "black", cex = 0.3)	FALSE	FALSE	0.947999999999993	0	87
+Operation	52	text(x = -72, y = 41.7, "CN", col = "black", cex = 0.3)	text(x = -72, y = 41.7, "CN", col = "black", cex = 0.3)	FALSE	FALSE	0.954999999999998	0	88
+Operation	53	text(x = -74.5, y = 40, "NJ", col = "black", cex = 0.3)	text(x = -74.5, y = 40, "NJ", col = "black", cex = 0.3)	FALSE	FALSE	0.962000000000003	0	89
+Operation	54	points(Apicea$lon, Apicea$lat, col = "darkolivegreen4", pch 	points(Apicea$lon, Apicea$lat, col = "darkolivegreen4", pch 	FALSE	FALSE	0.971999999999994	0	92
+Operation	55	axis(1, las = 1)	axis(1, las = 1)	FALSE	FALSE	0.992999999999981	0	95
+Operation	56	axis(2, las = 1)	axis(2, las = 1)	FALSE	FALSE	1.00399999999999	0	96
+Operation	57	box()	box()	FALSE	FALSE	1.011	0	99
+Operation	58	longrid = seq(-99.2, -63, 0.05)	longrid = seq(-99.2, -63, 0.05)	FALSE	FALSE	1.01599999999999	0	102
+Operation	59	latgrid = seq(23.6, 45.5, 0.05)	latgrid = seq(23.6, 45.5, 0.05)	FALSE	FALSE	1.032	0	103
+Operation	60	subs = c()	subs = c()	FALSE	FALSE	1.044	0	106
+Operation	61	for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(	for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(	FALSE	FALSE	52.047	0	107
+Operation	62	dim(subs)	dim(subs)	FALSE	FALSE	52.128	0	115
+Operation	63	x = circles(subs[, c("lon", "lat")], d = 50000, lonlat = T)	x = circles(subs[, c("lon", "lat")], d = 50000, lonlat = T)	FALSE	FALSE	52.212	0	118
+Operation	64	plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border =	plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border =	FALSE	FALSE	52.253	0	119
+Operation	65	bg = spsample(x@polygons, 1000, type = "random", iter = 1000	bg = spsample(x@polygons, 1000, type = "random", iter = 1000	FALSE	FALSE	54.666	0	127
+Operation	66	points(bg, col = "khaki4", pch = 1, cex = 0.3)	points(bg, col = "khaki4", pch = 1, cex = 0.3)	FALSE	FALSE	54.707	0	128
+Operation	67	require(raster)	require(raster)	FALSE	FALSE	54.717	0	135
+Operation	68	YbrevRange = extent(-99.2, -63, 23.6, 45.5)	YbrevRange = extent(-99.2, -63, 23.6, 45.5)	FALSE	FALSE	54.727	0	139
+Operation	69	BClim = crop(BClim, YbrevRange)	BClim = crop(BClim, YbrevRange)	FALSE	FALSE	54.755	0	140
+Operation	70	tryCatch	tryCatch	FALSE	FALSE	55.058	0	141

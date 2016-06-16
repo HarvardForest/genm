@@ -1,0 +1,21 @@
+ddg.type	ddg.num	ddg.name	ddg.value	ddg.scope	ddg.from.env	ddg.time	ddg.loc	ddg.current
+Snapshot	1	Apicea_raw	1-Apicea_raw-PARTIAL.csv	R_GlobalEnv	FALSE	2016-06-14T17.26.40EDT		TRUE
+Snapshot	2	Apicea	2-Apicea.csv	R_GlobalEnv	FALSE	2016-06-14T17.26.40EDT		TRUE
+Data	3	stateMapEnv	R_MAP_DATA_DIR	R_GlobalEnv	TRUE			TRUE
+Snapshot	4	longrid	4-longrid.csv	R_GlobalEnv	FALSE	2016-06-14T17.26.41EDT		TRUE
+Snapshot	5	latgrid	5-latgrid.csv	R_GlobalEnv	FALSE	2016-06-14T17.26.41EDT		TRUE
+Data	6	subs		R_GlobalEnv	FALSE			TRUE
+Data	7	i	724	R_GlobalEnv	TRUE			TRUE
+Data	8	j	438	R_GlobalEnv	TRUE			TRUE
+Snapshot	9	gridsq	9-gridsq.csv	R_GlobalEnv	TRUE	2016-06-14T17.27.32EDT		TRUE
+Snapshot	10	subs	10-subs.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.32EDT		TRUE
+Snapshot	11	gridsq	11-gridsq.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.32EDT		TRUE
+Snapshot	12	x	12-x.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.32EDT		TRUE
+Snapshot	13	bg	13-bg.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.34EDT		TRUE
+Snapshot	14	YbrevRange	14-YbrevRange.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.35EDT		TRUE
+Snapshot	15	BClim	15-BClim.txt	R_GlobalEnv	TRUE	2016-06-14T17.27.35EDT		TRUE
+Snapshot	16	BClim	16-BClim.txt	R_GlobalEnv	FALSE	2016-06-14T17.27.35EDT		TRUE
+Exception	17	error.msg	Error in file(fnamevals, "wb"): cannot open the connection
+	ddg.library	FALSE			TRUE
+File	18	dev.off.18.pdf	18-dev.off.18.pdf	undefined	FALSE	2016-06-14T17.27.35EDT	/Users/annacalderon/Desktop/gENM/src/dev.off.18.pdf	TRUE
+Exception	19	error.msg	No procedure node found for SDM_Apicea.R	ddg.library	FALSE			TRUE
