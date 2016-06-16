@@ -1,0 +1,201 @@
+Architecture="x86_64"
+OperatingSystem="unix"
+Language="R"
+LanguageVersion="R version 3.2.3 (2015-12-10)"
+RDataTrackerVersion="2.21"
+Script="/Users/annacalderon/Desktop/gENM/src/SDM_Apicea.R"
+ProcessFileTimestamp="2016-06-14T17.19.08EDT"
+WorkingDirectory="/Users/annacalderon/Desktop/gENM/src"
+DDGDirectory="/Users/annacalderon/Desktop/gENM/src/ddg"
+DateTime="2016-06-14T17.27.35EDT"
+70
+Start p1 "1-SDM_Apicea.R" Value="SDM_Apicea.R" Time="0.132000000000005";
+Operation p2 "2-setwd(\"/Users/annacalderon/Desktop/gENM/src\") [2]" Value="setwd(\"/Users/annacalderon/Desktop/gENM/src\")" Time="0.134";
+CF p1 p2
+Operation p3 "3-library(mapproj) [18]" Value="library(mapproj)" Time="0.140000000000001";
+CF p2 p3
+Operation p4 "4-library(mapdata) [19]" Value="library(mapdata)" Time="0.149000000000001";
+CF p3 p4
+Operation p5 "5-library(maptools) [20]" Value="library(maptools)" Time="0.156999999999996";
+CF p4 p5
+Operation p6 "6-library(dismo) [21]" Value="library(dismo)" Time="0.170000000000002";
+CF p5 p6
+Operation p7 "7-library(rJava) [22]" Value="library(rJava)" Time="0.179000000000002";
+CF p6 p7
+Operation p8 "8-library(rgbif) [23]" Value="library(rgbif)" Time="0.188000000000002";
+CF p7 p8
+Operation p9 "9-Apicea_raw <- gbif(genus = \"Aphaenogaster\", species = \"picea [27]" Value="Apicea_raw <- gbif(genus = \"Aphaenogaster\", species = \"picea" Time="0.429000000000002";
+CF p8 p9
+Snapshot d1 "1-Apicea_raw" Value="/Users/annacalderon/Desktop/gENM/src/ddg/1-Apicea_raw-PARTIAL.csv" Time="2016-06-14T17.26.40EDT";
+DF p9 d1
+Operation p10 "10-Apicea_raw[, c(\"lat\", \"lon\")] [29]" Value="Apicea_raw[, c(\"lat\", \"lon\")]" Time="0.472999999999985";
+CF p9 p10
+DF d1 p10
+Operation p11 "11-na.omit(Apicea_raw[, c(\"lat\", \"lon\")]) [32]" Value="na.omit(Apicea_raw[, c(\"lat\", \"lon\")])" Time="0.48599999999999";
+CF p10 p11
+DF d1 p11
+Operation p12 "12-Apicea <- na.omit(Apicea_raw[, c(\"lat\", \"lon\")]) [34]" Value="Apicea <- na.omit(Apicea_raw[, c(\"lat\", \"lon\")])" Time="0.502999999999986";
+CF p11 p12
+DF d1 p12
+Snapshot d2 "2-Apicea" Value="/Users/annacalderon/Desktop/gENM/src/ddg/2-Apicea.csv" Time="2016-06-14T17.26.40EDT";
+DF p12 d2
+Operation p13 "13-range(Apicea[, \"lon\"]) [38]" Value="range(Apicea[, \"lon\"])" Time="0.531999999999996";
+CF p12 p13
+DF d2 p13
+Operation p14 "14-range(Apicea[, \"lat\"]) [39]" Value="range(Apicea[, \"lat\"])" Time="0.543999999999997";
+CF p13 p14
+DF d2 p14
+Operation p15 "15-data(stateMapEnv) [42]" Value="data(stateMapEnv)" Time="0.561999999999983";
+CF p14 p15
+Data d3 "3-stateMapEnv [ENV]" Value="\"R_MAP_DATA_DIR\"";
+DF d3 p15
+Operation p16 "16-plot(c(-99.2, -63), c(23.6, 45.5), mar = par(\"mar\"), xlab =  [49]" Value="plot(c(-99.2, -63), c(23.6, 45.5), mar = par(\"mar\"), xlab = " Time="0.59899999999999";
+CF p15 p16
+Operation p17 "17-rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\") [50]" Value="rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\")" Time="0.616";
+CF p16 p17
+Operation p18 "18-map(\"state\", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fil [51]" Value="map(\"state\", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fil" Time="0.641999999999996";
+CF p17 p18
+Operation p19 "19-text(x = -99.06, y = 31.72, \"Texas\", col = \"black\", cex = 0. [55]" Value="text(x = -99.06, y = 31.72, \"Texas\", col = \"black\", cex = 0." Time="0.663999999999987";
+CF p18 p19
+Operation p20 "20-text(x = -97.06, y = 35.02, \"Oklahoma\", col = \"black\", cex = [56]" Value="text(x = -97.06, y = 35.02, \"Oklahoma\", col = \"black\", cex =" Time="0.673000000000002";
+CF p19 p20
+Operation p21 "21-text(x = -97.7, y = 38, \"Texas\", col = \"black\", cex = 0.3) [57]" Value="text(x = -97.7, y = 38, \"Texas\", col = \"black\", cex = 0.3)" Time="0.680999999999997";
+CF p20 p21
+Operation p22 "22-text(x = -98, y = 41, \"Nebraska\", col = \"black\", cex = 0.3) [58]" Value="text(x = -98, y = 41, \"Nebraska\", col = \"black\", cex = 0.3)" Time="0.688999999999993";
+CF p21 p22
+Operation p23 "23-text(x = -99, y = 44, \"South Dakota\", col = \"black\", cex = 0 [59]" Value="text(x = -99, y = 44, \"South Dakota\", col = \"black\", cex = 0" Time="0.698999999999984";
+CF p22 p23
+Operation p24 "24-text(x = -100, y = 47, \"North Dakota\", col = \"black\", cex =  [60]" Value="text(x = -100, y = 47, \"North Dakota\", col = \"black\", cex = " Time="0.706999999999994";
+CF p23 p24
+Operation p25 "25-text(x = -94, y = 46, \"Minnesota\", col = \"black\", cex = 0.3) [61]" Value="text(x = -94, y = 46, \"Minnesota\", col = \"black\", cex = 0.3)" Time="0.715999999999994";
+CF p24 p25
+Operation p26 "26-text(x = -93, y = 42, \"Iowa\", col = \"black\", cex = 0.3) [62]" Value="text(x = -93, y = 42, \"Iowa\", col = \"black\", cex = 0.3)" Time="0.724999999999994";
+CF p25 p26
+Operation p27 "27-text(x = -93, y = 38, \"Missouri\", col = \"black\", cex = 0.3) [63]" Value="text(x = -93, y = 38, \"Missouri\", col = \"black\", cex = 0.3)" Time="0.733999999999995";
+CF p26 p27
+Operation p28 "28-text(x = -92, y = 35, \"Arkansas\", col = \"black\", cex = 0.3) [64]" Value="text(x = -92, y = 35, \"Arkansas\", col = \"black\", cex = 0.3)" Time="0.741";
+CF p27 p28
+Operation p29 "29-text(x = -89, y = 33, \"Mississippi\", col = \"black\", cex = 0. [65]" Value="text(x = -89, y = 33, \"Mississippi\", col = \"black\", cex = 0." Time="0.751000000000005";
+CF p28 p29
+Operation p30 "30-text(x = -86, y = 32, \"Alabama\", col = \"black\", cex = 0.3) [66]" Value="text(x = -86, y = 32, \"Alabama\", col = \"black\", cex = 0.3)" Time="0.759999999999991";
+CF p29 p30
+Operation p31 "31-text(x = -83, y = 33, \"Gerogia\", col = \"black\", cex = 0.3) [67]" Value="text(x = -83, y = 33, \"Gerogia\", col = \"black\", cex = 0.3)" Time="0.768999999999991";
+CF p30 p31
+Operation p32 "32-text(x = -81, y = 27, \"Florida\", col = \"black\", cex = 0.3) [68]" Value="text(x = -81, y = 27, \"Florida\", col = \"black\", cex = 0.3)" Time="0.775999999999996";
+CF p31 p32
+Operation p33 "33-text(x = -86, y = 35, \"Tennessee\", col = \"black\", cex = 0.3) [69]" Value="text(x = -86, y = 35, \"Tennessee\", col = \"black\", cex = 0.3)" Time="0.789000000000001";
+CF p32 p33
+Operation p34 "34-text(x = -85, y = 37.5, \"Kentucky\", col = \"black\", cex = 0.3 [70]" Value="text(x = -85, y = 37.5, \"Kentucky\", col = \"black\", cex = 0.3" Time="0.798000000000002";
+CF p33 p34
+Operation p35 "35-text(x = -89, y = 40, \"Illinois\", col = \"black\", cex = 0.3) [71]" Value="text(x = -89, y = 40, \"Illinois\", col = \"black\", cex = 0.3)" Time="0.806999999999988";
+CF p34 p35
+Operation p36 "36-text(x = -89.5, y = 44, \"Wisconsin\", col = \"black\", cex = 0. [72]" Value="text(x = -89.5, y = 44, \"Wisconsin\", col = \"black\", cex = 0." Time="0.814999999999998";
+CF p35 p36
+Operation p37 "37-text(x = -85, y = 43.5, \"Michigan\", col = \"black\", cex = 0.3 [73]" Value="text(x = -85, y = 43.5, \"Michigan\", col = \"black\", cex = 0.3" Time="0.823999999999998";
+CF p36 p37
+Operation p38 "38-text(x = -86, y = 40, \"Indiana\", col = \"black\", cex = 0.3) [74]" Value="text(x = -86, y = 40, \"Indiana\", col = \"black\", cex = 0.3)" Time="0.831999999999994";
+CF p37 p38
+Operation p39 "39-text(x = -83, y = 40, \"Ohio\", col = \"black\", cex = 0.3) [75]" Value="text(x = -83, y = 40, \"Ohio\", col = \"black\", cex = 0.3)" Time="0.839999999999989";
+CF p38 p39
+Operation p40 "40-text(x = -87, y = 36, \"Tennessee\", col = \"black\", cex = 0.3) [76]" Value="text(x = -87, y = 36, \"Tennessee\", col = \"black\", cex = 0.3)" Time="0.847999999999999";
+CF p39 p40
+Operation p41 "41-text(x = -81, y = 38, \"West Virginia\", col = \"black\", cex =  [77]" Value="text(x = -81, y = 38, \"West Virginia\", col = \"black\", cex = " Time="0.858000000000004";
+CF p40 p41
+Operation p42 "42-text(x = -78, y = 41, \"Pennsylvania\", col = \"black\", cex = 0 [78]" Value="text(x = -78, y = 41, \"Pennsylvania\", col = \"black\", cex = 0" Time="0.865999999999985";
+CF p41 p42
+Operation p43 "43-text(x = -75, y = 43, \"New York\", col = \"black\", cex = 0.3) [79]" Value="text(x = -75, y = 43, \"New York\", col = \"black\", cex = 0.3)" Time="0.874999999999986";
+CF p42 p43
+Operation p44 "44-text(x = -79, y = 37, \"Virginia\", col = \"black\", cex = 0.3) [80]" Value="text(x = -79, y = 37, \"Virginia\", col = \"black\", cex = 0.3)" Time="0.882999999999996";
+CF p43 p44
+Operation p45 "45-text(x = -78, y = 35, \"North Carolina\", col = \"black\", cex = [81]" Value="text(x = -78, y = 35, \"North Carolina\", col = \"black\", cex =" Time="0.893000000000001";
+CF p44 p45
+Operation p46 "46-text(x = -80, y = 34, \"South Carolina\", col = \"black\", cex = [82]" Value="text(x = -80, y = 34, \"South Carolina\", col = \"black\", cex =" Time="0.903999999999982";
+CF p45 p46
+Operation p47 "47-text(x = -92, y = 31, \"Louisiana\", col = \"black\", cex = 0.3) [83]" Value="text(x = -92, y = 31, \"Louisiana\", col = \"black\", cex = 0.3)" Time="0.914999999999992";
+CF p46 p47
+Operation p48 "48-text(x = -69, y = 45, \"Maine\", col = \"black\", cex = 0.3) [84]" Value="text(x = -69, y = 45, \"Maine\", col = \"black\", cex = 0.3)" Time="0.923999999999992";
+CF p47 p48
+Operation p49 "49-text(x = -73, y = 44, \"VT\", col = \"black\", cex = 0.3) [85]" Value="text(x = -73, y = 44, \"VT\", col = \"black\", cex = 0.3)" Time="0.931999999999988";
+CF p48 p49
+Operation p50 "50-text(x = -72, y = 43.6, \"NH\", col = \"black\", cex = 0.3) [86]" Value="text(x = -72, y = 43.6, \"NH\", col = \"black\", cex = 0.3)" Time="0.939999999999998";
+CF p49 p50
+Operation p51 "51-text(x = -72, y = 42.2, \"MA\", col = \"black\", cex = 0.3) [87]" Value="text(x = -72, y = 42.2, \"MA\", col = \"black\", cex = 0.3)" Time="0.947999999999993";
+CF p50 p51
+Operation p52 "52-text(x = -72, y = 41.7, \"CN\", col = \"black\", cex = 0.3) [88]" Value="text(x = -72, y = 41.7, \"CN\", col = \"black\", cex = 0.3)" Time="0.954999999999998";
+CF p51 p52
+Operation p53 "53-text(x = -74.5, y = 40, \"NJ\", col = \"black\", cex = 0.3) [89]" Value="text(x = -74.5, y = 40, \"NJ\", col = \"black\", cex = 0.3)" Time="0.962000000000003";
+CF p52 p53
+Operation p54 "54-points(Apicea$lon, Apicea$lat, col = \"darkolivegreen4\", pch  [92]" Value="points(Apicea$lon, Apicea$lat, col = \"darkolivegreen4\", pch " Time="0.971999999999994";
+CF p53 p54
+DF d2 p54
+Operation p55 "55-axis(1, las = 1) [95]" Value="axis(1, las = 1)" Time="0.992999999999981";
+CF p54 p55
+Operation p56 "56-axis(2, las = 1) [96]" Value="axis(2, las = 1)" Time="1.00399999999999";
+CF p55 p56
+Operation p57 "57-box() [99]" Value="box()" Time="1.011";
+CF p56 p57
+Operation p58 "58-longrid = seq(-99.2, -63, 0.05) [102]" Value="longrid = seq(-99.2, -63, 0.05)" Time="1.01599999999999";
+CF p57 p58
+Snapshot d4 "4-longrid" Value="/Users/annacalderon/Desktop/gENM/src/ddg/4-longrid.csv" Time="2016-06-14T17.26.41EDT";
+DF p58 d4
+Operation p59 "59-latgrid = seq(23.6, 45.5, 0.05) [103]" Value="latgrid = seq(23.6, 45.5, 0.05)" Time="1.032";
+CF p58 p59
+Snapshot d5 "5-latgrid" Value="/Users/annacalderon/Desktop/gENM/src/ddg/5-latgrid.csv" Time="2016-06-14T17.26.41EDT";
+DF p59 d5
+Operation p60 "60-subs = c() [106]" Value="subs = c()" Time="1.044";
+CF p59 p60
+Data d6 "6-subs" Value="NULL";
+DF p60 d6
+Operation p61 "61-for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length( [107]" Value="for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(" Time="52.047";
+CF p60 p61
+Data d7 "7-i [ENV]" Value="724";
+DF d7 p61
+DF d4 p61
+Data d8 "8-j [ENV]" Value="438";
+DF d8 p61
+DF d5 p61
+DF d2 p61
+Snapshot d9 "9-gridsq" Value="/Users/annacalderon/Desktop/gENM/src/ddg/9-gridsq.csv" Time="2016-06-14T17.27.32EDT";
+Snapshot d10 "10-subs" Value="/Users/annacalderon/Desktop/gENM/src/ddg/10-subs.txt" Time="2016-06-14T17.27.32EDT";
+DF p61 d10
+Snapshot d11 "11-gridsq" Value="/Users/annacalderon/Desktop/gENM/src/ddg/11-gridsq.txt" Time="2016-06-14T17.27.32EDT";
+DF p61 d11
+Operation p62 "62-dim(subs) [115]" Value="dim(subs)" Time="52.128";
+CF p61 p62
+DF d10 p62
+Operation p63 "63-x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T) [118]" Value="x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T)" Time="52.212";
+CF p62 p63
+DF d10 p63
+Snapshot d12 "12-x" Value="/Users/annacalderon/Desktop/gENM/src/ddg/12-x.txt" Time="2016-06-14T17.27.32EDT";
+DF p63 d12
+Operation p64 "64-plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border = [119]" Value="plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border =" Time="52.253";
+CF p63 p64
+DF d12 p64
+Operation p65 "65-bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000 [127]" Value="bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000" Time="54.666";
+CF p64 p65
+DF d12 p65
+Snapshot d13 "13-bg" Value="/Users/annacalderon/Desktop/gENM/src/ddg/13-bg.txt" Time="2016-06-14T17.27.34EDT";
+DF p65 d13
+Operation p66 "66-points(bg, col = \"khaki4\", pch = 1, cex = 0.3) [128]" Value="points(bg, col = \"khaki4\", pch = 1, cex = 0.3)" Time="54.707";
+CF p65 p66
+DF d13 p66
+Operation p67 "67-require(raster) [135]" Value="require(raster)" Time="54.717";
+CF p66 p67
+Operation p68 "68-YbrevRange = extent(-99.2, -63, 23.6, 45.5) [139]" Value="YbrevRange = extent(-99.2, -63, 23.6, 45.5)" Time="54.727";
+CF p67 p68
+Snapshot d14 "14-YbrevRange" Value="/Users/annacalderon/Desktop/gENM/src/ddg/14-YbrevRange.txt" Time="2016-06-14T17.27.35EDT";
+DF p68 d14
+Operation p69 "69-BClim = crop(BClim, YbrevRange) [140]" Value="BClim = crop(BClim, YbrevRange)" Time="54.755";
+CF p68 p69
+Snapshot d15 "15-BClim" Value="/Users/annacalderon/Desktop/gENM/src/ddg/15-BClim.txt" Time="2016-06-14T17.27.35EDT";
+DF d14 p69
+Snapshot d16 "16-BClim" Value="/Users/annacalderon/Desktop/gENM/src/ddg/16-BClim.txt" Time="2016-06-14T17.27.35EDT";
+DF p69 d16
+Operation p70 "70-tryCatch [141]" Value="tryCatch" Time="55.058";
+CF p69 p70
+Exception d17 "17-error.msg" Value="\"Error in file(fnamevals, \"wb\"): cannot open the connection \"";
+DF p70 d17
+File d18 "18-dev.off.18.pdf" Value="/Users/annacalderon/Desktop/gENM/src/ddg/18-dev.off.18.pdf" Time="2016-06-14T17.27.35EDT" Location="/Users/annacalderon/Desktop/gENM/src/dev.off.18.pdf";
+Exception d19 "19-error.msg" Value="\"No procedure node found for SDM_Apicea.R\"";
+DF p70 d19
+
