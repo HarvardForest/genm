@@ -1,16 +1,20 @@
-#rm()
+### ENM using MaxEnt with GBIF and BioClim data
+### A. Calderon and M.K. Lau
+### 17June2016
+
+### Inputs
+
+#1. working directory                                        
+wd <- '.' # default is the current working directory
+
 ##############################     Setting your work station    #############################
 
 setwd("")
 
-#install.packages("rgbif")
-#install.packages("mapproj")
-#install.packages("mapdata")
-#install.packages("sp")
-#install.packages("maptools")
-#install.packages("dismo")
-#install.packages("rJava")
-#install.packages("rgdal")
+## Load package dependencies
+if (!require("pacman")){install.packages("pacman")}
+library(pacman)
+pacman::p_load("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
 
 library(mapproj)
 library(mapdata)
@@ -21,7 +25,7 @@ library(rgbif)
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
-rawdata<- gbif(genus = '', species = '') 
+rawdata <- gbif(genus = 'Aphaenogaster', species = '') 
 rawdata[,c('lat','lon')] 
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])
