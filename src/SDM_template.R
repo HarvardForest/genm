@@ -1,4 +1,4 @@
-#rm()
+rm(list=ls())
 ##############################     Setting your work station    #############################
 
 setwd("")
@@ -73,13 +73,13 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 ################################    HANDLING CLIMATE DATA     #############################
 
 
-#require(raster)
-#BClim = getData("worldclim", var="bio", res=2.5, path="/Users/annacalderon/Desktop/gENM/data")
+require(raster)
+BClim = getData("worldclim", var="bio", res=2.5, path="")
 
 #crop data
 YbrevRange = extent(leftlon, rightlon,lowerlat, upperlat)
 BClim = crop(BClim, YbrevRange)
-writeRaster(BClim, filename="/Users/annacalderon/Desktop/gENM/data", overwrite=T)
+writeRaster(BClim, filename="", overwrite=T)
 ##BClim = brick("/Users/annacalderon/Desktop/gENM/data/data.grd")
 
 
