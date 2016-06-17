@@ -7,9 +7,20 @@
 #1. working directory                                        
 wd <- '.' # default is the current working directory
 
+#2. choose the species
+genus <- ''
+species <- ''
+
+#3. Select a window for the range 
+
+leftlon <- ''
+rightlon <- ''
+lowerlat <- ''
+upperlat <- ''
+
 ##############################     Setting your work station    #############################
 
-setwd("")
+setwd(wd)
 
 ## Load package dependencies
 if (!require("pacman")){install.packages("pacman")}
@@ -25,7 +36,8 @@ library(rgbif)
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
-rawdata <- gbif(genus = 'Aphaenogaster', species = '') 
+if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
+rawdata <- gbif(genus = genus, species = species) 
 rawdata[,c('lat','lon')] 
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])
