@@ -20,10 +20,12 @@ lowerlat <- ''
 upperlat <- ''
 
 ## 4. Define filename and file paths
-writeRaster(BClim, filename="", overwrite=T)
-path <- ''
-filename <- ''
-brick <- 'filename/data.grd'
+path <- ("") #data folder path
+
+if (path == ""){path <- "../data"}
+filename <- ("YbrevBC_2.5.grd")
+paste(path,filename, sep="/")
+croppeddata<- paste(path,filename, sep="/")
 
 ## 5. Landscape resistance
 
@@ -46,10 +48,10 @@ lapply(packs, require, character.only = TRUE)
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
-if (leftlon == ''){leftlon <- '-99.2'}
-if (leftlon == ''){rightlon <- '-63'}
-if (lowerlat == ''){lowerlat <- '23.6'}
-if (leftlon == ''){leftlon <- '45.5'}
+if (leftlon == ''){leftlon <- -99.2}
+if (rightlon == ''){rightlon <- -63}
+if (lowerlat == ''){lowerlat <- 23.6}
+if (upperlat == ''){upperlat <- 45.5}
 
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
@@ -66,7 +68,6 @@ plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitud
 rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4], col="lightcyan")
 map("state", xlim=c(leftlon, rightlon), ylim=c(lowerlat, upperlat), fill=T, col="honeydew", add=T)
 
-#text(x=lon, y=lat, "state name", col="black", cex=.3) 
 
 # plot the points
 points(Gspecies$lon, Gspecies$lat, col="darkolivegreen4", pch=20, cex=0.5)
@@ -102,14 +103,14 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 ################################    HANDLING CLIMATE DATA     #############################
 
 
-require(raster)
-BClim = getData("worldclim", var="bio", res=2.5, path="")
+#require(raster)
+#BClim = getData("worldclim", var="bio", res=2.5, path="")
 
 #crop data
 YbrevRange = extent(leftlon, rightlon,lowerlat, upperlat)
 BClim = crop(BClim, YbrevRange)
-writeRaster(BClim, filename="", overwrite=T)
-##BClim = brick("/Users/annacalderon/Desktop/gENM/data/data.grd")
+writeRaster(BClim, filename=croppeddata, overwrite=T)
+BClim = brick(croppeddata)
 
 
 #################################PULLING BIOCLIM VALUE######################################
