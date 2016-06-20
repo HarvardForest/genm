@@ -5,30 +5,31 @@
 
 ### Inputs
 
-#1. working directory                                        
+## 1. working directory                                        
 wd <- '.' # default is the current working directory
 
-#2. choose the species
+## 2. choose the species
 genus <- ''
 species <- ''
 
-#3. Select a window for the range 
+## 3. Select a window for the range 
 
 leftlon <- ''
 rightlon <- ''
 lowerlat <- ''
 upperlat <- ''
 
-if (leftlon == ''){leftlon <- '-99.2'}
-if (leftlon == ''){rightlon <- '-63'}
-if (lowerlat == ''){lowerlat <- '23.6'}
-if (leftlon == ''){leftlon <- '45.5'}
-
-#4. Define filename and file paths
+## 4. Define filename and file paths
 writeRaster(BClim, filename="", overwrite=T)
 path <- ''
 filename <- ''
 brick <- '"filename"/data.grd'
+
+## 5. Landscape resistance
+
+## 6. Genetic distance
+
+## 7. Genetic clusters
 
 
 ##############################     Setting your work station    #############################
@@ -45,6 +46,11 @@ lapply(packs, require, character.only = TRUE)
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
+if (leftlon == ''){leftlon <- '-99.2'}
+if (leftlon == ''){rightlon <- '-63'}
+if (lowerlat == ''){lowerlat <- '23.6'}
+if (leftlon == ''){leftlon <- '45.5'}
+
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
 rawdata[,c('lat','lon')] 
@@ -55,7 +61,8 @@ data(stateMapEnv)
 
 ######################    PLOTTING PRESENCE AND ABSENCE POINTS  ############################
 
-plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitude", ylab="latitude", xaxt="n", yaxt="n", type="n", main="Presence and Absence Points")
+plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitude",
+     ylab="latitude", xaxt="n", yaxt="n", type="n", main="Presence and Absence Points")
 rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4], col="lightcyan")
 map("state", xlim=c(leftlon, rightlon), ylim=c(lowerlat, upperlat), fill=T, col="honeydew", add=T)
 
