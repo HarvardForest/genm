@@ -28,7 +28,7 @@ if (leftlon == ''){leftlon <- '45.5'}
 writeRaster(BClim, filename="", overwrite=T)
 path <- ''
 filename <- ''
-brick <- '"filename"/data.grd'
+brick <- 'filename/data.grd'
 
 
 ##############################     Setting your work station    #############################
