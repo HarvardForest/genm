@@ -23,7 +23,7 @@ upperlat <- ''
 path <- ("") #data folder path
 
 if (path == ""){path <- "../data"}
-filename <- ("YbrevBC_2.5.grd")
+filename <- ("GspeciesBC_2.5.grd")
 paste(path,filename, sep="/")
 croppeddata<- paste(path,filename, sep="/")
 
@@ -55,7 +55,6 @@ if (upperlat == ''){upperlat <- 45.5}
 
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
-rawdata[,c('lat','lon')] 
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])
 
@@ -103,12 +102,12 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 ################################    HANDLING CLIMATE DATA     #############################
 
 
-#require(raster)
+require(raster)
 #BClim = getData("worldclim", var="bio", res=2.5, path="")
 
 #crop data
-YbrevRange = extent(leftlon, rightlon,lowerlat, upperlat)
-BClim = crop(BClim, YbrevRange)
+GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
+BClim = crop(BClim, GspeciesRange)
 writeRaster(BClim, filename=croppeddata, overwrite=T)
 BClim = brick(croppeddata)
 
@@ -117,23 +116,23 @@ BClim = brick(croppeddata)
 ##################################????????????????????######################################
 
 
-Ybrev_bc = extract(BClim, subs[,c("lon","lat")]) 
+Gspecies_bc = extract(BClim, subs[,c("lon","lat")]) 
 bg_bc = extract(BClim, bg) 
-Ybrev_bc = data.frame(lon=subs$lon, lat=subs$lat, Ybrev_bc)
+Gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, Gspecies_bc)
 
 bgpoints = bg@coords
 colnames(bgpoints) = c("lon","lat")
 bg_bc = data.frame(cbind(bgpoints,bg_bc))
 length(which(is.na(bg_bc$bio1))) 
 bg_bc = bg_bc[!is.na(bg_bc$bio1), ] 
-group_p = kfold(Ybrev_bc, 5) 
+group_p = kfold(Gspecies_bc, 5) 
 group_a = kfold(bg_bc, 5) 
 
 ####################################  BUILDIG YOUR SDM  ############################################
 test=3
-train_p = Ybrev_bc[group_p!=test, c("lon","lat")]
+train_p = Gspecies_bc[group_p!=test, c("lon","lat")]
 train_a = bg_bc[group_a!=test, c("lon","lat")]
-test_p = Ybrev_bc[group_p==test, c("lon","lat")]
+test_p = Gspecies_bc[group_p==test, c("lon","lat")]
 test_a = bg_bc[group_a==test, c("lon","lat")]
 me = maxent(BClim, p=train_p, a=train_a)
 e = evaluate(test_p, test_a, me, BClim)
