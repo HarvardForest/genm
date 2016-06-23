@@ -1,84 +1,30 @@
-1: setwd("/Users/annacalderon/Desktop/gENM/src")
-2: library(mapproj)
-3: library(mapdata)
-4: library(maptools)
-5: library(dismo)
-6: library(rJava)
-7: library(rgbif)
-8: Apicea_raw <- gbif(genus = "Aphaenogaster", species = "picea")
-9: Apicea_raw[, c("lat", "lon")]
-10: na.omit(Apicea_raw[, c("lat", "lon")])
-11: Apicea <- na.omit(Apicea_raw[, c("lat", "lon")])
-12: range(Apicea[, "lon"])
-13: range(Apicea[, "lat"])
-14: data(stateMapEnv)
-15: plot(c(-99.2, -63), c(23.6, 45.5), mar = par("mar"), xlab = "longitude", 
-15:     ylab = "latitude", xaxt = "n", yaxt = "n", type = "n", main = "Joshua tree presence data")
-16: rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")[4], 
-16:     col = "lightcyan")
-17: map("state", xlim = c(-99.2, -63), ylim = c(23.6, 45.5), fill = T, 
-17:     col = "honeydew", add = T)
-18: text(x = -99.06, y = 31.72, "Texas", col = "black", cex = 0.3)
-19: text(x = -97.06, y = 35.02, "Oklahoma", col = "black", cex = 0.3)
-20: text(x = -97.7, y = 38, "Texas", col = "black", cex = 0.3)
-21: text(x = -98, y = 41, "Nebraska", col = "black", cex = 0.3)
-22: text(x = -99, y = 44, "South Dakota", col = "black", cex = 0.3)
-23: text(x = -100, y = 47, "North Dakota", col = "black", cex = 0.3)
-24: text(x = -94, y = 46, "Minnesota", col = "black", cex = 0.3)
-25: text(x = -93, y = 42, "Iowa", col = "black", cex = 0.3)
-26: text(x = -93, y = 38, "Missouri", col = "black", cex = 0.3)
-27: text(x = -92, y = 35, "Arkansas", col = "black", cex = 0.3)
-28: text(x = -89, y = 33, "Mississippi", col = "black", cex = 0.3)
-29: text(x = -86, y = 32, "Alabama", col = "black", cex = 0.3)
-30: text(x = -83, y = 33, "Gerogia", col = "black", cex = 0.3)
-31: text(x = -81, y = 27, "Florida", col = "black", cex = 0.3)
-32: text(x = -86, y = 35, "Tennessee", col = "black", cex = 0.3)
-33: text(x = -85, y = 37.5, "Kentucky", col = "black", cex = 0.3)
-34: text(x = -89, y = 40, "Illinois", col = "black", cex = 0.3)
-35: text(x = -89.5, y = 44, "Wisconsin", col = "black", cex = 0.3)
-36: text(x = -85, y = 43.5, "Michigan", col = "black", cex = 0.3)
-37: text(x = -86, y = 40, "Indiana", col = "black", cex = 0.3)
-38: text(x = -83, y = 40, "Ohio", col = "black", cex = 0.3)
-39: text(x = -87, y = 36, "Tennessee", col = "black", cex = 0.3)
-40: text(x = -81, y = 38, "West Virginia", col = "black", cex = 0.3)
-41: text(x = -78, y = 41, "Pennsylvania", col = "black", cex = 0.3)
-42: text(x = -75, y = 43, "New York", col = "black", cex = 0.3)
-43: text(x = -79, y = 37, "Virginia", col = "black", cex = 0.3)
-44: text(x = -78, y = 35, "North Carolina", col = "black", cex = 0.3)
-45: text(x = -80, y = 34, "South Carolina", col = "black", cex = 0.3)
-46: text(x = -92, y = 31, "Louisiana", col = "black", cex = 0.3)
-47: text(x = -69, y = 45, "Maine", col = "black", cex = 0.3)
-48: text(x = -73, y = 44, "VT", col = "black", cex = 0.3)
-49: text(x = -72, y = 43.6, "NH", col = "black", cex = 0.3)
-50: text(x = -72, y = 42.2, "MA", col = "black", cex = 0.3)
-51: text(x = -72, y = 41.7, "CN", col = "black", cex = 0.3)
-52: text(x = -74.5, y = 40, "NJ", col = "black", cex = 0.3)
-53: points(Apicea$lon, Apicea$lat, col = "darkolivegreen4", pch = 20, 
-53:     cex = 0.5)
-54: axis(1, las = 1)
-55: axis(2, las = 1)
-56: box()
-57: longrid = seq(-99.2, -63, 0.05)
-58: latgrid = seq(23.6, 45.5, 0.05)
-59: subs = c()
-60: for (i in 1:(length(longrid) - 1)) {
-60:     for (j in 1:(length(latgrid) - 1)) {
-60:         gridsq = subset(Apicea, lat > latgrid[j] & lat < latgrid[j + 
-60:             1] & lon > longrid[i] & lon < longrid[i + 1])
-60:         if (dim(gridsq)[1] > 0) {
-60:             subs = rbind(subs, gridsq[sample(1:dim(gridsq)[1], 
-60:                 1), ])
-60:         }
-60:     }
-60: }
-61: dim(subs)
-62: x = circles(subs[, c("lon", "lat")], d = 50000, lonlat = T)
-63: plot(x@polygons, axes = T, col = rgb(0, 0, 0, 0.1), border = NA, 
-63:     add = T)
-64: bg = spsample(x@polygons, 1000, type = "random", iter = 1000)
-65: points(bg, col = "khaki4", pch = 1, cex = 0.3)
-66: require(raster)
-67: YbrevRange = extent(-99.2, -63, 23.6, 45.5)
-68: BClim = crop(BClim, YbrevRange)
-69: writeRaster(BClim, filename = "/Users/annacalderon/Desktop/gENM/src/SDM A picea/data", 
-69:     overwrite = T)
+1: set.seed(13)
+2: r <- raster(ncol = 3, nrow = 3)
+3: r[] <- 1:ncell(r)
+4: r
+5: plot(r, main = "r", xlab = "Longitude (degrees)", ylab = "Latitude (degrees)")
+6: text(r)
+7: r[] <- 1
+8: tr1 <- transition(r, transitionFunction = mean, directions = 8)
+9: tr1
+10: r[] <- runif(9)
+11: ncf <- function(x) {
+11:     ddg.function()
+11:     ddg.return.value(max(x) - x[1] + x[2])
+11: }
+12: tr2 <- transition(r, ncf, 4, symm = FALSE)
+13: tr2
+14: tr3 <- tr1 * tr2
+15: tr3 <- tr1 + tr2
+16: tr3 <- tr1 * 3
+17: tr3 <- sqrt(tr1)
+18: tr3[cbind(1:9, 1:9)] <- tr2[cbind(1:9, 1:9)]
+19: tr3[1:9, 1:9] <- tr2[1:9, 1:9]
+20: tr3[1:5, 1:5]
+21: image(transitionMatrix(tr1))
+22: r <- raster(system.file("external/maungawhau.grd", package = "gdistance"))
+23: altDiff <- function(x) {
+23:     ddg.function()
+23:     ddg.return.value(x[2] - x[1])
+23: }
+24: hd <- transition(r, altDiff, 8, symm = FALSE)

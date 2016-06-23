@@ -6,7 +6,7 @@
 ### Inputs
 
 ## 1. working directory                                        
-wd <- '.' # default is the current working directory
+wd <- '/Users/annacalderon/Desktop/gENM/data' # default is the current working directory
 
 ## 2. choose the species
 genus <- ''
@@ -20,7 +20,7 @@ lowerlat <- ''
 upperlat <- ''
 
 ## 4. Define filename and file paths
-path <- ("") #data folder path
+path <- ("/Users/annacalderon/Desktop/gENM/data") #data folder path
 
 if (path == ""){path <- "../data"}
 filename <- ("GspeciesBC_2.5.grd")
@@ -39,11 +39,7 @@ croppeddata<- paste(path,filename, sep="/")
 setwd(wd)
 
 packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
-## Load package dependencies
-if (!require("pacman")){install.packages("pacman")}
- library(pacman)
- pacman::p_load(packs)
- lapply(packs, require, character.only = TRUE)
+lapply(packs, require, character.only = TRUE)
 
 
 ###################################    SETTING UP YOUR DATA      ##############################
@@ -104,6 +100,8 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 
 require(raster)
 BClim = getData("worldclim", var="bio", res=2.5, path="")
+#once BClim has been loaded ^^^, you can re-run this line over and over again 
+#and it won't re-download. 
 
 #crop data
 GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
