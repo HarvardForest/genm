@@ -1,7 +1,7 @@
 #install.packages("gdistance")
 #install.packages("FedData")
-#library("FedData")
-# library("gdistance")
+library("FedData")
+library("gdistance")
 
 
 set.seed(123)
@@ -41,14 +41,15 @@ image(transitionMatrix(tr1))
 r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
 #finding the slope
 
-# altDiff <- function(x){x[2] - x[1]}
-# hd <- transition(r, altDiff, 8, symm=FALSE)
-# slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
-# #adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
-# adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
-# speed <- slope
-# speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
-# Conductance <- geoCorrection(speed)
+altDiff <- function(x){x[2] - x[1]}
+
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
 
 ## Retrieve a Conductance matrix:DDDDD
 
