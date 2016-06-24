@@ -1,423 +1,10 @@
-addPolygons(data = Apicea, color = "green", fill = "green") %>%
-addTiles()
-m <- leaflet()
-m
-m <- addTiles(m)
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-m %>% addTiles()
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m <- leaflet()
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m <- addTiles(m)
-m <- leaflet()
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m <- addTiles(m)
-m <- leaflet()
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addPolygons(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-?addPolygons
-m <- leaflet()
-m <- addMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-#library(leaflet)
-#library(sp)
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-library(sp)
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-ibrary(sp)
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-coords <- cbind(Apicea$lon, Apicea$lat)
-sp_Apieca <- SpatialPointsDataFrame(coords = coords, data = Apicea, proj4string = CRS("+proj=longlat +datum=WGS84"))
-sp_Apieca_proj <- spTransform(sp_Apieca, CRS("+init=epsg:26914"))
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green"
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-m %>% addTiles(m)
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles(m)
-m <- addTiles(m)
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m <- addTiles(m)
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-m %>% addTiles()
-library(leaflet)
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-addPolygons(m, data = Apicea, color = "green", fill = "green")
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name) %>%
-addPolygons(data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name)
-addPolygons(data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-?addPolygons
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name)
-addPolygons(data = Apicea, color = "green", fill = "green")
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, popup="Apicea")
-addCircleMarkers(data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m<- addCircleMarkers(m, data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat,lng = ~lon, popup = Apicea$Name)
-m %>% addTiles()
-?addCircles
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=5, opacity=0.5, fillColor="red", fillOpacity=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=5, opacity=0.5, fillColor="red", fillOpacity=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="red", fillOpacity=0.2, popup = Apicea$Name)
-m %>% addTiles()
-?addCircles
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="red", fillOpacity=0.2, weight=3,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="red", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-<- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=5, opacity=0.5, fillColor="red", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="red", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-?markerClusterOptions
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="red", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=0.5, fillColor="green", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=1, fillColor="green", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=8, opacity=6, fillColor="green", fillOpacity=0.2, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=3, opacity=6, fillColor="green", fillOpacity=.5, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=3, opacity=6, fillColor="green", fillOpacity=5, weight=10,popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=3, opacity=6, fillColor="green", fillOpacity=5, weight=2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=6, fillColor="green", fillOpacity=5, weight=2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="green", fillOpacity=5, weight=2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="green", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="blue", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- addCircles(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="white", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCirclesMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="white", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCirclesMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="white", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCirclesMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="white", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="white", fillOpacity=5, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="lightgreen", fillOpacity=.9, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="aliceblue", fillOpacity=.9, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="aliceblue", fillOpacity=.2, weight=3, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="aliceblue", fillOpacity=.2, weight=1, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="aliceblue", fillOpacity=.2, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="olivegreen1", fillOpacity=7, weight=0, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=6, fillColor="lightblue", fillOpacity=7, weight=0, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=7, opacity=4, fillColor="snow", fillOpacity=7, weight=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="seagreen", fillOpacity=7, weight=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="seagreen1", fillOpacity=7, weight=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="lightseagreen", fillOpacity=7, weight=0.2, popup = Apicea$Name)
-m %>% addTiles()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="lightseagreen", fillOpacity=7, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="yellowgreen", fillOpacity=7, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="paleturquoise1", fillOpacity=7, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="lightgreen", fillOpacity=4, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="lightgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=4, fillColor="yellowgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=3, fillColor="salmon", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=3, fillColor="yellowgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-axis(1,las=1)
-?axis
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=3, fillColor="yellowgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-axis(m, 1,las=1)
-axis(m, 2,las=1)
-?addTitles
-plot(BClim, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Annual mean temperature (ºC x 10)")
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=3, fillColor="yellowgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-plot(BClim, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Annual mean temperature (ºC x 10)")
-leaflet(BClim, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Annual mean temperature (ºC x 10)")
-m<- leaflet(BClim, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Annual mean temperature (ºC x 10)")
-m <- leaflet()
-m <- addCircleMarkers(m, data = Apicea, lat = ~ lat, lng = ~lon, radius=4, opacity=3, fillColor="yellowgreen", fillOpacity=6, weight=0.5, popup = Apicea$Name)
-m %>% addTiles()
-?mapId
-add(1:10)
-sum(1:10)
-x<-(3y+7)
-f<-(25)
-x<-(3f+7)
-x<-(3*f+7)
-x
-f<-(x+25)
-x
-sum(1:10)
-x<-(3*f+7)
-f<-(x+25)
-x
-f
-ls
-ls()
-rm ()
-y<-(x+25)
-x<-(3*y+7)
-?structure
-structure(1:6, dim = 2:3)
-structure(1:6, dim = 2:4)
-structure(1:6, dim = 2:3)
-structure(1:6, dim = 3:2
-)
-structure(1:10, dim = 3:2)
-structure(1:10, dim = 5:2)
-structure(1:10, dim = 2:5)
-structure(1:4, dim = 2:2)
-structure(1:6, dim = 2:3)
-structure(1:8, dim = 2:4)
-structure(1:6, dim = 2:12)
-structure(1:8, dim = 2:4)
-structure(1:8, dim = 2:3)
-?dim
-install.packages("/Users/annacalderon/Desktop/gENM/data/grainscape_0.3.tar.gz")
-??structure
-?structure
-structure(1:6, dim = 2:3)
-structure(1:10, my_attribute = "This is a vector")
-x <- c("green","red","blue")
-structure(x)
-y<-c(1,2,3,4,5,6,7,8,9,10)
-structure(y)
-structure(x,y)
-x <- c("green","red","blue", "Yellow", "purple", "yellowgreen", "pink", "aliceblue", "turquoise", "magenta")
-structure(x,y)
-structure(x)
-y<-c(1:10)
-structure(y)
-y<-c(1:10, dim=2:5)
-structure(y)
-?structure
-structure(1:10, dim=2:5)
-structure(1:10, dim=2:5)
-y
-y<-c(1:10)
-structure(y)
-y
-structure(Apicea)
-?structure
-str(Apicea)
-structure(Apicea)
-head(Apicea)
-tail(Apicea)
-?str
-str(Apicea)
-install.packages("gdistance")
-library("gdistance")
-set.seed(123)
-r <- raster(ncol=3,nrow=3)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-install.packages("gdistance")
-library("gdistance")
-set.seed(123)
-r <- raster(ncol=4,nrow=4)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-install.packages("gdistance")
-#install.packages("gdistance")
-#library("gdistance")
-set.seed(123)
-r <- raster(ncol=4,nrow=4)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-#install.packages("gdistance")
-#library("gdistance")
-set.seed(132)
-r <- raster(ncol=4,nrow=4)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-#install.packages("gdistance")
-#library("gdistance")
-set.seed(123)
-r <- raster(ncol=4,nrow=4)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-R> r[] <- 1
-R> tr1 <- transition(r, transitionFunction=mean, directions=8)
-r[] <- 1
-tr1 <- transition(r, transitionFunction=mean, directions=8)
 tr1
-plot(tr1)
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
+#Creating an Asymmetric Matrix
 r[] <- runif(9)
 ncf <- function(x) max(x) - x[1] + x[2]
 tr2 <- transition(r, ncf, 4, symm=FALSE)
 tr2
+#The class dgCMatrix holds an asymmetric matrix.
 tr3 <- tr1*tr2
 tr3 <- tr1+tr2
 tr3 <- tr1*3
@@ -426,10 +13,84 @@ tr3[cbind(1:9, 1:9)] <- tr2[cbind(1:9, 1:9)]
 tr3[1:9, 1:9] <- tr2[1:9, 1:9]
 tr3[1:5, 1:5]
 image(transitionMatrix(tr1))
-r <- raster(ncol=3,nrow=3
-r <- raster(ncol=3,nrow=3)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
+############  Hiking around Maunga Whau ##############
+#First, we read in the altitude data for the volcano.
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+#finding the slope
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+#Calculating Distances
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+################ Geographical Genetics #########################
+Europe <- raster(system.file("external/Europe.grd", package="gdistance"))
+Europe[is.na(Europe)] <- 0
+data(genDist)
+data(popCoord)
+pC <- as.matrix(popCoord[c("x","y")])
+geoDist <- pointDistance(pC, longlat=TRUE)
+geoDist <- as.dist(geoDist)
+Europe <- aggregate(Europe,3)
+tr <- transition(Europe, mean, directions=8)
+trC <- geoCorrection(tr, "c", scl=TRUE)
+trR <- geoCorrection(tr, "r", scl=TRUE)
+cosDist <- costDistance(trC,pC)
+resDist <- commuteDistance(trR, pC)
+cor(genDist,geoDist)
+cor(genDist,cosDist)
+cor(genDist,resDist)
+origin <- unlist(popCoord[22,c("x","y")])
+pI <- pathInc(trC, origin=origin, from=pC,functions=list(overlap))
+cor(genDist,pI[[1]])
+set.seed(15)
+r <- raster(system.file("system.file("external/maungawhau.grd", package="gdistance""))
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+rm(list=ls())
+set.seed(15)
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <-  6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+Conductance
+Conductance[1:87, 1:67]
+image(Conductance[1:87, 1:67]) #I think darker numbers equal highest conductance
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)")
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+Conductance[1:3, 1:3]
+conductance
+Conductance
+#install.packages("gdistance")
+#library("gdistance")
+set.seed(13)
 r <- raster(ncol=3,nrow=3)
 r[] <- 1:ncell(r)
 r
@@ -439,35 +100,12 @@ text(r)
 r[] <- 1
 tr1 <- transition(r, transitionFunction=mean, directions=8)
 tr1
-plot(tr1)
-plot(r)
-r[]
-set.seed(123)
-r <- raster(ncol=3,nrow=3)
-r[] <- 1:ncell(r)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-text(r)
-tr1 <- transition(r, transitionFunction=mean, directions=8)
-tr1
-plot(tr1)
-transition
-1:ncell(r)
-r <- raster(ncol=3,nrow=3)
-r
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-r[] <- 1:ncell(r)
-plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
-r[]
-r <- raster(ncol=3,nrow=3)
-ncell(r)
-r[]
-r <- raster(ncol=3,nrow=3)
-r[]
+#Creating an Asymmetric Matrix
 r[] <- runif(9)
 ncf <- function(x) max(x) - x[1] + x[2]
 tr2 <- transition(r, ncf, 4, symm=FALSE)
 tr2
+#The class dgCMatrix holds an asymmetric matrix.
 tr3 <- tr1*tr2
 tr3 <- tr1+tr2
 tr3 <- tr1*3
@@ -476,10 +114,266 @@ tr3[cbind(1:9, 1:9)] <- tr2[cbind(1:9, 1:9)]
 tr3[1:9, 1:9] <- tr2[1:9, 1:9]
 tr3[1:5, 1:5]
 image(transitionMatrix(tr1))
-source('~/Desktop/gENM/src/gdistance.R')
-source('~/Desktop/gENM/src/gdistance.R')
+############  Hiking around Maunga Whau ##############
+#First, we read in the altitude data for the volcano.
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+#finding the slope
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+#Calculating Distances
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+################ Geographical Genetics #########################
+Europe <- raster(system.file("external/Europe.grd", package="gdistance"))
+Europe[is.na(Europe)] <- 0
+data(genDist)
+data(popCoord)
+pC <- as.matrix(popCoord[c("x","y")])
+geoDist <- pointDistance(pC, longlat=TRUE)
+geoDist <- as.dist(geoDist)
+Europe <- aggregate(Europe,3)
+tr <- transition(Europe, mean, directions=8)
+trC <- geoCorrection(tr, "c", scl=TRUE)
+trR <- geoCorrection(tr, "r", scl=TRUE)
+cosDist <- costDistance(trC,pC)
+resDist <- commuteDistance(trR, pC)
+cor(genDist,geoDist)
+cor(genDist,cosDist)
+cor(genDist,resDist)
+origin <- unlist(popCoord[22,c("x","y")])
+pI <- pathInc(trC, origin=origin, from=pC,functions=list(overlap))
+cor(genDist,pI[[1]])
+Conductance
+Conductance[1:5, 1:5]
+image(Conductance[1:5, 1:5]) #I think darker numbers equal highest conductance
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+costDistance(Conductance, sP)
+sP <- cbind(c(2667670,2667800 ), c(5479000,5479400))
+costDistance(Conductance, sP)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:5, 1:5]
+image(Conductance[1:5, 1:5]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 5479000)
+B <- c(2667800, 5479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+#Calculating Distances
+sP <- cbind(c(2667670,2667800 ), c(5479000,5479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
 #install.packages("gdistance")
 #library("gdistance")
+set.seed(13)
+r <- raster(ncol=3,nrow=3)
+r[] <- 1:ncell(r)
+r
+plot(r, main="r", xlab="Longitude (degrees)", ylab="Latitude (degrees)")
+text(r)
+#4. Transition Classes
+r[] <- 1
+tr1 <- transition(r, transitionFunction=mean, directions=8)
+tr1
+#Creating an Asymmetric Matrix
+r[] <- runif(9)
+ncf <- function(x) max(x) - x[1] + x[2]
+tr2 <- transition(r, ncf, 4, symm=FALSE)
+tr2
+#The class dgCMatrix holds an asymmetric matrix.
+tr3 <- tr1*tr2
+tr3 <- tr1+tr2
+tr3 <- tr1*3
+tr3 <- sqrt(tr1)
+tr3[cbind(1:9, 1:9)] <- tr2[cbind(1:9, 1:9)]
+tr3[1:9, 1:9] <- tr2[1:9, 1:9]
+tr3[1:5, 1:5]
+image(transitionMatrix(tr1))
+############  Hiking around Maunga Whau ##############
+#First, we read in the altitude data for the volcano.
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+#finding the slope
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+#Calculating Distances
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+################ Geographical Genetics #########################
+Europe <- raster(system.file("external/Europe.grd", package="gdistance"))
+Europe[is.na(Europe)] <- 0
+data(genDist)
+data(popCoord)
+pC <- as.matrix(popCoord[c("x","y")])
+geoDist <- pointDistance(pC, longlat=TRUE)
+geoDist <- as.dist(geoDist)
+Europe <- aggregate(Europe,3)
+tr <- transition(Europe, mean, directions=8)
+trC <- geoCorrection(tr, "c", scl=TRUE)
+trR <- geoCorrection(tr, "r", scl=TRUE)
+cosDist <- costDistance(trC,pC)
+resDist <- commuteDistance(trR, pC)
+cor(genDist,geoDist)
+cor(genDist,cosDist)
+cor(genDist,resDist)
+origin <- unlist(popCoord[22,c("x","y")])
+pI <- pathInc(trC, origin=origin, from=pC,functions=list(overlap))
+cor(genDist,pI[[1]])
+Conductance
+rm(list=ls())
+#First, we read in the altitude data for the volcano.
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+#finding the slope
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+Conductance
+Conductance[1:87, 1:61]
+image(Conductance[1:87, 1:61]) #I think darker numbers equal highest conductance
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+Conductance[1:3, 1:3]
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+library(FedData)
+vepPolygon <- polygon_from_extent(raster::extent(672800,672950,4102000,4104000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+set.seed(123)
+r <- raster(NED)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+A <- c(672800, 4102000)
+B <- c(740000, 4170000)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+source("/Users/annacalderon/Desktop/gENM/src")
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+setwd("~/Desktop/gENM/src")
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance_template.R")
+##-ddg-- Fri Jun 24 15:23:50 2016 ------##
+ddg.run("gdistance_template.R",load = TRUE)
+##-ddg-- Fri Jun 24 15:24:04 2016 ------##
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance_template.R",load = TRUE)
+##-ddg-- Fri Jun 24 15:26:56 2016 ------##
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance_template.R",load = TRUE)
+##-ddg-- Fri Jun 24 15:31:20 2016 ------##
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance_template.R",load = TRUE)
+##-ddg-- Fri Jun 24 15:31:32 2016 ------##
+A <- c(672800, 4102000)
+B <- c(672950, 4104000)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+?shortestpath
+?shortestPath
+?SpatialLines
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:87, 1:61]
+image(Conductance[1:87, 1:61]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+rm(list=ls())
 set.seed(123)
 r <- raster(ncol=3,nrow=3)
 r[] <- 1:ncell(r)
@@ -504,9 +398,115 @@ tr3[cbind(1:9, 1:9)] <- tr2[cbind(1:9, 1:9)]
 tr3[1:9, 1:9] <- tr2[1:9, 1:9]
 tr3[1:5, 1:5]
 image(transitionMatrix(tr1))
-source('~/Desktop/gENM/src/gdistance.R')
-##-ddg-- Thu Jun 23 14:22:14 2016 ------##
-setwd("~/Desktop/gENM/src")
+############  Hiking around Maunga Whau ##############
+#First, we read in the altitude data for the volcano.
+r <- raster(system.file("external/maungawhau.grd", package="gdistance"))
+#finding the slope
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd) # use the geoCorrection function to divide by the distance between cells.
+#adjacent cells have a slope ≠ 0; this f() restricts calculations to adjacent cells
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+Conductance[1:87, 1:61]
+image(Conductance[1:87, 1:61]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
+plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+legend.lab="Altitude (masl)", xlim = c(2667200, 2668000))
+lines(AtoB, col="red", lwd=2)
+lines(BtoA, col="blue")
+text(A[1] - 10, A[2] - 10, "A")
+text(B[1] + 10, B[2] + 10, "B")
+#Calculating Distances
+sP <- cbind(c(2667670,2667800 ), c(6479000,6479400))
+costDistance(Conductance, sP)
+ddg.run("gdistance.R")
 library(RDataTracker)
 ddg.run("gdistance.R")
-##-ddg-- Thu Jun 23 14:23:24 2016 ------##
+##-ddg-- Fri Jun 24 15:45:28 2016 ------##
+detach("package:RDataTracker", unload=TRUE)
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance.R")
+##-ddg-- Fri Jun 24 15:47:10 2016 ------##
+vepPolygon <- polygon_from_extent(raster::extent(672800,672950,4102000,4104000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+set.seed(123)
+r <- raster(NED)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+#Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(672800, 4102000)
+B <- c(672950, 4104000)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+vepPolygon <- polygon_from_extent(raster::extent(672800,740000,4102000,4170000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+set.seed(123)
+r <- raster(NED)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+#Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(672800, 4102000)
+B <- c(672950, 4104000)
+vepPolygon <- polygon_from_extent(raster::extent(672800,740000,4102000,4170000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+set.seed(123)
+r <- raster(NED)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+#Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(2667670, 6479000)
+B <- c(2667800, 6479400)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+vepPolygon <- polygon_from_extent(raster::extent(672800,740000,4102000,4170000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+set.seed(123)
+r <- raster(NED)
+altDiff <- function(x){x[2] - x[1]}
+hd <- transition(r, altDiff, 8, symm=FALSE)
+slope <- geoCorrection(hd)
+adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+speed <- slope
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
+Conductance <- geoCorrection(speed)
+## Retrieve a Conductance matrix:DDDDD
+#Conductance[1:3, 1:3]
+image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
+#defining two points on the graph
+A <- c(672800, 4102000)
+B <- c(740000, 4170000)
+AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
+source("/Users/annacalderon/Desktop/gENM/sr")
+source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+ddg.run("gdistance_template.R")
+##-ddg-- Fri Jun 24 16:09:56 2016 ------##

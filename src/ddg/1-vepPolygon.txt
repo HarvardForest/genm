@@ -1,0 +1,4 @@
+class       : SpatialPolygons 
+features    : 1 
+extent      : 672800, 672950, 4102000, 4104000  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=utm +datum=NAD83 +zone=12 +ellps=GRS80 +towgs84=0,0,0 

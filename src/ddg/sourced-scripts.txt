@@ -1,2 +1,2 @@
 snum	sname
-0	gdistance.R
+0	gdistance_template.R

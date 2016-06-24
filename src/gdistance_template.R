@@ -1,24 +1,33 @@
 #install.packages("gdistance")
-library("gdistance")
-set.seed()
-r <- raster(system.file(""))
+#install.packages('FedData')
+#library("gdistance")
+#library(FedData)
+
+vepPolygon <- polygon_from_extent(raster::extent(672800,740000,4102000,4170000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+NED <- get_ned(template=vepPolygon,label="VEPIIN")
+
+
+
+set.seed(123)
+r <- raster(NED)
 altDiff <- function(x){x[2] - x[1]}
 hd <- transition(r, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
 adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
 speed <- slope
-#speed[adj] <- equations
+speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
 
 ## Retrieve a Conductance matrix:DDDDD
 
-Conductance[1:3, 1:3]
+#Conductance[1:3, 1:3]
 image(Conductance[1:3, 1:3]) #I think darker numbers equal highest conductance
 
 
+
 #defining two points on the graph
-A <- c(, )
-B <- c(, )
+A <- c(672800, 4102000)
+B <- c(740000, 4170000)
 AtoB <- shortestPath(Conductance, A, B, output="SpatialLines")
 BtoA <- shortestPath(Conductance, B, A, output="SpatialLines")
 

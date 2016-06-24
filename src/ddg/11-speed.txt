@@ -1,0 +1,7 @@
+class       : TransitionLayer 
+dimensions  : 66, 9, 594  (nrow, ncol, ncell)
+resolution  : 0.0002777778, 0.0002777778  (x, y)
+extent      : -109.0569, -109.0544, 37.04806, 37.06639  (xmin, xmax, ymin, ymax)
+coord. ref. : +proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs 
+values      : conductance 
+matrix class: dsCMatrix 
