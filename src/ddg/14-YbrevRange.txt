@@ -1,5 +1,0 @@
-class       : Extent 
-xmin        : -99.2 
-xmax        : -63 
-ymin        : 23.6 
-ymax        : 45.5 

@@ -41,9 +41,9 @@ setwd(wd)
 packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
 ## Load package dependencies
 if (!require("pacman")){install.packages("pacman")}
-library(pacman)
-pacman::p_load(packs)
-lapply(packs, require, character.only = TRUE)
+ library(pacman)
+ pacman::p_load(packs)
+ lapply(packs, require, character.only = TRUE)
 
 
 ###################################    SETTING UP YOUR DATA      ##############################
@@ -103,7 +103,7 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 
 
 require(raster)
-#BClim = getData("worldclim", var="bio", res=2.5, path="")
+BClim = getData("worldclim", var="bio", res=2.5, path="")
 
 #crop data
 GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
@@ -151,4 +151,5 @@ axis(1,las=1)
 axis(2,las=1)
 box()
 
-ddg.run("")
+#source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+#ddg.run("/Users/annacalderon/Desktop/gENM/src/BClimBug.R")
