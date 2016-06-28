@@ -1,26 +1,45 @@
 ddg.type	ddg.num	ddg.name	ddg.value	ddg.return.linked	ddg.auto.created	ddg.time	ddg.snum	ddg.lnum
-Start	1	gdistance_template.R	gdistance_template.R	FALSE	FALSE	0.0359999999999445	0	NA
-Operation	2	library(FedData)	library(FedData)	FALSE	FALSE	0.0380000000000109	0	4
-Operation	3	vepPolygon <- polygon_from_extent(raster::extent(672800, 672	vepPolygon <- polygon_from_extent(raster::extent(672800, 672	FALSE	FALSE	0.0509999999999309	0	6
-Operation	4	NED <- get_ned(template = vepPolygon, label = "VEPIIN")	NED <- get_ned(template = vepPolygon, label = "VEPIIN")	FALSE	FALSE	0.0849999999999227	0	7
-Operation	5	set.seed(123)	set.seed(123)	FALSE	FALSE	0.350999999999999	0	10
-Operation	6	r <- raster(NED)	r <- raster(NED)	FALSE	FALSE	0.358999999999924	0	11
-Operation	7	altDiff <- function(x) {    x[2] - x[1]}	altDiff <- function(x) {    x[2] - x[1]}	FALSE	FALSE	0.385999999999967	0	12
-Start	8	hd <- transition(r, altDiff, 8, symm = FALSE)	hd <- transition(r, altDiff, 8, symm = FALSE)	FALSE	FALSE	0.40300000000002	0	13
-Start	9	FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]	FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]	FALSE	FALSE	0.420999999999935	0	13
-Binding	10	...  <-  if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L], d.call, 		FALSE	FALSE	0.422000000000025	0	13
-Binding	11	...  <-  ...		FALSE	FALSE	0.434999999999945	0	13
-Operation	12	FUN	FUN	FALSE	FALSE	0.437999999999988	0	13
-Operation	13	x[2] - x[1]	x[2] - x[1]	FALSE	FALSE	0.441000000000031	0	13
-Operation	14	return (x[2] - x[1])	return (x[2] - x[1])	TRUE	FALSE	0.451000000000022	0	13
-Finish	15	FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]	FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]	FALSE	FALSE	0.458999999999946	0	13
-Finish	16	hd <- transition(r, altDiff, 8, symm = FALSE)	hd <- transition(r, altDiff, 8, symm = FALSE)	FALSE	FALSE	0.461000000000013	0	13
-Operation	17	slope <- geoCorrection(hd)	slope <- geoCorrection(hd)	FALSE	FALSE	0.476999999999975	0	14
-Operation	18	adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi	adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi	FALSE	FALSE	0.504999999999995	0	15
-Operation	19	speed <- slope	speed <- slope	FALSE	FALSE	0.532999999999902	0	16
-Operation	20	speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))	speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))	FALSE	FALSE	0.558999999999969	0	17
-Operation	21	Conductance <- geoCorrection(speed)	Conductance <- geoCorrection(speed)	FALSE	FALSE	0.601999999999975	0	18
-Operation	22	image(Conductance[1:3, 1:3])	image(Conductance[1:3, 1:3])	FALSE	FALSE	0.62399999999991	0	23
-Operation	23	A <- c(672800, 4102000)	A <- c(672800, 4102000)	FALSE	FALSE	0.640999999999963	0	28
-Operation	24	B <- c(740000, 4170000)	B <- c(740000, 4170000)	FALSE	FALSE	0.65199999999993	0	29
-Operation	25	tryCatch	tryCatch	FALSE	FALSE	0.670999999999935	0	30
+Start	1	/Users/annacalderon/Desktop/gENM/src/SDM_template.R	/Users/annacalderon/Desktop/gENM/src/SDM_template.R	FALSE	FALSE	0.0889999999999986	0	NA
+Operation	2	wd <- "."	wd <- "."	FALSE	FALSE	0.0910000000000082	0	9
+Operation	3	genus <- ""	genus <- ""	FALSE	FALSE	0.0989999999999895	0	12
+Operation	4	species <- ""	species <- ""	FALSE	FALSE	0.110000000000014	0	13
+Operation	5	leftlon <- ""	leftlon <- ""	FALSE	FALSE	0.121000000000038	0	17
+Operation	6	rightlon <- ""	rightlon <- ""	FALSE	FALSE	0.130000000000052	0	18
+Operation	7	lowerlat <- ""	lowerlat <- ""	FALSE	FALSE	0.141999999999996	0	19
+Operation	8	upperlat <- ""	upperlat <- ""	FALSE	FALSE	0.15100000000001	0	20
+Operation	9	path <- ("")	path <- ("")	FALSE	FALSE	0.160000000000025	0	23
+Operation	10	if (path == "") {    path <- "../data"}	if (path == "") {    path <- "../data"}	FALSE	FALSE	0.16900000000004	0	25
+Operation	11	filename <- ("GspeciesBC_2.5.grd")	filename <- ("GspeciesBC_2.5.grd")	FALSE	FALSE	0.185000000000002	0	26
+Operation	12	paste(path, filename, sep = "/")	paste(path, filename, sep = "/")	FALSE	FALSE	0.194999999999993	0	27
+Operation	13	croppeddata <- paste(path, filename, sep = "/")	croppeddata <- paste(path, filename, sep = "/")	FALSE	FALSE	0.215000000000032	0	28
+Operation	14	setwd(wd)	setwd(wd)	FALSE	FALSE	0.242000000000019	0	39
+Operation	15	packs <- c("rgbif", "mapproj", "mapdata", "sp", "maptools", 	packs <- c("rgbif", "mapproj", "mapdata", "sp", "maptools", 	FALSE	FALSE	0.264999999999986	0	41
+Operation	16	if (!require("pacman")) {    install.packages("pacman")}	if (!require("pacman")) {    install.packages("pacman")}	FALSE	FALSE	0.281000000000006	0	43
+Operation	17	library(pacman)	library(pacman)	FALSE	FALSE	0.291999999999973	0	44
+Operation	18	pacman::p_load(packs)	pacman::p_load(packs)	FALSE	FALSE	4.31999999999999	0	45
+Operation	19	lapply(packs, require, character.only = TRUE)	lapply(packs, require, character.only = TRUE)	FALSE	FALSE	4.34000000000003	0	46
+Operation	20	if (leftlon == "") {    leftlon <- -99.2}	if (leftlon == "") {    leftlon <- -99.2}	FALSE	FALSE	4.35300000000001	0	51
+Operation	21	if (rightlon == "") {    rightlon <- -63}	if (rightlon == "") {    rightlon <- -63}	FALSE	FALSE	4.37100000000004	0	52
+Operation	22	if (lowerlat == "") {    lowerlat <- 23.6}	if (lowerlat == "") {    lowerlat <- 23.6}	FALSE	FALSE	4.387	0	53
+Operation	23	if (upperlat == "") {    upperlat <- 45.5}	if (upperlat == "") {    upperlat <- 45.5}	FALSE	FALSE	4.40600000000001	0	54
+Operation	24	if (genus == "") {    genus <- "Aphaenogaster"    species <-	if (genus == "") {    genus <- "Aphaenogaster"    species <-	FALSE	FALSE	4.42199999999997	0	56
+Operation	25	rawdata <- gbif(genus = genus, species = species)	rawdata <- gbif(genus = genus, species = species)	FALSE	FALSE	4.69800000000004	0	57
+Operation	26	na.omit(rawdata[, c("lat", "lon")])	na.omit(rawdata[, c("lat", "lon")])	FALSE	FALSE	4.74700000000001	0	58
+Operation	27	Gspecies <- na.omit(rawdata[, c("lat", "lon")])	Gspecies <- na.omit(rawdata[, c("lat", "lon")])	FALSE	FALSE	4.76299999999998	0	59
+Operation	28	data(stateMapEnv)	data(stateMapEnv)	FALSE	FALSE	4.79199999999997	0	61
+Operation	29	plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar = par(	plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar = par(	FALSE	FALSE	4.81700000000001	0	65
+Operation	30	rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")	rect(par("usr")[1], par("usr")[3], par("usr")[2], par("usr")	FALSE	FALSE	4.85500000000002	0	67
+Operation	31	map("state", xlim = c(leftlon, rightlon), ylim = c(lowerlat,	map("state", xlim = c(leftlon, rightlon), ylim = c(lowerlat,	FALSE	FALSE	4.87899999999996	0	68
+Operation	32	points(Gspecies$lon, Gspecies$lat, col = "darkolivegreen4", 	points(Gspecies$lon, Gspecies$lat, col = "darkolivegreen4", 	FALSE	FALSE	4.92200000000003	0	72
+Operation	33	axis(1, las = 1)	axis(1, las = 1)	FALSE	FALSE	4.94200000000001	0	73
+Operation	34	axis(2, las = 1)	axis(2, las = 1)	FALSE	FALSE	4.952	0	74
+Operation	35	box()	box()	FALSE	FALSE	4.95699999999999	0	75
+Operation	36	longrid = seq(leftlon, rightlon, 0.05)	longrid = seq(leftlon, rightlon, 0.05)	FALSE	FALSE	4.96299999999997	0	78
+Operation	37	latgrid = seq(lowerlat, upperlat, 0.05)	latgrid = seq(lowerlat, upperlat, 0.05)	FALSE	FALSE	4.99099999999999	0	79
+Operation	38	subs = c()	subs = c()	FALSE	FALSE	5.02199999999999	0	82
+Operation	39	for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(	for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(	FALSE	FALSE	59.897	0	83
+Operation	40	dim(subs)	dim(subs)	FALSE	FALSE	59.991	0	93
+Operation	41	x = circles(subs[, c("lon", "lat")], d = 50000, lonlat = T)	x = circles(subs[, c("lon", "lat")], d = 50000, lonlat = T)	FALSE	FALSE	60.078	0	96
+Operation	42	bg = spsample(x@polygons, 1000, type = "random", iter = 1000	bg = spsample(x@polygons, 1000, type = "random", iter = 1000	FALSE	FALSE	62.367	0	97
+Operation	43	points(bg, col = "khaki4", pch = 1, cex = 0.3)	points(bg, col = "khaki4", pch = 1, cex = 0.3)	FALSE	FALSE	62.441	0	98
+Operation	44	require(raster)	require(raster)	FALSE	FALSE	62.452	0	105

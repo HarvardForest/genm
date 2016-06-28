@@ -1,8 +1,6 @@
 
 ##############################     Setting your work station    #############################
 
-setwd("")
-
 #install.packages("rgbif")
 #install.packages("mapproj")
 #install.packages("mapdata")

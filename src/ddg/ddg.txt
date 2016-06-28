@@ -2,207 +2,195 @@ Architecture="x86_64"
 OperatingSystem="unix"
 Language="R"
 LanguageVersion="R version 3.2.3 (2015-12-10)"
-RDataTrackerVersion="2.21"
-Script="/Users/annacalderon/Desktop/gENM/src/gdistance_template.R"
-ProcessFileTimestamp="2016-06-24T15.28.51EDT"
+RDataTrackerVersion="2.24"
+Script="/Users/annacalderon/Desktop/gENM/src/SDM_template.R"
+ProcessFileTimestamp="2016-06-27T09.09.55EDT"
 WorkingDirectory="/Users/annacalderon/Desktop/gENM/src"
 DDGDirectory="/Users/annacalderon/Desktop/gENM/src/ddg"
-DateTime="2016-06-24T16.09.56EDT"
-25
-Start p1 "1-gdistance_template.R" Value="gdistance_template.R" Time="0.0359999999999445" Script="0" Line="NA";
-Operation p2 "2-library(FedData)" Value="library(FedData)" Time="0.0380000000000109" Script="0" Line="4";
+DateTime="2016-06-28T12.53.30EDT"
+44
+Start p1 "1-/Users/annacalderon/Desktop/gENM/src/SDM_template.R" Value="/Users/annacalderon/Desktop/gENM/src/SDM_template.R" Time="0.0889999999999986" Script="0" Line="NA";
+Operation p2 "2-wd <- \".\"" Value="wd <- \".\"" Time="0.0910000000000082" Script="0" Line="9";
 CF p1 p2
-Operation p3 "3-vepPolygon <- polygon_from_extent(raster::extent(672800, 672" Value="vepPolygon <- polygon_from_extent(raster::extent(672800, 672" Time="0.0509999999999309" Script="0" Line="6";
+Data d1 "1-wd" Value="\".\"";
+DF p2 d1
+Operation p3 "3-genus <- \"\"" Value="genus <- \"\"" Time="0.0989999999999895" Script="0" Line="12";
 CF p2 p3
-Snapshot d1 "1-vepPolygon" Value="/Users/annacalderon/Desktop/gENM/src/ddg/1-vepPolygon.txt" Time="2016-06-24T16.09.56EDT";
-DF p3 d1
-Operation p4 "4-NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")" Value="NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")" Time="0.0849999999999227" Script="0" Line="7";
+Data d2 "2-genus" Value="NotRecorded";
+DF p3 d2
+Operation p4 "4-species <- \"\"" Value="species <- \"\"" Time="0.110000000000014" Script="0" Line="13";
 CF p3 p4
-DF d1 p4
-Snapshot d2 "2-NED" Value="/Users/annacalderon/Desktop/gENM/src/ddg/2-NED.txt" Time="2016-06-24T16.09.56EDT";
-DF p4 d2
-Operation p5 "5-set.seed(123)" Value="set.seed(123)" Time="0.350999999999999" Script="0" Line="10";
+Data d3 "3-species" Value="NotRecorded";
+DF p4 d3
+Operation p5 "5-leftlon <- \"\"" Value="leftlon <- \"\"" Time="0.121000000000038" Script="0" Line="17";
 CF p4 p5
-Operation p6 "6-r <- raster(NED)" Value="r <- raster(NED)" Time="0.358999999999924" Script="0" Line="11";
+Data d4 "4-leftlon" Value="NotRecorded";
+DF p5 d4
+Operation p6 "6-rightlon <- \"\"" Value="rightlon <- \"\"" Time="0.130000000000052" Script="0" Line="18";
 CF p5 p6
-DF d2 p6
-Snapshot d3 "3-r" Value="/Users/annacalderon/Desktop/gENM/src/ddg/3-r.txt" Time="2016-06-24T16.09.56EDT";
-DF p6 d3
-Operation p7 "7-altDiff <- function(x) {    x[2] - x[1]}" Value="altDiff <- function(x) {    x[2] - x[1]}" Time="0.385999999999967" Script="0" Line="12";
+Data d5 "5-rightlon" Value="NotRecorded";
+DF p6 d5
+Operation p7 "7-lowerlat <- \"\"" Value="lowerlat <- \"\"" Time="0.141999999999996" Script="0" Line="19";
 CF p6 p7
-Data d4 "4-altDiff" Value="#ddg.function";
-DF p7 d4
-Start p8 "8-hd <- transition(r, altDiff, 8, symm = FALSE)" Value="hd <- transition(r, altDiff, 8, symm = FALSE)" Time="0.40300000000002" Script="0" Line="13";
+Data d6 "6-lowerlat" Value="NotRecorded";
+DF p7 d6
+Operation p8 "8-upperlat <- \"\"" Value="upperlat <- \"\"" Time="0.15100000000001" Script="0" Line="20";
 CF p7 p8
-DF d3 p8
-DF d4 p8
-Start p9 "9-FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Value="FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Time="0.420999999999935" Script="0" Line="13";
+Data d7 "7-upperlat" Value="NotRecorded";
+DF p8 d7
+Operation p9 "9-path <- (\"\")" Value="path <- (\"\")" Time="0.160000000000025" Script="0" Line="23";
 CF p8 p9
-Binding p10 "10-...  <-  if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L], d.call, " Time="0.422000000000025" Script="0" Line="13";
+Data d8 "8-path" Value="NotRecorded";
+DF p9 d8
+Operation p10 "10-if (path == \"\") {    path <- \"../data\"}" Value="if (path == \"\") {    path <- \"../data\"}" Time="0.16900000000004" Script="0" Line="25";
 CF p9 p10
-Binding p11 "11-...  <-  ..." Time="0.434999999999945" Script="0" Line="13";
+Data d9 "9-path" Value="\"../data\"";
+DF p10 d9
+Operation p11 "11-filename <- (\"GspeciesBC_2.5.grd\")" Value="filename <- (\"GspeciesBC_2.5.grd\")" Time="0.185000000000002" Script="0" Line="26";
 CF p10 p11
-Operation p12 "12-FUN" Value="FUN" Time="0.437999999999988" Script="0" Line="13";
+Data d10 "10-filename" Value="\"GspeciesBC_2.5.grd\"";
+DF p11 d10
+Operation p12 "12-paste(path, filename, sep = \"/\")" Value="paste(path, filename, sep = \"/\")" Time="0.194999999999993" Script="0" Line="27";
 CF p11 p12
-Operation p13 "13-x[2] - x[1]" Value="x[2] - x[1]" Time="0.441000000000031" Script="0" Line="13";
+DF d9 p12
+DF d10 p12
+Operation p13 "13-croppeddata <- paste(path, filename, sep = \"/\")" Value="croppeddata <- paste(path, filename, sep = \"/\")" Time="0.215000000000032" Script="0" Line="28";
 CF p12 p13
-Data d5 "5-FUN(if(length(d.call)<2L)newX[,1]elsearray(newX[,1L], return" Value="0";
-Operation p14 "14-return (x[2] - x[1])" Value="return (x[2] - x[1])" Time="0.451000000000022" Script="0" Line="13";
+DF d9 p13
+DF d10 p13
+Data d11 "11-croppeddata" Value="\"../data/GspeciesBC_2.5.grd\"";
+DF p13 d11
+Operation p14 "14-setwd(wd)" Value="setwd(wd)" Time="0.242000000000019" Script="0" Line="39";
 CF p13 p14
-DF p14 d5
-Finish p15 "15-FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Value="FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Time="0.458999999999946" Script="0" Line="13";
+DF d1 p14
+Operation p15 "15-packs <- c(\"rgbif\", \"mapproj\", \"mapdata\", \"sp\", \"maptools\", " Value="packs <- c(\"rgbif\", \"mapproj\", \"mapdata\", \"sp\", \"maptools\", " Time="0.264999999999986" Script="0" Line="41";
 CF p14 p15
-Finish p16 "16-hd <- transition(r, altDiff, 8, symm = FALSE)" Value="hd <- transition(r, altDiff, 8, symm = FALSE)" Time="0.461000000000013" Script="0" Line="13";
+Snapshot d12 "12-packs" Value="/Users/annacalderon/Desktop/gENM/src/ddg/12-packs.csv" Time="2016-06-28T12.53.30EDT";
+DF p15 d12
+Operation p16 "16-if (!require(\"pacman\")) {    install.packages(\"pacman\")}" Value="if (!require(\"pacman\")) {    install.packages(\"pacman\")}" Time="0.281000000000006" Script="0" Line="43";
 CF p15 p16
-Snapshot d6 "6-hd" Value="/Users/annacalderon/Desktop/gENM/src/ddg/6-hd.txt" Time="2016-06-24T16.09.56EDT";
-DF p16 d6
-Operation p17 "17-slope <- geoCorrection(hd)" Value="slope <- geoCorrection(hd)" Time="0.476999999999975" Script="0" Line="14";
+Operation p17 "17-library(pacman)" Value="library(pacman)" Time="0.291999999999973" Script="0" Line="44";
 CF p16 p17
-Exception d7 "7-warning.msg" Value="\"In  ddg.proc.nodes$ddg.name[ddg.pnum] <- pname :  number of items to replace is not a multiple of replacement length\"";
-DF p17 d7
-DF d6 p17
-Snapshot d8 "8-slope" Value="/Users/annacalderon/Desktop/gENM/src/ddg/8-slope.txt" Time="2016-06-24T16.09.56EDT";
-DF p17 d8
-Operation p18 "18-adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi" Value="adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi" Time="0.504999999999995" Script="0" Line="15";
+Operation p18 "18-pacman::p_load(packs)" Value="pacman::p_load(packs)" Time="4.31999999999999" Script="0" Line="45";
 CF p17 p18
-DF d3 p18
-Snapshot d9 "9-adj" Value="/Users/annacalderon/Desktop/gENM/src/ddg/9-adj.csv" Time="2016-06-24T16.09.56EDT";
-DF p18 d9
-Operation p19 "19-speed <- slope" Value="speed <- slope" Time="0.532999999999902" Script="0" Line="16";
+Exception d13 "13-warning.msg" Value="\"In  pacman::p_load(packs) :  Failed to install/load: packs\"";
+DF p18 d13
+DF d12 p18
+Operation p19 "19-lapply(packs, require, character.only = TRUE)" Value="lapply(packs, require, character.only = TRUE)" Time="4.34000000000003" Script="0" Line="46";
 CF p18 p19
-DF d8 p19
-Snapshot d10 "10-speed" Value="/Users/annacalderon/Desktop/gENM/src/ddg/10-speed.txt" Time="2016-06-24T16.09.56EDT";
-DF p19 d10
-Operation p20 "20-speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))" Value="speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))" Time="0.558999999999969" Script="0" Line="17";
+DF d12 p19
+Operation p20 "20-if (leftlon == \"\") {    leftlon <- -99.2}" Value="if (leftlon == \"\") {    leftlon <- -99.2}" Time="4.35300000000001" Script="0" Line="51";
 CF p19 p20
-DF d8 p20
-DF d9 p20
-Snapshot d11 "11-speed" Value="/Users/annacalderon/Desktop/gENM/src/ddg/11-speed.txt" Time="2016-06-24T16.09.56EDT";
-DF p20 d11
-Operation p21 "21-Conductance <- geoCorrection(speed)" Value="Conductance <- geoCorrection(speed)" Time="0.601999999999975" Script="0" Line="18";
+Data d14 "14-leftlon" Value="-99.2";
+DF p20 d14
+Operation p21 "21-if (rightlon == \"\") {    rightlon <- -63}" Value="if (rightlon == \"\") {    rightlon <- -63}" Time="4.37100000000004" Script="0" Line="52";
 CF p20 p21
-DF d11 p21
-Snapshot d12 "12-Conductance" Value="/Users/annacalderon/Desktop/gENM/src/ddg/12-Conductance.txt" Time="2016-06-24T16.09.56EDT";
-DF p21 d12
-Operation p22 "22-image(Conductance[1:3, 1:3])" Value="image(Conductance[1:3, 1:3])" Time="0.62399999999991" Script="0" Line="23";
+Data d15 "15-rightlon" Value="-63";
+DF p21 d15
+Operation p22 "22-if (lowerlat == \"\") {    lowerlat <- 23.6}" Value="if (lowerlat == \"\") {    lowerlat <- 23.6}" Time="4.387" Script="0" Line="53";
 CF p21 p22
-DF d12 p22
-Operation p23 "23-A <- c(672800, 4102000)" Value="A <- c(672800, 4102000)" Time="0.640999999999963" Script="0" Line="28";
+Data d16 "16-lowerlat" Value="23.6";
+DF p22 d16
+Operation p23 "23-if (upperlat == \"\") {    upperlat <- 45.5}" Value="if (upperlat == \"\") {    upperlat <- 45.5}" Time="4.40600000000001" Script="0" Line="54";
 CF p22 p23
-Snapshot d13 "13-A" Value="/Users/annacalderon/Desktop/gENM/src/ddg/13-A.csv" Time="2016-06-24T16.09.56EDT";
-DF p23 d13
-Operation p24 "24-B <- c(740000, 4170000)" Value="B <- c(740000, 4170000)" Time="0.65199999999993" Script="0" Line="29";
+Data d17 "17-upperlat" Value="45.5";
+DF p23 d17
+Operation p24 "24-if (genus == \"\") {    genus <- \"Aphaenogaster\"    species <-" Value="if (genus == \"\") {    genus <- \"Aphaenogaster\"    species <-" Time="4.42199999999997" Script="0" Line="56";
 CF p23 p24
-Snapshot d14 "14-B" Value="/Users/annacalderon/Desktop/gENM/src/ddg/14-B.csv" Time="2016-06-24T16.09.56EDT";
-DF p24 d14
-Operation p25 "25-tryCatch" Value="tryCatch" Time="0.670999999999935" Script="0" Line="30";
+Data d18 "18-genus" Value="\"Aphaenogaster\"";
+DF p24 d18
+Data d19 "19-species" Value="\"picea\"";
+DF p24 d19
+Operation p25 "25-rawdata <- gbif(genus = genus, species = species)" Value="rawdata <- gbif(genus = genus, species = species)" Time="4.69800000000004" Script="0" Line="57";
 CF p24 p25
-Exception d15 "15-error.msg" Value="\"Error in if (is.numeric(v) && any(v < 0)) {: missing value where TRUE/FALSE needed \"";
-DF p25 d15
-File d16 "16-dev.off.16.pdf" Value="/Users/annacalderon/Desktop/gENM/src/ddg/16-dev.off.16.pdf" Time="2016-06-24T16.09.56EDT" Location="/Users/annacalderon/Desktop/gENM/src/dev.off.16.pdf";
-DF p1 d16
-
-Architecture="x86_64"
-OperatingSystem="unix"
-Language="R"
-LanguageVersion="R version 3.2.3 (2015-12-10)"
-RDataTrackerVersion="2.21"
-Script="/Users/annacalderon/Desktop/gENM/src/gdistance_template.R"
-ProcessFileTimestamp="2016-06-24T15.28.51EDT"
-WorkingDirectory="/Users/annacalderon/Desktop/gENM/src"
-DDGDirectory="/Users/annacalderon/Desktop/gENM/src/ddg"
-DateTime="2016-06-24T16.09.56EDT"
-25
-Start p1 "1-gdistance_template.R" Value="gdistance_template.R" Time="0.0359999999999445" Script="0" Line="NA";
-Operation p2 "2-library(FedData)" Value="library(FedData)" Time="0.0380000000000109" Script="0" Line="4";
-CF p1 p2
-Operation p3 "3-vepPolygon <- polygon_from_extent(raster::extent(672800, 672" Value="vepPolygon <- polygon_from_extent(raster::extent(672800, 672" Time="0.0509999999999309" Script="0" Line="6";
-CF p2 p3
-Snapshot d1 "1-vepPolygon" Value="/Users/annacalderon/Desktop/gENM/src/ddg/1-vepPolygon.txt" Time="2016-06-24T16.09.56EDT";
-DF p3 d1
-Operation p4 "4-NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")" Value="NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")" Time="0.0849999999999227" Script="0" Line="7";
-CF p3 p4
-DF d1 p4
-Snapshot d2 "2-NED" Value="/Users/annacalderon/Desktop/gENM/src/ddg/2-NED.txt" Time="2016-06-24T16.09.56EDT";
-DF p4 d2
-Operation p5 "5-set.seed(123)" Value="set.seed(123)" Time="0.350999999999999" Script="0" Line="10";
-CF p4 p5
-Operation p6 "6-r <- raster(NED)" Value="r <- raster(NED)" Time="0.358999999999924" Script="0" Line="11";
-CF p5 p6
-DF d2 p6
-Snapshot d3 "3-r" Value="/Users/annacalderon/Desktop/gENM/src/ddg/3-r.txt" Time="2016-06-24T16.09.56EDT";
-DF p6 d3
-Operation p7 "7-altDiff <- function(x) {    x[2] - x[1]}" Value="altDiff <- function(x) {    x[2] - x[1]}" Time="0.385999999999967" Script="0" Line="12";
-CF p6 p7
-Data d4 "4-altDiff" Value="#ddg.function";
-DF p7 d4
-Start p8 "8-hd <- transition(r, altDiff, 8, symm = FALSE)" Value="hd <- transition(r, altDiff, 8, symm = FALSE)" Time="0.40300000000002" Script="0" Line="13";
-CF p7 p8
-DF d3 p8
-DF d4 p8
-Start p9 "9-FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Value="FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Time="0.420999999999935" Script="0" Line="13";
-CF p8 p9
-Binding p10 "10-...  <-      dn.call)" Time="0.422000000000025" Script="0" Line="13";
-CF p9 p10
-Binding p11 "11-...  <-  ..." Time="0.434999999999945" Script="0" Line="13";
-CF p10 p11
-Operation p12 "12-FUN" Value="FUN" Time="0.437999999999988" Script="0" Line="13";
-CF p11 p12
-Operation p13 "13-x[2] - x[1]" Value="x[2] - x[1]" Time="0.441000000000031" Script="0" Line="13";
-CF p12 p13
-Data d5 "5-FUN(if(length(d.call)<2L)newX[,1]elsearray(newX[,1L], return" Value="0";
-Operation p14 "14-return (x[2] - x[1])" Value="return (x[2] - x[1])" Time="0.451000000000022" Script="0" Line="13";
-CF p13 p14
-DF p14 d5
-Finish p15 "15-FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Value="FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]" Time="0.458999999999946" Script="0" Line="13";
-CF p14 p15
-Finish p16 "16-hd <- transition(r, altDiff, 8, symm = FALSE)" Value="hd <- transition(r, altDiff, 8, symm = FALSE)" Time="0.461000000000013" Script="0" Line="13";
-CF p15 p16
-Snapshot d6 "6-hd" Value="/Users/annacalderon/Desktop/gENM/src/ddg/6-hd.txt" Time="2016-06-24T16.09.56EDT";
-DF p16 d6
-Operation p17 "17-slope <- geoCorrection(hd)" Value="slope <- geoCorrection(hd)" Time="0.476999999999975" Script="0" Line="14";
-CF p16 p17
-Exception d7 "7-warning.msg" Value="\"In  ddg.proc.nodes$ddg.name[ddg.pnum] <- pname :  number of items to replace is not a multiple of replacement length\"";
-DF p17 d7
-DF d6 p17
-Snapshot d8 "8-slope" Value="/Users/annacalderon/Desktop/gENM/src/ddg/8-slope.txt" Time="2016-06-24T16.09.56EDT";
-DF p17 d8
-Operation p18 "18-adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi" Value="adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi" Time="0.504999999999995" Script="0" Line="15";
-CF p17 p18
-DF d3 p18
-Snapshot d9 "9-adj" Value="/Users/annacalderon/Desktop/gENM/src/ddg/9-adj.csv" Time="2016-06-24T16.09.56EDT";
-DF p18 d9
-Operation p19 "19-speed <- slope" Value="speed <- slope" Time="0.532999999999902" Script="0" Line="16";
-CF p18 p19
-DF d8 p19
-Snapshot d10 "10-speed" Value="/Users/annacalderon/Desktop/gENM/src/ddg/10-speed.txt" Time="2016-06-24T16.09.56EDT";
-DF p19 d10
-Operation p20 "20-speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))" Value="speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))" Time="0.558999999999969" Script="0" Line="17";
-CF p19 p20
-DF d8 p20
-DF d9 p20
-Snapshot d11 "11-speed" Value="/Users/annacalderon/Desktop/gENM/src/ddg/11-speed.txt" Time="2016-06-24T16.09.56EDT";
-DF p20 d11
-Operation p21 "21-Conductance <- geoCorrection(speed)" Value="Conductance <- geoCorrection(speed)" Time="0.601999999999975" Script="0" Line="18";
-CF p20 p21
-DF d11 p21
-Snapshot d12 "12-Conductance" Value="/Users/annacalderon/Desktop/gENM/src/ddg/12-Conductance.txt" Time="2016-06-24T16.09.56EDT";
-DF p21 d12
-Operation p22 "22-image(Conductance[1:3, 1:3])" Value="image(Conductance[1:3, 1:3])" Time="0.62399999999991" Script="0" Line="23";
-CF p21 p22
-DF d12 p22
-Operation p23 "23-A <- c(672800, 4102000)" Value="A <- c(672800, 4102000)" Time="0.640999999999963" Script="0" Line="28";
-CF p22 p23
-Snapshot d13 "13-A" Value="/Users/annacalderon/Desktop/gENM/src/ddg/13-A.csv" Time="2016-06-24T16.09.56EDT";
-DF p23 d13
-Operation p24 "24-B <- c(740000, 4170000)" Value="B <- c(740000, 4170000)" Time="0.65199999999993" Script="0" Line="29";
-CF p23 p24
-Snapshot d14 "14-B" Value="/Users/annacalderon/Desktop/gENM/src/ddg/14-B.csv" Time="2016-06-24T16.09.56EDT";
-DF p24 d14
-Operation p25 "25-tryCatch" Value="tryCatch" Time="0.670999999999935" Script="0" Line="30";
-CF p24 p25
-Exception d15 "15-error.msg" Value="\"Error in if (is.numeric(v) && any(v < 0)) {: missing value where TRUE/FALSE needed \"";
-DF p25 d15
-File d16 "16-dev.off.16.pdf" Value="/Users/annacalderon/Desktop/gENM/src/ddg/16-dev.off.16.pdf" Time="2016-06-24T16.09.56EDT" Location="/Users/annacalderon/Desktop/gENM/src/dev.off.16.pdf";
-DF p1 d16
+DF d18 p25
+DF d19 p25
+Snapshot d20 "20-rawdata" Value="/Users/annacalderon/Desktop/gENM/src/ddg/20-rawdata-PARTIAL.csv" Time="2016-06-28T12.53.37EDT";
+DF p25 d20
+Operation p26 "26-na.omit(rawdata[, c(\"lat\", \"lon\")])" Value="na.omit(rawdata[, c(\"lat\", \"lon\")])" Time="4.74700000000001" Script="0" Line="58";
+CF p25 p26
+DF d20 p26
+Operation p27 "27-Gspecies <- na.omit(rawdata[, c(\"lat\", \"lon\")])" Value="Gspecies <- na.omit(rawdata[, c(\"lat\", \"lon\")])" Time="4.76299999999998" Script="0" Line="59";
+CF p26 p27
+DF d20 p27
+Snapshot d21 "21-Gspecies" Value="/Users/annacalderon/Desktop/gENM/src/ddg/21-Gspecies.csv" Time="2016-06-28T12.53.37EDT";
+DF p27 d21
+Operation p28 "28-data(stateMapEnv)" Value="data(stateMapEnv)" Time="4.79199999999997" Script="0" Line="61";
+CF p27 p28
+Data d22 "22-stateMapEnv [ENV]" Value="\"R_MAP_DATA_DIR\"";
+DF d22 p28
+Operation p29 "29-plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar = par(" Value="plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar = par(" Time="4.81700000000001" Script="0" Line="65";
+CF p28 p29
+DF d14 p29
+DF d15 p29
+DF d16 p29
+DF d17 p29
+Operation p30 "30-rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\")" Value="rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\")" Time="4.85500000000002" Script="0" Line="67";
+CF p29 p30
+Operation p31 "31-map(\"state\", xlim = c(leftlon, rightlon), ylim = c(lowerlat," Value="map(\"state\", xlim = c(leftlon, rightlon), ylim = c(lowerlat," Time="4.87899999999996" Script="0" Line="68";
+CF p30 p31
+DF d14 p31
+DF d15 p31
+DF d16 p31
+DF d17 p31
+Operation p32 "32-points(Gspecies$lon, Gspecies$lat, col = \"darkolivegreen4\", " Value="points(Gspecies$lon, Gspecies$lat, col = \"darkolivegreen4\", " Time="4.92200000000003" Script="0" Line="72";
+CF p31 p32
+DF d21 p32
+Operation p33 "33-axis(1, las = 1)" Value="axis(1, las = 1)" Time="4.94200000000001" Script="0" Line="73";
+CF p32 p33
+Operation p34 "34-axis(2, las = 1)" Value="axis(2, las = 1)" Time="4.952" Script="0" Line="74";
+CF p33 p34
+Operation p35 "35-box()" Value="box()" Time="4.95699999999999" Script="0" Line="75";
+CF p34 p35
+Operation p36 "36-longrid = seq(leftlon, rightlon, 0.05)" Value="longrid = seq(leftlon, rightlon, 0.05)" Time="4.96299999999997" Script="0" Line="78";
+CF p35 p36
+DF d14 p36
+DF d15 p36
+Snapshot d23 "23-longrid" Value="/Users/annacalderon/Desktop/gENM/src/ddg/23-longrid.csv" Time="2016-06-28T12.53.38EDT";
+DF p36 d23
+Operation p37 "37-latgrid = seq(lowerlat, upperlat, 0.05)" Value="latgrid = seq(lowerlat, upperlat, 0.05)" Time="4.99099999999999" Script="0" Line="79";
+CF p36 p37
+DF d16 p37
+DF d17 p37
+Snapshot d24 "24-latgrid" Value="/Users/annacalderon/Desktop/gENM/src/ddg/24-latgrid.csv" Time="2016-06-28T12.53.38EDT";
+DF p37 d24
+Operation p38 "38-subs = c()" Value="subs = c()" Time="5.02199999999999" Script="0" Line="82";
+CF p37 p38
+Data d25 "25-subs" Value="NULL";
+DF p38 d25
+Operation p39 "39-for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(" Value="for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(" Time="59.897" Script="0" Line="83";
+CF p38 p39
+Data d26 "26-i [ENV]" Value="724";
+DF d26 p39
+DF d23 p39
+Data d27 "27-j [ENV]" Value="438";
+DF d27 p39
+DF d24 p39
+DF d21 p39
+Snapshot d28 "28-gridsq [ENV]" Value="/Users/annacalderon/Desktop/gENM/src/ddg/28-gridsq.csv" Time="2016-06-28T12.54.33EDT";
+Snapshot d29 "29-subs" Value="/Users/annacalderon/Desktop/gENM/src/ddg/29-subs.txt" Time="2016-06-28T12.54.33EDT";
+DF p39 d29
+Snapshot d30 "30-gridsq" Value="/Users/annacalderon/Desktop/gENM/src/ddg/30-gridsq.txt" Time="2016-06-28T12.54.33EDT";
+DF p39 d30
+Operation p40 "40-dim(subs)" Value="dim(subs)" Time="59.991" Script="0" Line="93";
+CF p39 p40
+DF d29 p40
+Operation p41 "41-x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T)" Value="x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T)" Time="60.078" Script="0" Line="96";
+CF p40 p41
+DF d29 p41
+Snapshot d31 "31-x" Value="/Users/annacalderon/Desktop/gENM/src/ddg/31-x.txt" Time="2016-06-28T12.54.33EDT";
+DF p41 d31
+Operation p42 "42-bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000" Value="bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000" Time="62.367" Script="0" Line="97";
+CF p41 p42
+DF d31 p42
+Snapshot d32 "32-bg" Value="/Users/annacalderon/Desktop/gENM/src/ddg/32-bg.txt" Time="2016-06-28T12.54.35EDT";
+DF p42 d32
+Operation p43 "43-points(bg, col = \"khaki4\", pch = 1, cex = 0.3)" Value="points(bg, col = \"khaki4\", pch = 1, cex = 0.3)" Time="62.441" Script="0" Line="98";
+CF p42 p43
+DF d32 p43
+Operation p44 "44-require(raster)" Value="require(raster)" Time="62.452" Script="0" Line="105";
+CF p43 p44
+File d33 "33-dev.off.33.pdf" Value="/Users/annacalderon/Desktop/gENM/src/ddg/33-dev.off.33.pdf" Time="2016-06-28T12.56.55EDT" Location="/Users/annacalderon/Desktop/gENM/src/dev.off.33.pdf";
+Exception d34 "34-error.msg" Value="\"No procedure node found for SDM_template.R\"";
+DF p44 d34
 

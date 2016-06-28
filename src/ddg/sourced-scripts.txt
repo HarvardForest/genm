@@ -1,2 +1,2 @@
 snum	sname
-0	gdistance_template.R
+0	/Users/annacalderon/Desktop/gENM/src/SDM_template.R

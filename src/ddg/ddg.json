@@ -11,20 +11,20 @@
 "rdt:operatingSystem" : "unix",
 "rdt:language" : "R",
 "rdt:rVersion" : "R version 3.2.3 (2015-12-10)",
-"rdt:script" : "/Users/annacalderon/Desktop/gENM/src/gdistance_template.R",
-"rdt:scriptTimeStamp" : "2016-06-24T15.28.51EDT",
+"rdt:script" : "/Users/annacalderon/Desktop/gENM/src/SDM_template.R",
+"rdt:scriptTimeStamp" : "2016-06-27T09.09.55EDT",
 "rdt:workingDirectory" : "/Users/annacalderon/Desktop/gENM/src",
 "rdt:ddgDirectory" : "/Users/annacalderon/Desktop/gENM/src/ddg",
-"rdt:ddgTimeStamp" : "2016-06-24T16.09.56EDT",
-"rdt:rdatatrackerVersion" : "2.21",
+"rdt:ddgTimeStamp" : "2016-06-28T12.53.30EDT",
+"rdt:rdatatrackerVersion" : "2.24",
 }
 },
 
 "activity" : {
 "p1" : {
-"rdt:name" : "gdistance_template.R",
+"rdt:name" : "/Users/annacalderon/Desktop/gENM/src/SDM_template.R",
 "rdt:type" : "Start",
-"rdt:elapsedTime" : "0.0359999999999445",
+"rdt:elapsedTime" : "0.0889999999999986",
 "rdt:scriptNum" : "0",
 "rdt:scriptLine" : "NA"
 }
@@ -32,11 +32,11 @@
 
 "activity" : {
 "p2" : {
-"rdt:name" : "library(FedData)",
+"rdt:name" : "wd <- \".\"",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0380000000000109",
+"rdt:elapsedTime" : "0.0910000000000082",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "4"
+"rdt:scriptLine" : "9"
 }
 },
 
@@ -47,28 +47,11 @@
 }
 },
 
-"activity" : {
-"p3" : {
-"rdt:name" : "vepPolygon <- polygon_from_extent(raster::extent(672800, 672",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0509999999999309",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "6"
-}
-},
-
-"wasInformedBy" : {
-"e2" : {
-"prov:informant" : "p2",
-"prov:informed" : "p3"
-}
-},
-
 "entity" : {
 "d1" : {
-"rdt:name" : "vepPolygon",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/1-vepPolygon.txt",
-"rdt:type" : "Snapshot",
+"rdt:name" : "wd",
+"rdt:value" : "\".\"",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -77,41 +60,70 @@
 },
 
 "wasGeneratedBy" : {
-"e3" : {
-"prov:entity" : "p3",
+"e2" : {
+"prov:entity" : "p2",
 "prov:activity" : "d1"
 }
 },
 
 "activity" : {
-"p4" : {
-"rdt:name" : "NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")",
+"p3" : {
+"rdt:name" : "genus <- \"\"",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0849999999999227",
+"rdt:elapsedTime" : "0.0989999999999895",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "7"
+"rdt:scriptLine" : "12"
 }
 },
 
 "wasInformedBy" : {
-"e4" : {
-"prov:informant" : "p3",
-"prov:informed" : "p4"
-}
-},
-
-"used" : {
-"e5" : {
-"prov:activity" : "d1",
-"prov:entity" : "p4"
+"e3" : {
+"prov:informant" : "p2",
+"prov:informed" : "p3"
 }
 },
 
 "entity" : {
 "d2" : {
-"rdt:name" : "NED",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/2-NED.txt",
-"rdt:type" : "Snapshot",
+"rdt:name" : "genus",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e4" : {
+"prov:entity" : "p3",
+"prov:activity" : "d2"
+}
+},
+
+"activity" : {
+"p4" : {
+"rdt:name" : "species <- \"\"",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.110000000000014",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "13"
+}
+},
+
+"wasInformedBy" : {
+"e5" : {
+"prov:informant" : "p3",
+"prov:informed" : "p4"
+}
+},
+
+"entity" : {
+"d3" : {
+"rdt:name" : "species",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -122,17 +134,17 @@
 "wasGeneratedBy" : {
 "e6" : {
 "prov:entity" : "p4",
-"prov:activity" : "d2"
+"prov:activity" : "d3"
 }
 },
 
 "activity" : {
 "p5" : {
-"rdt:name" : "set.seed(123)",
+"rdt:name" : "leftlon <- \"\"",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.350999999999999",
+"rdt:elapsedTime" : "0.121000000000038",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "10"
+"rdt:scriptLine" : "17"
 }
 },
 
@@ -143,35 +155,47 @@
 }
 },
 
+"entity" : {
+"d4" : {
+"rdt:name" : "leftlon",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e8" : {
+"prov:entity" : "p5",
+"prov:activity" : "d4"
+}
+},
+
 "activity" : {
 "p6" : {
-"rdt:name" : "r <- raster(NED)",
+"rdt:name" : "rightlon <- \"\"",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.358999999999924",
+"rdt:elapsedTime" : "0.130000000000052",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "11"
+"rdt:scriptLine" : "18"
 }
 },
 
 "wasInformedBy" : {
-"e8" : {
+"e9" : {
 "prov:informant" : "p5",
 "prov:informed" : "p6"
 }
 },
 
-"used" : {
-"e9" : {
-"prov:activity" : "d2",
-"prov:entity" : "p6"
-}
-},
-
 "entity" : {
-"d3" : {
-"rdt:name" : "r",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/3-r.txt",
-"rdt:type" : "Snapshot",
+"d5" : {
+"rdt:name" : "rightlon",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -182,17 +206,17 @@
 "wasGeneratedBy" : {
 "e10" : {
 "prov:entity" : "p6",
-"prov:activity" : "d3"
+"prov:activity" : "d5"
 }
 },
 
 "activity" : {
 "p7" : {
-"rdt:name" : "altDiff <- function(x) {    x[2] - x[1]}",
+"rdt:name" : "lowerlat <- \"\"",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.385999999999967",
+"rdt:elapsedTime" : "0.141999999999996",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "12"
+"rdt:scriptLine" : "19"
 }
 },
 
@@ -204,9 +228,9 @@
 },
 
 "entity" : {
-"d4" : {
-"rdt:name" : "altDiff",
-"rdt:value" : "#ddg.function",
+"d6" : {
+"rdt:name" : "lowerlat",
+"rdt:value" : "NotRecorded",
 "rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
@@ -218,17 +242,17 @@
 "wasGeneratedBy" : {
 "e12" : {
 "prov:entity" : "p7",
-"prov:activity" : "d4"
+"prov:activity" : "d6"
 }
 },
 
 "activity" : {
 "p8" : {
-"rdt:name" : "hd <- transition(r, altDiff, 8, symm = FALSE)",
-"rdt:type" : "Start",
-"rdt:elapsedTime" : "0.40300000000002",
+"rdt:name" : "upperlat <- \"\"",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.15100000000001",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
+"rdt:scriptLine" : "20"
 }
 },
 
@@ -239,44 +263,68 @@
 }
 },
 
-"used" : {
-"e14" : {
-"prov:activity" : "d3",
-"prov:entity" : "p8"
+"entity" : {
+"d7" : {
+"rdt:name" : "upperlat",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
 }
 },
 
-"used" : {
-"e15" : {
-"prov:activity" : "d4",
-"prov:entity" : "p8"
+"wasGeneratedBy" : {
+"e14" : {
+"prov:entity" : "p8",
+"prov:activity" : "d7"
 }
 },
 
 "activity" : {
 "p9" : {
-"rdt:name" : "FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]",
-"rdt:type" : "Start",
-"rdt:elapsedTime" : "0.420999999999935",
+"rdt:name" : "path <- (\"\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.160000000000025",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
+"rdt:scriptLine" : "23"
 }
 },
 
 "wasInformedBy" : {
-"e16" : {
+"e15" : {
 "prov:informant" : "p8",
 "prov:informed" : "p9"
 }
 },
 
+"entity" : {
+"d8" : {
+"rdt:name" : "path",
+"rdt:value" : "NotRecorded",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e16" : {
+"prov:entity" : "p9",
+"prov:activity" : "d8"
+}
+},
+
 "activity" : {
 "p10" : {
-"rdt:name" : "...  <-  if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L], d.call, ",
-"rdt:type" : "Binding",
-"rdt:elapsedTime" : "0.422000000000025",
+"rdt:name" : "if (path == \"\") {    path <- \"../data\"}",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.16900000000004",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
+"rdt:scriptLine" : "25"
 }
 },
 
@@ -287,61 +335,10 @@
 }
 },
 
-"activity" : {
-"p11" : {
-"rdt:name" : "...  <-  ...",
-"rdt:type" : "Binding",
-"rdt:elapsedTime" : "0.434999999999945",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e18" : {
-"prov:informant" : "p10",
-"prov:informed" : "p11"
-}
-},
-
-"activity" : {
-"p12" : {
-"rdt:name" : "FUN",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.437999999999988",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e19" : {
-"prov:informant" : "p11",
-"prov:informed" : "p12"
-}
-},
-
-"activity" : {
-"p13" : {
-"rdt:name" : "x[2] - x[1]",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.441000000000031",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e20" : {
-"prov:informant" : "p12",
-"prov:informed" : "p13"
-}
-},
-
 "entity" : {
-"d5" : {
-"rdt:name" : "FUN(if(length(d.call)<2L)newX[,1]elsearray(newX[,1L], return",
-"rdt:value" : "0",
+"d9" : {
+"rdt:name" : "path",
+"rdt:value" : "\"../data\"",
 "rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
@@ -350,69 +347,35 @@
 }
 },
 
-"activity" : {
-"p14" : {
-"rdt:name" : "return (x[2] - x[1])",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.451000000000022",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e21" : {
-"prov:informant" : "p13",
-"prov:informed" : "p14"
-}
-},
-
 "wasGeneratedBy" : {
-"e22" : {
-"prov:entity" : "p14",
-"prov:activity" : "d5"
+"e18" : {
+"prov:entity" : "p10",
+"prov:activity" : "d9"
 }
 },
 
 "activity" : {
-"p15" : {
-"rdt:name" : "FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]",
-"rdt:type" : "Finish",
-"rdt:elapsedTime" : "0.458999999999946",
+"p11" : {
+"rdt:name" : "filename <- (\"GspeciesBC_2.5.grd\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.185000000000002",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
+"rdt:scriptLine" : "26"
 }
 },
 
 "wasInformedBy" : {
-"e23" : {
-"prov:informant" : "p14",
-"prov:informed" : "p15"
-}
-},
-
-"activity" : {
-"p16" : {
-"rdt:name" : "hd <- transition(r, altDiff, 8, symm = FALSE)",
-"rdt:type" : "Finish",
-"rdt:elapsedTime" : "0.461000000000013",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e24" : {
-"prov:informant" : "p15",
-"prov:informed" : "p16"
+"e19" : {
+"prov:informant" : "p10",
+"prov:informed" : "p11"
 }
 },
 
 "entity" : {
-"d6" : {
-"rdt:name" : "hd",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/6-hd.txt",
-"rdt:type" : "Snapshot",
+"d10" : {
+"rdt:name" : "filename",
+"rdt:value" : "\"GspeciesBC_2.5.grd\"",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -421,35 +384,80 @@
 },
 
 "wasGeneratedBy" : {
-"e25" : {
-"prov:entity" : "p16",
-"prov:activity" : "d6"
+"e20" : {
+"prov:entity" : "p11",
+"prov:activity" : "d10"
 }
 },
 
 "activity" : {
-"p17" : {
-"rdt:name" : "slope <- geoCorrection(hd)",
+"p12" : {
+"rdt:name" : "paste(path, filename, sep = \"/\")",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.476999999999975",
+"rdt:elapsedTime" : "0.194999999999993",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "14"
+"rdt:scriptLine" : "27"
 }
 },
 
 "wasInformedBy" : {
+"e21" : {
+"prov:informant" : "p11",
+"prov:informed" : "p12"
+}
+},
+
+"used" : {
+"e22" : {
+"prov:activity" : "d9",
+"prov:entity" : "p12"
+}
+},
+
+"used" : {
+"e23" : {
+"prov:activity" : "d10",
+"prov:entity" : "p12"
+}
+},
+
+"activity" : {
+"p13" : {
+"rdt:name" : "croppeddata <- paste(path, filename, sep = \"/\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.215000000000032",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "28"
+}
+},
+
+"wasInformedBy" : {
+"e24" : {
+"prov:informant" : "p12",
+"prov:informed" : "p13"
+}
+},
+
+"used" : {
+"e25" : {
+"prov:activity" : "d9",
+"prov:entity" : "p13"
+}
+},
+
+"used" : {
 "e26" : {
-"prov:informant" : "p16",
-"prov:informed" : "p17"
+"prov:activity" : "d10",
+"prov:entity" : "p13"
 }
 },
 
 "entity" : {
-"d7" : {
-"rdt:name" : "warning.msg",
-"rdt:value" : "\"In  ddg.proc.nodes$ddg.name[ddg.pnum] <- pname :  number of items to replace is not a multiple of replacement length\"",
-"rdt:type" : "Exception",
-"rdt:scope" : "ddg.library",
+"d11" : {
+"rdt:name" : "croppeddata",
+"rdt:value" : "\"../data/GspeciesBC_2.5.grd\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
 "rdt:location" : ""
@@ -458,782 +466,56 @@
 
 "wasGeneratedBy" : {
 "e27" : {
-"prov:entity" : "p17",
-"prov:activity" : "d7"
-}
-},
-
-"used" : {
-"e28" : {
-"prov:activity" : "d6",
-"prov:entity" : "p17"
-}
-},
-
-"entity" : {
-"d8" : {
-"rdt:name" : "slope",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/8-slope.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e29" : {
-"prov:entity" : "p17",
-"prov:activity" : "d8"
-}
-},
-
-"activity" : {
-"p18" : {
-"rdt:name" : "adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.504999999999995",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "15"
-}
-},
-
-"wasInformedBy" : {
-"e30" : {
-"prov:informant" : "p17",
-"prov:informed" : "p18"
-}
-},
-
-"used" : {
-"e31" : {
-"prov:activity" : "d3",
-"prov:entity" : "p18"
-}
-},
-
-"entity" : {
-"d9" : {
-"rdt:name" : "adj",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/9-adj.csv",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e32" : {
-"prov:entity" : "p18",
-"prov:activity" : "d9"
-}
-},
-
-"activity" : {
-"p19" : {
-"rdt:name" : "speed <- slope",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.532999999999902",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "16"
-}
-},
-
-"wasInformedBy" : {
-"e33" : {
-"prov:informant" : "p18",
-"prov:informed" : "p19"
-}
-},
-
-"used" : {
-"e34" : {
-"prov:activity" : "d8",
-"prov:entity" : "p19"
-}
-},
-
-"entity" : {
-"d10" : {
-"rdt:name" : "speed",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/10-speed.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e35" : {
-"prov:entity" : "p19",
-"prov:activity" : "d10"
-}
-},
-
-"activity" : {
-"p20" : {
-"rdt:name" : "speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.558999999999969",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "17"
-}
-},
-
-"wasInformedBy" : {
-"e36" : {
-"prov:informant" : "p19",
-"prov:informed" : "p20"
-}
-},
-
-"used" : {
-"e37" : {
-"prov:activity" : "d8",
-"prov:entity" : "p20"
-}
-},
-
-"used" : {
-"e38" : {
-"prov:activity" : "d9",
-"prov:entity" : "p20"
-}
-},
-
-"entity" : {
-"d11" : {
-"rdt:name" : "speed",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/11-speed.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e39" : {
-"prov:entity" : "p20",
+"prov:entity" : "p13",
 "prov:activity" : "d11"
 }
 },
 
 "activity" : {
-"p21" : {
-"rdt:name" : "Conductance <- geoCorrection(speed)",
+"p14" : {
+"rdt:name" : "setwd(wd)",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.601999999999975",
+"rdt:elapsedTime" : "0.242000000000019",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "18"
+"rdt:scriptLine" : "39"
 }
 },
 
 "wasInformedBy" : {
-"e40" : {
-"prov:informant" : "p20",
-"prov:informed" : "p21"
+"e28" : {
+"prov:informant" : "p13",
+"prov:informed" : "p14"
 }
 },
 
 "used" : {
-"e41" : {
-"prov:activity" : "d11",
-"prov:entity" : "p21"
-}
-},
-
-"entity" : {
-"d12" : {
-"rdt:name" : "Conductance",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/12-Conductance.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e42" : {
-"prov:entity" : "p21",
-"prov:activity" : "d12"
-}
-},
-
-"activity" : {
-"p22" : {
-"rdt:name" : "image(Conductance[1:3, 1:3])",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.62399999999991",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "23"
-}
-},
-
-"wasInformedBy" : {
-"e43" : {
-"prov:informant" : "p21",
-"prov:informed" : "p22"
-}
-},
-
-"used" : {
-"e44" : {
-"prov:activity" : "d12",
-"prov:entity" : "p22"
-}
-},
-
-"activity" : {
-"p23" : {
-"rdt:name" : "A <- c(672800, 4102000)",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.640999999999963",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "28"
-}
-},
-
-"wasInformedBy" : {
-"e45" : {
-"prov:informant" : "p22",
-"prov:informed" : "p23"
-}
-},
-
-"entity" : {
-"d13" : {
-"rdt:name" : "A",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/13-A.csv",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e46" : {
-"prov:entity" : "p23",
-"prov:activity" : "d13"
-}
-},
-
-"activity" : {
-"p24" : {
-"rdt:name" : "B <- c(740000, 4170000)",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.65199999999993",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "29"
-}
-},
-
-"wasInformedBy" : {
-"e47" : {
-"prov:informant" : "p23",
-"prov:informed" : "p24"
-}
-},
-
-"entity" : {
-"d14" : {
-"rdt:name" : "B",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/14-B.csv",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e48" : {
-"prov:entity" : "p24",
-"prov:activity" : "d14"
-}
-},
-
-"activity" : {
-"p25" : {
-"rdt:name" : "tryCatch",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.670999999999935",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "30"
-}
-},
-
-"wasInformedBy" : {
-"e49" : {
-"prov:informant" : "p24",
-"prov:informed" : "p25"
-}
-},
-
-"entity" : {
-"d15" : {
-"rdt:name" : "error.msg",
-"rdt:value" : "\"Error in if (is.numeric(v) && any(v < 0)) {: missing value where TRUE/FALSE needed \"",
-"rdt:type" : "Exception",
-"rdt:scope" : "ddg.library",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e50" : {
-"prov:entity" : "p25",
-"prov:activity" : "d15"
-}
-},
-
-"entity" : {
-"d16" : {
-"rdt:name" : "dev.off.16.pdf",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/16-dev.off.16.pdf",
-"rdt:type" : "File",
-"rdt:scope" : "undefined",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e51" : {
-"prov:entity" : "p1",
-"prov:activity" : "d16"
-}
-},
-
-}
-{
-
-"prefix" : {
-"prov" : "http://www.w3.org/ns/prov#",
-"rdt" : "http://rdatatracker.org/"
-},
-
-"entity" : {
-"rdt:environment" : {
-"rdt:architecture" : "x86_64",
-"rdt:operatingSystem" : "unix",
-"rdt:language" : "R",
-"rdt:rVersion" : "R version 3.2.3 (2015-12-10)",
-"rdt:script" : "/Users/annacalderon/Desktop/gENM/src/gdistance_template.R",
-"rdt:scriptTimeStamp" : "2016-06-24T15.28.51EDT",
-"rdt:workingDirectory" : "/Users/annacalderon/Desktop/gENM/src",
-"rdt:ddgDirectory" : "/Users/annacalderon/Desktop/gENM/src/ddg",
-"rdt:ddgTimeStamp" : "2016-06-24T16.09.56EDT",
-"rdt:rdatatrackerVersion" : "2.21",
-}
-},
-
-"activity" : {
-"p1" : {
-"rdt:name" : "gdistance_template.R",
-"rdt:type" : "Start",
-"rdt:elapsedTime" : "0.0359999999999445",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "NA"
-}
-},
-
-"activity" : {
-"p2" : {
-"rdt:name" : "library(FedData)",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0380000000000109",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "4"
-}
-},
-
-"wasInformedBy" : {
-"e1" : {
-"prov:informant" : "p1",
-"prov:informed" : "p2"
-}
-},
-
-"activity" : {
-"p3" : {
-"rdt:name" : "vepPolygon <- polygon_from_extent(raster::extent(672800, 672",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0509999999999309",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "6"
-}
-},
-
-"wasInformedBy" : {
-"e2" : {
-"prov:informant" : "p2",
-"prov:informed" : "p3"
-}
-},
-
-"entity" : {
-"d1" : {
-"rdt:name" : "vepPolygon",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/1-vepPolygon.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e3" : {
-"prov:entity" : "p3",
-"prov:activity" : "d1"
-}
-},
-
-"activity" : {
-"p4" : {
-"rdt:name" : "NED <- get_ned(template = vepPolygon, label = \"VEPIIN\")",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.0849999999999227",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "7"
-}
-},
-
-"wasInformedBy" : {
-"e4" : {
-"prov:informant" : "p3",
-"prov:informed" : "p4"
-}
-},
-
-"used" : {
-"e5" : {
+"e29" : {
 "prov:activity" : "d1",
-"prov:entity" : "p4"
-}
-},
-
-"entity" : {
-"d2" : {
-"rdt:name" : "NED",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/2-NED.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e6" : {
-"prov:entity" : "p4",
-"prov:activity" : "d2"
-}
-},
-
-"activity" : {
-"p5" : {
-"rdt:name" : "set.seed(123)",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.350999999999999",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "10"
-}
-},
-
-"wasInformedBy" : {
-"e7" : {
-"prov:informant" : "p4",
-"prov:informed" : "p5"
-}
-},
-
-"activity" : {
-"p6" : {
-"rdt:name" : "r <- raster(NED)",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.358999999999924",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "11"
-}
-},
-
-"wasInformedBy" : {
-"e8" : {
-"prov:informant" : "p5",
-"prov:informed" : "p6"
-}
-},
-
-"used" : {
-"e9" : {
-"prov:activity" : "d2",
-"prov:entity" : "p6"
-}
-},
-
-"entity" : {
-"d3" : {
-"rdt:name" : "r",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/3-r.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e10" : {
-"prov:entity" : "p6",
-"prov:activity" : "d3"
-}
-},
-
-"activity" : {
-"p7" : {
-"rdt:name" : "altDiff <- function(x) {    x[2] - x[1]}",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.385999999999967",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "12"
-}
-},
-
-"wasInformedBy" : {
-"e11" : {
-"prov:informant" : "p6",
-"prov:informed" : "p7"
-}
-},
-
-"entity" : {
-"d4" : {
-"rdt:name" : "altDiff",
-"rdt:value" : "#ddg.function",
-"rdt:type" : "Data",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e12" : {
-"prov:entity" : "p7",
-"prov:activity" : "d4"
-}
-},
-
-"activity" : {
-"p8" : {
-"rdt:name" : "hd <- transition(r, altDiff, 8, symm = FALSE)",
-"rdt:type" : "Start",
-"rdt:elapsedTime" : "0.40300000000002",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e13" : {
-"prov:informant" : "p7",
-"prov:informed" : "p8"
-}
-},
-
-"used" : {
-"e14" : {
-"prov:activity" : "d3",
-"prov:entity" : "p8"
-}
-},
-
-"used" : {
-"e15" : {
-"prov:activity" : "d4",
-"prov:entity" : "p8"
-}
-},
-
-"activity" : {
-"p9" : {
-"rdt:name" : "FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]",
-"rdt:type" : "Start",
-"rdt:elapsedTime" : "0.420999999999935",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e16" : {
-"prov:informant" : "p8",
-"prov:informed" : "p9"
-}
-},
-
-"activity" : {
-"p10" : {
-"rdt:name" : "...  <-      dn.call)",
-"rdt:type" : "Binding",
-"rdt:elapsedTime" : "0.422000000000025",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e17" : {
-"prov:informant" : "p9",
-"prov:informed" : "p10"
-}
-},
-
-"activity" : {
-"p11" : {
-"rdt:name" : "...  <-  ...",
-"rdt:type" : "Binding",
-"rdt:elapsedTime" : "0.434999999999945",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e18" : {
-"prov:informant" : "p10",
-"prov:informed" : "p11"
-}
-},
-
-"activity" : {
-"p12" : {
-"rdt:name" : "FUN",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.437999999999988",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e19" : {
-"prov:informant" : "p11",
-"prov:informed" : "p12"
-}
-},
-
-"activity" : {
-"p13" : {
-"rdt:name" : "x[2] - x[1]",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.441000000000031",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e20" : {
-"prov:informant" : "p12",
-"prov:informed" : "p13"
-}
-},
-
-"entity" : {
-"d5" : {
-"rdt:name" : "FUN(if(length(d.call)<2L)newX[,1]elsearray(newX[,1L], return",
-"rdt:value" : "0",
-"rdt:type" : "Data",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"activity" : {
-"p14" : {
-"rdt:name" : "return (x[2] - x[1])",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.451000000000022",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e21" : {
-"prov:informant" : "p13",
-"prov:informed" : "p14"
-}
-},
-
-"wasGeneratedBy" : {
-"e22" : {
-"prov:entity" : "p14",
-"prov:activity" : "d5"
+"prov:entity" : "p14"
 }
 },
 
 "activity" : {
 "p15" : {
-"rdt:name" : "FUN(if (length(d.call) < 2L) newX[, 1] else array(newX[, 1L]",
-"rdt:type" : "Finish",
-"rdt:elapsedTime" : "0.458999999999946",
+"rdt:name" : "packs <- c(\"rgbif\", \"mapproj\", \"mapdata\", \"sp\", \"maptools\", ",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.264999999999986",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
+"rdt:scriptLine" : "41"
 }
 },
 
 "wasInformedBy" : {
-"e23" : {
+"e30" : {
 "prov:informant" : "p14",
 "prov:informed" : "p15"
 }
 },
 
-"activity" : {
-"p16" : {
-"rdt:name" : "hd <- transition(r, altDiff, 8, symm = FALSE)",
-"rdt:type" : "Finish",
-"rdt:elapsedTime" : "0.461000000000013",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "13"
-}
-},
-
-"wasInformedBy" : {
-"e24" : {
-"prov:informant" : "p15",
-"prov:informed" : "p16"
-}
-},
-
 "entity" : {
-"d6" : {
-"rdt:name" : "hd",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/6-hd.txt",
+"d12" : {
+"rdt:name" : "packs",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/12-packs.csv",
 "rdt:type" : "Snapshot",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
@@ -1243,33 +525,67 @@
 },
 
 "wasGeneratedBy" : {
-"e25" : {
-"prov:entity" : "p16",
-"prov:activity" : "d6"
+"e31" : {
+"prov:entity" : "p15",
+"prov:activity" : "d12"
+}
+},
+
+"activity" : {
+"p16" : {
+"rdt:name" : "if (!require(\"pacman\")) {    install.packages(\"pacman\")}",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "0.281000000000006",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "43"
+}
+},
+
+"wasInformedBy" : {
+"e32" : {
+"prov:informant" : "p15",
+"prov:informed" : "p16"
 }
 },
 
 "activity" : {
 "p17" : {
-"rdt:name" : "slope <- geoCorrection(hd)",
+"rdt:name" : "library(pacman)",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.476999999999975",
+"rdt:elapsedTime" : "0.291999999999973",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "14"
+"rdt:scriptLine" : "44"
 }
 },
 
 "wasInformedBy" : {
-"e26" : {
+"e33" : {
 "prov:informant" : "p16",
 "prov:informed" : "p17"
 }
 },
 
+"activity" : {
+"p18" : {
+"rdt:name" : "pacman::p_load(packs)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.31999999999999",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "45"
+}
+},
+
+"wasInformedBy" : {
+"e34" : {
+"prov:informant" : "p17",
+"prov:informed" : "p18"
+}
+},
+
 "entity" : {
-"d7" : {
+"d13" : {
 "rdt:name" : "warning.msg",
-"rdt:value" : "\"In  ddg.proc.nodes$ddg.name[ddg.pnum] <- pname :  number of items to replace is not a multiple of replacement length\"",
+"rdt:value" : "\"In  pacman::p_load(packs) :  Failed to install/load: packs\"",
 "rdt:type" : "Exception",
 "rdt:scope" : "ddg.library",
 "rdt:fromEnv" : "FALSE",
@@ -1279,160 +595,65 @@
 },
 
 "wasGeneratedBy" : {
-"e27" : {
-"prov:entity" : "p17",
-"prov:activity" : "d7"
-}
-},
-
-"used" : {
-"e28" : {
-"prov:activity" : "d6",
-"prov:entity" : "p17"
-}
-},
-
-"entity" : {
-"d8" : {
-"rdt:name" : "slope",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/8-slope.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e29" : {
-"prov:entity" : "p17",
-"prov:activity" : "d8"
-}
-},
-
-"activity" : {
-"p18" : {
-"rdt:name" : "adj <- adjacent(r, cells = 1:ncell(r), pairs = TRUE, directi",
-"rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.504999999999995",
-"rdt:scriptNum" : "0",
-"rdt:scriptLine" : "15"
-}
-},
-
-"wasInformedBy" : {
-"e30" : {
-"prov:informant" : "p17",
-"prov:informed" : "p18"
-}
-},
-
-"used" : {
-"e31" : {
-"prov:activity" : "d3",
-"prov:entity" : "p18"
-}
-},
-
-"entity" : {
-"d9" : {
-"rdt:name" : "adj",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/9-adj.csv",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e32" : {
+"e35" : {
 "prov:entity" : "p18",
-"prov:activity" : "d9"
+"prov:activity" : "d13"
+}
+},
+
+"used" : {
+"e36" : {
+"prov:activity" : "d12",
+"prov:entity" : "p18"
 }
 },
 
 "activity" : {
 "p19" : {
-"rdt:name" : "speed <- slope",
+"rdt:name" : "lapply(packs, require, character.only = TRUE)",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.532999999999902",
+"rdt:elapsedTime" : "4.34000000000003",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "16"
+"rdt:scriptLine" : "46"
 }
 },
 
 "wasInformedBy" : {
-"e33" : {
+"e37" : {
 "prov:informant" : "p18",
 "prov:informed" : "p19"
 }
 },
 
 "used" : {
-"e34" : {
-"prov:activity" : "d8",
+"e38" : {
+"prov:activity" : "d12",
 "prov:entity" : "p19"
-}
-},
-
-"entity" : {
-"d10" : {
-"rdt:name" : "speed",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/10-speed.txt",
-"rdt:type" : "Snapshot",
-"rdt:scope" : "R_GlobalEnv",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e35" : {
-"prov:entity" : "p19",
-"prov:activity" : "d10"
 }
 },
 
 "activity" : {
 "p20" : {
-"rdt:name" : "speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))",
+"rdt:name" : "if (leftlon == \"\") {    leftlon <- -99.2}",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.558999999999969",
+"rdt:elapsedTime" : "4.35300000000001",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "17"
+"rdt:scriptLine" : "51"
 }
 },
 
 "wasInformedBy" : {
-"e36" : {
+"e39" : {
 "prov:informant" : "p19",
 "prov:informed" : "p20"
 }
 },
 
-"used" : {
-"e37" : {
-"prov:activity" : "d8",
-"prov:entity" : "p20"
-}
-},
-
-"used" : {
-"e38" : {
-"prov:activity" : "d9",
-"prov:entity" : "p20"
-}
-},
-
 "entity" : {
-"d11" : {
-"rdt:name" : "speed",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/11-speed.txt",
-"rdt:type" : "Snapshot",
+"d14" : {
+"rdt:name" : "leftlon",
+"rdt:value" : "-99.2",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -1441,41 +662,34 @@
 },
 
 "wasGeneratedBy" : {
-"e39" : {
+"e40" : {
 "prov:entity" : "p20",
-"prov:activity" : "d11"
+"prov:activity" : "d14"
 }
 },
 
 "activity" : {
 "p21" : {
-"rdt:name" : "Conductance <- geoCorrection(speed)",
+"rdt:name" : "if (rightlon == \"\") {    rightlon <- -63}",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.601999999999975",
+"rdt:elapsedTime" : "4.37100000000004",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "18"
+"rdt:scriptLine" : "52"
 }
 },
 
 "wasInformedBy" : {
-"e40" : {
+"e41" : {
 "prov:informant" : "p20",
 "prov:informed" : "p21"
 }
 },
 
-"used" : {
-"e41" : {
-"prov:activity" : "d11",
-"prov:entity" : "p21"
-}
-},
-
 "entity" : {
-"d12" : {
-"rdt:name" : "Conductance",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/12-Conductance.txt",
-"rdt:type" : "Snapshot",
+"d15" : {
+"rdt:name" : "rightlon",
+"rdt:value" : "-63",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -1486,17 +700,17 @@
 "wasGeneratedBy" : {
 "e42" : {
 "prov:entity" : "p21",
-"prov:activity" : "d12"
+"prov:activity" : "d15"
 }
 },
 
 "activity" : {
 "p22" : {
-"rdt:name" : "image(Conductance[1:3, 1:3])",
+"rdt:name" : "if (lowerlat == \"\") {    lowerlat <- 23.6}",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.62399999999991",
+"rdt:elapsedTime" : "4.387",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "23"
+"rdt:scriptLine" : "53"
 }
 },
 
@@ -1507,20 +721,32 @@
 }
 },
 
-"used" : {
+"entity" : {
+"d16" : {
+"rdt:name" : "lowerlat",
+"rdt:value" : "23.6",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
 "e44" : {
-"prov:activity" : "d12",
-"prov:entity" : "p22"
+"prov:entity" : "p22",
+"prov:activity" : "d16"
 }
 },
 
 "activity" : {
 "p23" : {
-"rdt:name" : "A <- c(672800, 4102000)",
+"rdt:name" : "if (upperlat == \"\") {    upperlat <- 45.5}",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.640999999999963",
+"rdt:elapsedTime" : "4.40600000000001",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "28"
+"rdt:scriptLine" : "54"
 }
 },
 
@@ -1532,10 +758,10 @@
 },
 
 "entity" : {
-"d13" : {
-"rdt:name" : "A",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/13-A.csv",
-"rdt:type" : "Snapshot",
+"d17" : {
+"rdt:name" : "upperlat",
+"rdt:value" : "45.5",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -1546,17 +772,17 @@
 "wasGeneratedBy" : {
 "e46" : {
 "prov:entity" : "p23",
-"prov:activity" : "d13"
+"prov:activity" : "d17"
 }
 },
 
 "activity" : {
 "p24" : {
-"rdt:name" : "B <- c(740000, 4170000)",
+"rdt:name" : "if (genus == \"\") {    genus <- \"Aphaenogaster\"    species <-",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.65199999999993",
+"rdt:elapsedTime" : "4.42199999999997",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "29"
+"rdt:scriptLine" : "56"
 }
 },
 
@@ -1568,10 +794,10 @@
 },
 
 "entity" : {
-"d14" : {
-"rdt:name" : "B",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/14-B.csv",
-"rdt:type" : "Snapshot",
+"d18" : {
+"rdt:name" : "genus",
+"rdt:value" : "\"Aphaenogaster\"",
+"rdt:type" : "Data",
 "rdt:scope" : "R_GlobalEnv",
 "rdt:fromEnv" : "FALSE",
 "rdt:timestamp" : "",
@@ -1582,31 +808,793 @@
 "wasGeneratedBy" : {
 "e48" : {
 "prov:entity" : "p24",
-"prov:activity" : "d14"
+"prov:activity" : "d18"
+}
+},
+
+"entity" : {
+"d19" : {
+"rdt:name" : "species",
+"rdt:value" : "\"picea\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e49" : {
+"prov:entity" : "p24",
+"prov:activity" : "d19"
 }
 },
 
 "activity" : {
 "p25" : {
-"rdt:name" : "tryCatch",
+"rdt:name" : "rawdata <- gbif(genus = genus, species = species)",
 "rdt:type" : "Operation",
-"rdt:elapsedTime" : "0.670999999999935",
+"rdt:elapsedTime" : "4.69800000000004",
 "rdt:scriptNum" : "0",
-"rdt:scriptLine" : "30"
+"rdt:scriptLine" : "57"
 }
 },
 
 "wasInformedBy" : {
-"e49" : {
+"e50" : {
 "prov:informant" : "p24",
 "prov:informed" : "p25"
 }
 },
 
+"used" : {
+"e51" : {
+"prov:activity" : "d18",
+"prov:entity" : "p25"
+}
+},
+
+"used" : {
+"e52" : {
+"prov:activity" : "d19",
+"prov:entity" : "p25"
+}
+},
+
 "entity" : {
-"d15" : {
+"d20" : {
+"rdt:name" : "rawdata",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/20-rawdata-PARTIAL.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e53" : {
+"prov:entity" : "p25",
+"prov:activity" : "d20"
+}
+},
+
+"activity" : {
+"p26" : {
+"rdt:name" : "na.omit(rawdata[, c(\"lat\", \"lon\")])",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.74700000000001",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "58"
+}
+},
+
+"wasInformedBy" : {
+"e54" : {
+"prov:informant" : "p25",
+"prov:informed" : "p26"
+}
+},
+
+"used" : {
+"e55" : {
+"prov:activity" : "d20",
+"prov:entity" : "p26"
+}
+},
+
+"activity" : {
+"p27" : {
+"rdt:name" : "Gspecies <- na.omit(rawdata[, c(\"lat\", \"lon\")])",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.76299999999998",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "59"
+}
+},
+
+"wasInformedBy" : {
+"e56" : {
+"prov:informant" : "p26",
+"prov:informed" : "p27"
+}
+},
+
+"used" : {
+"e57" : {
+"prov:activity" : "d20",
+"prov:entity" : "p27"
+}
+},
+
+"entity" : {
+"d21" : {
+"rdt:name" : "Gspecies",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/21-Gspecies.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e58" : {
+"prov:entity" : "p27",
+"prov:activity" : "d21"
+}
+},
+
+"activity" : {
+"p28" : {
+"rdt:name" : "data(stateMapEnv)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.79199999999997",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "61"
+}
+},
+
+"wasInformedBy" : {
+"e59" : {
+"prov:informant" : "p27",
+"prov:informed" : "p28"
+}
+},
+
+"entity" : {
+"d22" : {
+"rdt:name" : "stateMapEnv [ENV]",
+"rdt:value" : "\"R_MAP_DATA_DIR\"",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"used" : {
+"e60" : {
+"prov:activity" : "d22",
+"prov:entity" : "p28"
+}
+},
+
+"activity" : {
+"p29" : {
+"rdt:name" : "plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar = par(",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.81700000000001",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "65"
+}
+},
+
+"wasInformedBy" : {
+"e61" : {
+"prov:informant" : "p28",
+"prov:informed" : "p29"
+}
+},
+
+"used" : {
+"e62" : {
+"prov:activity" : "d14",
+"prov:entity" : "p29"
+}
+},
+
+"used" : {
+"e63" : {
+"prov:activity" : "d15",
+"prov:entity" : "p29"
+}
+},
+
+"used" : {
+"e64" : {
+"prov:activity" : "d16",
+"prov:entity" : "p29"
+}
+},
+
+"used" : {
+"e65" : {
+"prov:activity" : "d17",
+"prov:entity" : "p29"
+}
+},
+
+"activity" : {
+"p30" : {
+"rdt:name" : "rect(par(\"usr\")[1], par(\"usr\")[3], par(\"usr\")[2], par(\"usr\")",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.85500000000002",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "67"
+}
+},
+
+"wasInformedBy" : {
+"e66" : {
+"prov:informant" : "p29",
+"prov:informed" : "p30"
+}
+},
+
+"activity" : {
+"p31" : {
+"rdt:name" : "map(\"state\", xlim = c(leftlon, rightlon), ylim = c(lowerlat,",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.87899999999996",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "68"
+}
+},
+
+"wasInformedBy" : {
+"e67" : {
+"prov:informant" : "p30",
+"prov:informed" : "p31"
+}
+},
+
+"used" : {
+"e68" : {
+"prov:activity" : "d14",
+"prov:entity" : "p31"
+}
+},
+
+"used" : {
+"e69" : {
+"prov:activity" : "d15",
+"prov:entity" : "p31"
+}
+},
+
+"used" : {
+"e70" : {
+"prov:activity" : "d16",
+"prov:entity" : "p31"
+}
+},
+
+"used" : {
+"e71" : {
+"prov:activity" : "d17",
+"prov:entity" : "p31"
+}
+},
+
+"activity" : {
+"p32" : {
+"rdt:name" : "points(Gspecies$lon, Gspecies$lat, col = \"darkolivegreen4\", ",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.92200000000003",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "72"
+}
+},
+
+"wasInformedBy" : {
+"e72" : {
+"prov:informant" : "p31",
+"prov:informed" : "p32"
+}
+},
+
+"used" : {
+"e73" : {
+"prov:activity" : "d21",
+"prov:entity" : "p32"
+}
+},
+
+"activity" : {
+"p33" : {
+"rdt:name" : "axis(1, las = 1)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.94200000000001",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "73"
+}
+},
+
+"wasInformedBy" : {
+"e74" : {
+"prov:informant" : "p32",
+"prov:informed" : "p33"
+}
+},
+
+"activity" : {
+"p34" : {
+"rdt:name" : "axis(2, las = 1)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.952",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "74"
+}
+},
+
+"wasInformedBy" : {
+"e75" : {
+"prov:informant" : "p33",
+"prov:informed" : "p34"
+}
+},
+
+"activity" : {
+"p35" : {
+"rdt:name" : "box()",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.95699999999999",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "75"
+}
+},
+
+"wasInformedBy" : {
+"e76" : {
+"prov:informant" : "p34",
+"prov:informed" : "p35"
+}
+},
+
+"activity" : {
+"p36" : {
+"rdt:name" : "longrid = seq(leftlon, rightlon, 0.05)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.96299999999997",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "78"
+}
+},
+
+"wasInformedBy" : {
+"e77" : {
+"prov:informant" : "p35",
+"prov:informed" : "p36"
+}
+},
+
+"used" : {
+"e78" : {
+"prov:activity" : "d14",
+"prov:entity" : "p36"
+}
+},
+
+"used" : {
+"e79" : {
+"prov:activity" : "d15",
+"prov:entity" : "p36"
+}
+},
+
+"entity" : {
+"d23" : {
+"rdt:name" : "longrid",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/23-longrid.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e80" : {
+"prov:entity" : "p36",
+"prov:activity" : "d23"
+}
+},
+
+"activity" : {
+"p37" : {
+"rdt:name" : "latgrid = seq(lowerlat, upperlat, 0.05)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "4.99099999999999",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "79"
+}
+},
+
+"wasInformedBy" : {
+"e81" : {
+"prov:informant" : "p36",
+"prov:informed" : "p37"
+}
+},
+
+"used" : {
+"e82" : {
+"prov:activity" : "d16",
+"prov:entity" : "p37"
+}
+},
+
+"used" : {
+"e83" : {
+"prov:activity" : "d17",
+"prov:entity" : "p37"
+}
+},
+
+"entity" : {
+"d24" : {
+"rdt:name" : "latgrid",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/24-latgrid.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e84" : {
+"prov:entity" : "p37",
+"prov:activity" : "d24"
+}
+},
+
+"activity" : {
+"p38" : {
+"rdt:name" : "subs = c()",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "5.02199999999999",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "82"
+}
+},
+
+"wasInformedBy" : {
+"e85" : {
+"prov:informant" : "p37",
+"prov:informed" : "p38"
+}
+},
+
+"entity" : {
+"d25" : {
+"rdt:name" : "subs",
+"rdt:value" : "NULL",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e86" : {
+"prov:entity" : "p38",
+"prov:activity" : "d25"
+}
+},
+
+"activity" : {
+"p39" : {
+"rdt:name" : "for (i in 1:(length(longrid) - 1)) {    for (j in 1:(length(",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "59.897",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "83"
+}
+},
+
+"wasInformedBy" : {
+"e87" : {
+"prov:informant" : "p38",
+"prov:informed" : "p39"
+}
+},
+
+"entity" : {
+"d26" : {
+"rdt:name" : "i [ENV]",
+"rdt:value" : "724",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"used" : {
+"e88" : {
+"prov:activity" : "d26",
+"prov:entity" : "p39"
+}
+},
+
+"used" : {
+"e89" : {
+"prov:activity" : "d23",
+"prov:entity" : "p39"
+}
+},
+
+"entity" : {
+"d27" : {
+"rdt:name" : "j [ENV]",
+"rdt:value" : "438",
+"rdt:type" : "Data",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"used" : {
+"e90" : {
+"prov:activity" : "d27",
+"prov:entity" : "p39"
+}
+},
+
+"used" : {
+"e91" : {
+"prov:activity" : "d24",
+"prov:entity" : "p39"
+}
+},
+
+"used" : {
+"e92" : {
+"prov:activity" : "d21",
+"prov:entity" : "p39"
+}
+},
+
+"entity" : {
+"d28" : {
+"rdt:name" : "gridsq [ENV]",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/28-gridsq.csv",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "TRUE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"entity" : {
+"d29" : {
+"rdt:name" : "subs",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/29-subs.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e93" : {
+"prov:entity" : "p39",
+"prov:activity" : "d29"
+}
+},
+
+"entity" : {
+"d30" : {
+"rdt:name" : "gridsq",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/30-gridsq.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e94" : {
+"prov:entity" : "p39",
+"prov:activity" : "d30"
+}
+},
+
+"activity" : {
+"p40" : {
+"rdt:name" : "dim(subs)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "59.991",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "93"
+}
+},
+
+"wasInformedBy" : {
+"e95" : {
+"prov:informant" : "p39",
+"prov:informed" : "p40"
+}
+},
+
+"used" : {
+"e96" : {
+"prov:activity" : "d29",
+"prov:entity" : "p40"
+}
+},
+
+"activity" : {
+"p41" : {
+"rdt:name" : "x = circles(subs[, c(\"lon\", \"lat\")], d = 50000, lonlat = T)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "60.078",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "96"
+}
+},
+
+"wasInformedBy" : {
+"e97" : {
+"prov:informant" : "p40",
+"prov:informed" : "p41"
+}
+},
+
+"used" : {
+"e98" : {
+"prov:activity" : "d29",
+"prov:entity" : "p41"
+}
+},
+
+"entity" : {
+"d31" : {
+"rdt:name" : "x",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/31-x.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e99" : {
+"prov:entity" : "p41",
+"prov:activity" : "d31"
+}
+},
+
+"activity" : {
+"p42" : {
+"rdt:name" : "bg = spsample(x@polygons, 1000, type = \"random\", iter = 1000",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "62.367",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "97"
+}
+},
+
+"wasInformedBy" : {
+"e100" : {
+"prov:informant" : "p41",
+"prov:informed" : "p42"
+}
+},
+
+"used" : {
+"e101" : {
+"prov:activity" : "d31",
+"prov:entity" : "p42"
+}
+},
+
+"entity" : {
+"d32" : {
+"rdt:name" : "bg",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/32-bg.txt",
+"rdt:type" : "Snapshot",
+"rdt:scope" : "R_GlobalEnv",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"wasGeneratedBy" : {
+"e102" : {
+"prov:entity" : "p42",
+"prov:activity" : "d32"
+}
+},
+
+"activity" : {
+"p43" : {
+"rdt:name" : "points(bg, col = \"khaki4\", pch = 1, cex = 0.3)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "62.441",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "98"
+}
+},
+
+"wasInformedBy" : {
+"e103" : {
+"prov:informant" : "p42",
+"prov:informed" : "p43"
+}
+},
+
+"used" : {
+"e104" : {
+"prov:activity" : "d32",
+"prov:entity" : "p43"
+}
+},
+
+"activity" : {
+"p44" : {
+"rdt:name" : "require(raster)",
+"rdt:type" : "Operation",
+"rdt:elapsedTime" : "62.452",
+"rdt:scriptNum" : "0",
+"rdt:scriptLine" : "105"
+}
+},
+
+"wasInformedBy" : {
+"e105" : {
+"prov:informant" : "p43",
+"prov:informed" : "p44"
+}
+},
+
+"entity" : {
+"d33" : {
+"rdt:name" : "dev.off.33.pdf",
+"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/33-dev.off.33.pdf",
+"rdt:type" : "File",
+"rdt:scope" : "undefined",
+"rdt:fromEnv" : "FALSE",
+"rdt:timestamp" : "",
+"rdt:location" : ""
+}
+},
+
+"entity" : {
+"d34" : {
 "rdt:name" : "error.msg",
-"rdt:value" : "\"Error in if (is.numeric(v) && any(v < 0)) {: missing value where TRUE/FALSE needed \"",
+"rdt:value" : "\"No procedure node found for SDM_template.R\"",
 "rdt:type" : "Exception",
 "rdt:scope" : "ddg.library",
 "rdt:fromEnv" : "FALSE",
@@ -1616,28 +1604,9 @@
 },
 
 "wasGeneratedBy" : {
-"e50" : {
-"prov:entity" : "p25",
-"prov:activity" : "d15"
-}
-},
-
-"entity" : {
-"d16" : {
-"rdt:name" : "dev.off.16.pdf",
-"rdt:value" : "/Users/annacalderon/Desktop/gENM/src/ddg/16-dev.off.16.pdf",
-"rdt:type" : "File",
-"rdt:scope" : "undefined",
-"rdt:fromEnv" : "FALSE",
-"rdt:timestamp" : "",
-"rdt:location" : ""
-}
-},
-
-"wasGeneratedBy" : {
-"e51" : {
-"prov:entity" : "p1",
-"prov:activity" : "d16"
+"e106" : {
+"prov:entity" : "p44",
+"prov:activity" : "d34"
 }
 },
 

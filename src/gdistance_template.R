@@ -3,13 +3,16 @@ install.packages('FedData')
 library("gdistance")
 library(FedData)
 
-vepPolygon <- polygon_from_extent(raster::extent(672800,740000,4102000,4170000),proj4string="+proj=utm +datum=NAD83 +zone=12")
+setwd("/Users/annacalderon/Desktop/gENM/data/")
+vepPolygon <- polygon_from_extent(raster::extent(-73.6,-66.4,41.16,47.58),proj4string="+proj=longlat +datum=WGS84 +ellps=WGS84")
 NED <- get_ned(template=vepPolygon,label="VEPIIN")
-NED <- projectRaster(NED,crs="+proj=utm +datum=NAD83 +zone=12")
+NED <- projectRaster(NED,crs="+proj=longlat +datum=WGS84 +ellps=WGS84")
 
+image(NED)
 
 set.seed(123)
 r <- NED
+
 
 altDiff <- function(x){x[2] - x[1]}
 
