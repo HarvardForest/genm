@@ -1,6 +1,4 @@
 
-setwd("/Users/annacalderon/Desktop/gENM/src")
-
 #install.packages("rgbif")
 #If you don't already have these packages, install them (from CRAN)
 #install.packages("mapproj")
