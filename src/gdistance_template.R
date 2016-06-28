@@ -42,6 +42,6 @@ text(B[1] + 10, B[2] + 10, "B")
 
 #Calculating Distances
 
-sP <- cbind(c(,), c(,))
-costDistance(Conductance, sP)
-rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+#sP <- cbind(c(,), c(,))
+#costDistance(Conductance, sP)
+#rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
