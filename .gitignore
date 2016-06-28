@@ -1,3 +1,4 @@
+*.DS_store
 bin/*
 docs/gENM_outline
 data/*
