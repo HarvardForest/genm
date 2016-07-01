@@ -6,7 +6,7 @@
 ### Inputs
 
 ## 1. working directory                                        
-wd <- '.' # default is the current working directory
+wd <- '/Users/annacalderon/Desktop/gENM/data' # default is the current working directory
 
 ## 2. choose the species
 genus <- ''

@@ -1,43 +1,57 @@
-install.packages("gdistance")
-install.packages('FedData')
+# install.packages("gdistance")
+# install.packages('FedData')
 library("gdistance")
 library(FedData)
 
-<<<<<<< HEAD
-setwd("/Users/annacalderon/Desktop/gENM/data/")
-vepPolygon <- polygon_from_extent(raster::extent(-73.6,-66.4,41.16,47.58),proj4string="+proj=longlat +datum=WGS84 +ellps=WGS84")
-NED <- get_ned(template=vepPolygon,label="VEPIIN")
-NED <- projectRaster(NED,crs="+proj=longlat +datum=WGS84 +ellps=WGS84")
 
-=======
 
-vepPolygon <- polygon_from_extent(raster::extent(-72.237179, -72.132233, 42.499695, 42.536449),
-                proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
+## 1. working directory                                        
+wd <- '/Users/annacalderon/Desktop/gENM/data' # default is the current working directory
+setwd(wd)
 
-NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir='../data/NED/EXTRACTIONS',label="HF",res='1',force.redo=TRUE)
+## 2. Limiting Extent
+#must replace '' with a numeric value
 
->>>>>>> mkl
-image(NED)
+xminimum <- ''
+xmaximum <- ''
+yminimum <- ''
+ymaximum <- ''
 
-set.seed(123)
+## 3. Set Seed
+
+seed <- ''
+
+## 4. Importing Presence Data
+
+genus <- ''
+species <- ''
+
+#######################################################################################
+if (xminimum == ''){xminimum <- -72.237179 }
+if (xmaximum == ''){xmaximum <- -72.132233}
+if (yminimum == ''){yminimum <- 42.499695}
+if (ymaximum == ''){ ymaximum <- 42.536449}
+
+vepPolygon <- polygon_from_extent(raster::extent(xminimum, xmaximum, yminimum, ymaximum),
+                                  proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
+
+NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
+                 '../data/NED/EXTRACTIONS',label="HF",res='1',force.redo=TRUE)
+
+image(NED,  xlab="longitude", ylab= "latitude")
 r <- NED
 
+if (seed == ''){seed <- 123} 
+set.seed(seed)
 
 altDiff <- function(x){x[2] - x[1]}
-
 hd <- transition(r, altDiff, 8, symm=FALSE)
-
 slope <- geoCorrection(hd)
 adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
 
-## Retrieve a Conductance matrix:DDDDD
-
-#Conductance[1:3, 1:3]
-image(Conductance[1:500, 1:500]) #I think darker numbers equal highest conductance
-image(Conductance) #I think darker numbers equal highest conductance
 
 #defining two points on the graph
 xlims <- as.vector(r@extent)[1:2]
@@ -54,7 +68,26 @@ text(A[1] - 10, A[2] - 10, "A")
 text(B[1] + 10, B[2] + 10, "B")
 
 #Calculating Distances
+packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
+lapply(packs, require, character.only = TRUE)
 
-#sP <- cbind(c(,), c(,))
-#costDistance(Conductance, sP)
-#rSPDistance(Conductance, sP, sP, theta=1e-12, totalNet = "total")
+if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
+rawdata <- gbif(genus = genus, species = species) 
+na.omit(rawdata[,c('lat','lon')])
+Gspecies <- na.omit(rawdata[,c('lat','lon')])
+
+
+points(Gspecies, col="snow", pch=20, cex=.75)
+costDistance(Conductance, Gspecies)
+cd <- costDistance(Conductance, Gspecies)
+cd/max(cd)
+Bprob <- cd/max(cd) #the probability that an individual will encounter a barrier
+1-Bprob
+m <- 1-Bprob #the probability that individuals will migrate 
+1/(1+4*m)
+Fst <- 1/(1+4*m)
+diag(Fst) <- 0
+
+
+
+
