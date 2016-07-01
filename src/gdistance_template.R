@@ -6,10 +6,10 @@ library(FedData)
 
 
 ## 1. working directory                                        
-wd <- '/Users/annacalderon/Desktop/gENM/data' # default is the current working directory
+wd <- '.' # default is the current working directory
 setwd(wd)
 
-## 2. Limiting Extent
+## 2. Limiting Extent of Elevation Data
 #must replace '' with a numeric value
 
 xminimum <- ''
@@ -21,7 +21,7 @@ ymaximum <- ''
 
 seed <- ''
 
-## 4. Importing Presence Data
+## 4. Importing Species Presence Data
 
 genus <- ''
 species <- ''
