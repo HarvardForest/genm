@@ -135,4 +135,4 @@ climate change.” *Ecosphere* 4 (3): art34.
 doi:[10.1890/ES12-00296.1](http://dx.doi.org/10.1890/ES12-00296.1).
 
 
-[![Stories in Ready](https://badge.waffle.io/HarvardForest/gENM.svg?label=ready&title=Ready)](http://waffle.io/HarvardForest/gENM)
+[![Stories in Ready](https://badge.waffle.io/HarvardForest/gENM.svg?label=1%20R-%20Ready&title=1%20-%20Ready)](http://waffle.io/HarvardForest/gENM)
