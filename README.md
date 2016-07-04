@@ -133,3 +133,6 @@ Record, S., N. D. Charney, R. M. Zakaria, and A. M. Ellison. 2013.
 “Projecting global mangrove species and community distributions under
 climate change.” *Ecosphere* 4 (3): art34.
 doi:[10.1890/ES12-00296.1](http://dx.doi.org/10.1890/ES12-00296.1).
+
+
+[![Stories in Ready](https://badge.waffle.io/HarvardForest/gENM.svg?label=ready&title=Ready)](http://waffle.io/HarvardForest/gENM)
