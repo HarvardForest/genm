@@ -2,7 +2,7 @@
 # install.packages('FedData')
 library(gdistance)
 library(FedData)
-
+source('helpers.R')
 
 
 ## 1. working directory                                        
@@ -94,7 +94,7 @@ lines(p3top2, col="greenyellow", lwd=0.7)
 
 #Calculating Distances
 packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
-lapply(packs, require, character.only = TRUE)
+unlist(lapply(packs, require, character.only = TRUE))
 
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
@@ -118,18 +118,53 @@ text(x= -71.398000,y= 42.41890, "3", col="black", pch=20, cex=.40)
 
 
 cd <- costDistance(Conductance, data)
+cd <- symSum(cd)
 Bprob <- cd/max(cd) #the probability that an individual will encounter a barrier
-m <- 1-Bprob #the probability that individuals will migrate 
+m <- 1 - Bprob #the probability that individuals will migrate 
 if (N == ''){N <- 1}
-Fst <- 1/(1+4*N*m)
+Fst <- 0.2 * (1/(1+4*N*m))
 diag(Fst) <- 0
-
-### How do we make Fst symmetric? Average non-symmetric Fst matrix.
 
 Fst
 
-
 ### Clustering
+
+library(fossil)
+library(igraph)
+
+Fst.mst <- Fst
+Fst.dm <- dino.mst(1-Fst)
+Fst.mst[Fst.dm == 0] <- 0 
+Fst.mstP <- Fst.mst
+Fst.mstP[Fst.mstP != 0] <- (1-Fst.mst[Fst.mst != 0])
+
+Fst.ig <- graph.adjacency(Fst,weighted=TRUE,mode='undirected')
+Fstm.ig <- graph.adjacency(Fst.mst,weighted=TRUE,mode='undirected')
+Fst.igP <- graph.adjacency((1-Fst),weighted=TRUE,mode='undirected')
+Fstm.igP <- graph.adjacency(Fst.mstP,weighted=TRUE,mode='undirected')
+
+par(mfrow=c(2,2))
+plot(Fst.ig)
+plot(Fstm.ig)
+plot(Fst.igP)
+plot(Fstm.igP)
+
+fastgreedy.community(Fst.igP)
+fastgreedy.community(Fstm.ig)
+fg.mP <- fastgreedy.community(Fstm.igP)
+
+set.seed(123)
+spinglass.community(Fst.igP)
+spinglass.community(Fstm.ig)
+sg.mP <- spinglass.community(Fstm.igP)
+
+par(mfrow=c(1,2))
+plot(Fstm.igP,vertex.color=
+         rainbow(max(fg.mP$membership))[fg.mP$membership])
+plot(Fstm.igP,vertex.color=
+         rainbow(max(sg.mP$membership))[sg.mP$membership])
+
+gclust <- fg.mP$membership
 
 ### ENM
 
