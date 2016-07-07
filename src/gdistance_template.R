@@ -30,6 +30,8 @@ N <- '' #number of individuals
 
 ## 5. Cluster
 
+## 6. SDM
+
 #######################################################################################
 if (xminimum == ''){xminimum <- -71.45 }
 if (xmaximum == ''){xmaximum <- -71.322200}
@@ -58,6 +60,11 @@ Conductance <- geoCorrection(speed)
 
 
 #defining  points on the graph
+
+
+####  How would generalize this for N points?
+# n <- 10
+# for (i in 1:n){plot(i)}
 
 p1  <- c(-71.33917, 42.43222)
 p2  <- c(-71.39083, 42.42972)
@@ -91,28 +98,38 @@ lapply(packs, require, character.only = TRUE)
 
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
-Gspecies <- na.omit(rawdata[,c('lat','lon')])
+Gspecies <- na.omit(rawdata[,c('lon','lat')])
+
 
 ylimit <- subset(Gspecies, lat >= 42.2300 & lat <= 42.46)
-ylimit <- subset(Gspecies, lat >= 42.2300 & lat <= 42.46)
 xlimit <- subset(ylimit, lon >= -71.50 & lon <= -71.322200)
-presencedata <- xlimit[!duplicated(xlimit), ]
-coordinates <- cbind(presencedata$lon, presencedata$lat)
-points(coordinates, col="black", pch=20, cex=.30)
+if (identical(colnames(xlimit),c("lat", "lon"))){xlimit <- xlimit[,c('lon','lat')]}
+if (is.matrix(xlimit) == FALSE){data <- data.matrix(xlimit)}
+
+points(xlimit, col="black", pch=20, cex=.30)
 
 text(x= -71.3450, y=42.43222, "1",col="black", pch=20, cex=.40 )
 text(x= -71.39500,y=42.42972, "2", col="black", pch=20, cex=.40)
 text(x= -71.398000,y= 42.41890, "3", col="black", pch=20, cex=.40)
 
 
-costDistance(Conductance, coordinates)
-cd <- costDistance(Conductance, coordinates)
+#### check if xlimit is a matrix -> is.matrix(xlimit)
+#### to check if a matrix is symmetric use: isSymmetric.matrix()
+
+
+cd <- costDistance(Conductance, data)
 Bprob <- cd/max(cd) #the probability that an individual will encounter a barrier
 m <- 1-Bprob #the probability that individuals will migrate 
-if (N == ''){N <- 3}
+if (N == ''){N <- 1}
 Fst <- 1/(1+4*N*m)
 diag(Fst) <- 0
+
+### How do we make Fst symmetric? Average non-symmetric Fst matrix.
+
 Fst
 
 
+### Clustering
+
+### ENM
 
