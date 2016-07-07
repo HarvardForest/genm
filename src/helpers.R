@@ -15,3 +15,6 @@ symSum <- function(x='matrix',zero.diag=TRUE){
 }
 
 ### 
+altDiff <- function(x){x[2] - x[1]}
+
+###
