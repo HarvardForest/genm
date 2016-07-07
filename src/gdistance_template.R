@@ -1,5 +1,6 @@
 # install.packages("gdistance")
 # install.packages('FedData')
+source("helpers.R")
 library(gdistance)
 library(FedData)
 source('helpers.R')
@@ -12,10 +13,10 @@ setwd(wd)
 ## 2. Limiting Extent of Elevation Data
 #must replace '' with a numeric value
 
-xminimum <- ''
-xmaximum <- ''
-yminimum <- ''
-ymaximum <- ''
+leftlon <- -91
+rightlon <- -88
+lowerlat <- 37
+uppperlat <- 40
 
 ## 3. Set Seed
 
@@ -33,12 +34,12 @@ N <- '' #number of individuals
 ## 6. SDM
 
 #######################################################################################
-if (xminimum == ''){xminimum <- -71.45 }
-if (xmaximum == ''){xmaximum <- -71.322200}
-if (yminimum == ''){yminimum <- 42.400}
-if (ymaximum == ''){ ymaximum <- 42.45}
+if (leftlon == ''){leftlon <- -71.45 }
+if (rightlon == ''){rightlon <- -71.322200}
+if (lowerlat == ''){lowerlat <- 42.400}
+if (uppperlat == ''){ uppperlat <- 42.45}
 
-vepPolygon <- polygon_from_extent(raster::extent(xminimum, xmaximum, yminimum, ymaximum),
+vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, uppperlat),
                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
@@ -93,9 +94,6 @@ lines(p3top2, col="greenyellow", lwd=0.7)
 # text(B[1] + 10, B[2] + 10, "B")
 
 #Calculating Distances
-packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
-unlist(lapply(packs, require, character.only = TRUE))
-
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
 Gspecies <- na.omit(rawdata[,c('lon','lat')])
@@ -115,16 +113,12 @@ text(x= -71.398000,y= 42.41890, "3", col="black", pch=20, cex=.40)
 #### check if xlimit is a matrix -> is.matrix(xlimit)
 #### to check if a matrix is symmetric use: isSymmetric.matrix()
 
-
 cd <- costDistance(Conductance, data)
-cd <- symSum(cd)
-Bprob <- cd/max(cd) #the probability that an individual will encounter a barrier
-m <- 1 - Bprob #the probability that individuals will migrate 
+scd <- symSum(cd)
+Bprob <- scd/max(scd) #the probability that an individual will encounter a barrier
+m <- 1-Bprob #the probability that individuals will migrate 
 if (N == ''){N <- 1}
-Fst <- 0.2 * (1/(1+4*N*m))
-diag(Fst) <- 0
-
-Fst
+Fst <- 0.20*(1/(1+4*N*m)) #see Conner & Hartle pg. 84
 
 ### Clustering
 

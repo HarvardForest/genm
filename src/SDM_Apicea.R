@@ -19,6 +19,7 @@ library(maptools)
 library(dismo)
 library(rJava)
 library(rgbif)
+library(rdgal)
 
 ########################################SETTING UP YOUR DATA###################################
 
@@ -131,12 +132,12 @@ points(bg,col="khaki4",pch=1,cex=0.3)
 
 
 require(raster)
-#BClim = getData("worldclim", var="bio", res=2.5, path="/Users/annacalderon/Desktop/gENM/data")
+BClim = getData("worldclim", var="bio", res=2.5, path="/Users/annacalderon/Desktop/gENM/data")
 
 #if the data is unwiedly, crop it. 
 YbrevRange = extent(-99.2,-63,23.6, 45.5) # define the extent
 BClim = crop(BClim, YbrevRange)
-#writeRaster(BClim, filename="/Users/annacalderon/Desktop/gENM/data", overwrite=T)
+writeRaster(BClim, filename="/Users/annacalderon/Desktop/gENM/data", overwrite=T)
 #....aaaaand, reload it from the file that contains the croped BClim data 
 BClim = brick("/Users/annacalderon/Desktop/gENM/data/data.grd")
 
@@ -226,7 +227,7 @@ group_p = kfold(Ybrev_bc, 5) # vector of group assignments splitting the Ybrev_b
 group_a = kfold(bg_bc, 5) # ditto for bg_bc
 
 ####################################  BUILDIG YOUR SDM  ############################################
-test=3
+test=2
 train_p = Ybrev_bc[group_p!=test, c("lon","lat")]
 train_a = bg_bc[group_a!=test, c("lon","lat")]
 test_p = Ybrev_bc[group_p==test, c("lon","lat")]
