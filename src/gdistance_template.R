@@ -100,7 +100,6 @@ if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
 Gspecies <- na.omit(rawdata[,c('lon','lat')])
 
-
 ylimit <- subset(Gspecies, lat >= 42.2300 & lat <= 42.46)
 xlimit <- subset(ylimit, lon >= -71.50 & lon <= -71.322200)
 if (identical(colnames(xlimit),c("lat", "lon"))){xlimit <- xlimit[,c('lon','lat')]}
@@ -132,6 +131,7 @@ Fst
 library(fossil)
 library(igraph)
 
+## returns a minimally connected graph
 Fst.mst <- Fst
 Fst.dm <- dino.mst(1-Fst)
 Fst.mst[Fst.dm == 0] <- 0 
@@ -165,6 +165,11 @@ plot(Fstm.igP,vertex.color=
          rainbow(max(sg.mP$membership))[sg.mP$membership])
 
 gclust <- fg.mP$membership
+names(gclust) <- rownames(Fst.mst)
+
+gclust
 
 ### ENM
+
+gObs <- split(xlimit,gclust)
 
