@@ -1,6 +1,0 @@
-install.packages(zlip)
-library ("curl")
-library ("zlib")
-library ("openssl")
-library ("expat")
-libray ("libiconv")
