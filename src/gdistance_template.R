@@ -13,10 +13,10 @@ setwd(wd)
 ## 2. Limiting Extent of Elevation Data
 #must replace '' with a numeric value
 
-leftlon <- -91
-rightlon <- -88
-lowerlat <- 37
-uppperlat <- 40
+leftlon <- ''
+rightlon <- ''
+lowerlat <- ''
+upperlat <- ''
 
 ## 3. Set Seed
 
@@ -37,9 +37,9 @@ N <- '' #number of individuals
 if (leftlon == ''){leftlon <- -71.45 }
 if (rightlon == ''){rightlon <- -71.322200}
 if (lowerlat == ''){lowerlat <- 42.400}
-if (uppperlat == ''){ uppperlat <- 42.45}
+if (upperlat == ''){ upperlat <- 42.45}
 
-vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, uppperlat),
+vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, upperlat),
                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
