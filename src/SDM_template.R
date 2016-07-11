@@ -6,7 +6,7 @@
 ### Inputs
 
 ## 1. working directory                                        
-wd <- '.' # default is the current working directory
+wd <- '/Users/annacalderon/Desktop/gENM/data' # default is the current working directory
 
 ## 2. choose the species
 genus <- ''
@@ -14,10 +14,10 @@ species <- ''
 
 ## 3. Select a window for the range 
 
-leftlon <- ''
-rightlon <- ''
-lowerlat <- ''
-upperlat <- ''
+leftlon <- -91
+rightlon <- -88
+lowerlat <- 37
+upperlat <- 40
 
 ## 4. Define filename and file paths
 path <- ("") #data folder path
@@ -38,36 +38,34 @@ croppeddata<- paste(path,filename, sep="/")
 
 setwd(wd)
 
-packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal")
+packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
 ## Load package dependencies
-if (!require("pacman")){install.packages("pacman")}
- library(pacman)
- pacman::p_load(packs)
- lapply(packs, require, character.only = TRUE)
+# if (!require("pacman")){install.packages("pacman")}
+#  library(pacman)
+#  pacman::p_load(packs)
+
+unlist(lapply(packs, require, character.only = TRUE))
 
 
 ###################################    SETTING UP YOUR DATA      ##############################
 
-if (leftlon == ''){leftlon <- -99.2}
-if (rightlon == ''){rightlon <- -63}
-if (lowerlat == ''){lowerlat <- 23.6}
-if (upperlat == ''){upperlat <- 45.5}
+ if (leftlon == ''){leftlon <- -99.2}
+ if (rightlon == ''){rightlon <- -63}
+ if (lowerlat == ''){lowerlat <- 23.6}
+ if (upperlat == ''){ upperlat <- 45.5}
 
 if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 rawdata <- gbif(genus = genus, species = species) 
 na.omit(rawdata[,c('lat','lon')])
 Gspecies <- na.omit(rawdata[,c('lat','lon')])
 
-data(stateMapEnv)
-
 ######################    PLOTTING PRESENCE AND ABSENCE POINTS  ############################
 
+data(stateMapEnv)
 plot(c(leftlon, rightlon), c(lowerlat, upperlat), mar=par("mar"), xlab="longitude",
      ylab="latitude", xaxt="n", yaxt="n", type="n", main="Presence and Absence Points")
 rect(par("usr")[1],par("usr")[3],par("usr")[2],par("usr")[4], col="lightcyan")
 map("state", xlim=c(leftlon, rightlon), ylim=c(lowerlat, upperlat), fill=T, col="honeydew", add=T)
-
-
 # plot the points
 points(Gspecies$lon, Gspecies$lat, col="darkolivegreen4", pch=20, cex=0.5)
 axis(1,las=1)
@@ -93,10 +91,11 @@ for(i in 1:(length(longrid)-1)){
 dim(subs) 
 
 
-x=circles(subs[,c("lon","lat")], d=50000, lonlat=T)
-bg = spsample(x@polygons, 1000, type='random', iter=1000)
-points(bg,col="khaki4",pch=1,cex=0.3)
 
+x=circles(subs[,c("lon","lat")], d=50000, lonlat=T)
+plot(x@polygons, axes=T, col=rgb(0,0,0,0.1), border=NA, add=T)
+random <- spsample(x@polygons, 1000, type='random', iter=1000)
+points(random,col="khaki4",pch=1,cex=0.3)
 
 
 ################################    HANDLING CLIMATE DATA     #############################
@@ -115,34 +114,28 @@ BClim = brick(croppeddata)
 #################################PULLING BIOCLIM VALUE######################################
 ##################################????????????????????######################################
 
-
 Gspecies_bc = extract(BClim, subs[,c("lon","lat")]) 
-bg_bc = extract(BClim, bg) 
+random_bc = extract(BClim, random) 
 Gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, Gspecies_bc)
 
-bgpoints = bg@coords
-colnames(bgpoints) = c("lon","lat")
-bg_bc = data.frame(cbind(bgpoints,bg_bc))
-length(which(is.na(bg_bc$bio1))) 
-bg_bc = bg_bc[!is.na(bg_bc$bio1), ] 
-group_p = kfold(Gspecies_bc, 5) 
-group_a = kfold(bg_bc, 5) 
+randompnts = random@coords
+colnames(randompnts) = c("lon","lat")
+random_bc = data.frame(cbind(randompnts,random_bc))
+length(which(is.na(random_bc$bio1))) 
+random_bc = random_bc[!is.na(random_bc$bio1), ] 
+
 
 ####################################  BUILDIG YOUR SDM  ############################################
-test=3
-train_p = Gspecies_bc[group_p!=test, c("lon","lat")]
-train_a = bg_bc[group_a!=test, c("lon","lat")]
-test_p = Gspecies_bc[group_p==test, c("lon","lat")]
-test_a = bg_bc[group_a==test, c("lon","lat")]
-me = maxent(BClim, p=train_p, a=train_a)
-e = evaluate(test_p, test_a, me, BClim)
+
+me = maxent(BClim, random_bc[,c("lon", "lat")], Gspecies_bc[,c("lon", "lat")])
+e = evaluate(random_bc[,c("lon", "lat")], Gspecies_bc[,c("lon", "lat")], me, BClim)
 e
 pred_me = predict(me, BClim) 
-
+me
 
 plot(pred_me, 1, cex=0.5, legend=T, mar=par("mar"), xaxt="n", yaxt="n", main="Predicted Species Distribution")
 map("state", xlim=c(leftlon,rightlon), ylim=c(lowerlat,upperlat), fill=F, col="black", add=T)
-points(bg,col="snow",pch=1,cex=0.2)
+points(random,col="snow",pch=1,cex=0.2)
 points(Gspecies$lon, Gspecies$lat, col="darkgreen", pch=20, cex=0.5)
 
 
