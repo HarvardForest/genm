@@ -16,22 +16,21 @@ filename <- ("GspeciesBC_2.5.grd")
 croppeddata<- paste(path,filename, sep="/")
 
 ## Step 1. Installing and loading Packages
-
+require(raster)
 library(FedData)
 
 ## Step 2. Downloading BioClim Data
 
-leftlon <- ''
-rightlon <- ''
-lowerlat <- ''
-upperlat <- ''
+leftlon <- -71.5
+rightlon <- -71.4
+lowerlat <- 42.5
+upperlat <- 42.56
 
-if (leftlon == ''){leftlon <- -71.45 }
-if (rightlon == ''){rightlon <- -71.322200}
-if (lowerlat == ''){lowerlat <- 42.400}
-if (upperlat == ''){ upperlat <- 42.45}
+if (leftlon == ''){leftlon <- -71.5 }
+if (rightlon == ''){rightlon <- -71.4}
+if (lowerlat == ''){lowerlat <- 42.50}
+if (upperlat == ''){ upperlat <- 42.56}
 
-require(raster)
 BClim = getData("worldclim", var="bio", res=2.5, path="")
 GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
 BClim = crop(BClim, GspeciesRange)
@@ -47,4 +46,15 @@ NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
                  '../data/NED/EXTRACTIONS',label="HF",res='1',force.redo=TRUE)
 
 ## Step 4. Downloading Species Presence Data
+gspecies <- ''
+
+
+prespoints <- read.csv('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-13-antData_use4R_snappedToClim.csv')
+if (gspecies == ''){gspecies <- "aphrud"}
+colnames(prespoints) = c("spcode", "lon","lat")
+gspecies <- prespoints[grep(gspecies,as.character(prespoints$spcode)),]
+gspecies$spcode <- NULL
+
+if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
+if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 
