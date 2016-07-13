@@ -37,13 +37,11 @@ BClim = crop(BClim, GspeciesRange)
 writeRaster(BClim, filename=croppeddata, overwrite=T)
 BClim = brick(croppeddata)
 
+
 ## Step 3. Downloading Elevation Data
+NEelev <- raster('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-17-neClim.gri')
 
-vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, upperlat),
-                                  proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
 
-NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
-                 '../data/NED/EXTRACTIONS',label="HF",res='1',force.redo=TRUE)
 
 ## Step 4. Downloading Species Presence Data
 gspecies <- ''
@@ -57,4 +55,6 @@ gspecies$spcode <- NULL
 
 if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
 if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
+
+
 

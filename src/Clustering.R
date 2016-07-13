@@ -15,12 +15,10 @@ library(igraph)
 
 ## Step 2. Setting Seed/N
 
-seed <- ''
+
 N <- ''
 
 ###########################################################################
-if (seed == ''){seed <- 123} 
-set.seed(seed)
 
 altDiff 
 hd <- transition(NED, altDiff, 8, symm=FALSE)
@@ -54,26 +52,12 @@ Fstm.ig <- graph.adjacency(Fst.mst,weighted=TRUE,mode='undirected')
 Fst.igP <- graph.adjacency((1-Fst),weighted=TRUE,mode='undirected')
 Fstm.igP <- graph.adjacency(Fst.mstP,weighted=TRUE,mode='undirected')
 
-par(mfrow=c(2,2))
-plot(Fst.ig)
-plot(Fstm.ig)
-plot(Fst.igP)
-plot(Fstm.igP)
-
 fastgreedy.community(Fst.igP)
 fastgreedy.community(Fstm.ig)
 fg.mP <- fastgreedy.community(Fstm.igP)
 
-set.seed(123)
-spinglass.community(Fst.igP)
-spinglass.community(Fstm.ig)
-sg.mP <- spinglass.community(Fstm.igP)
 
-par(mfrow=c(1,2))
-plot(Fstm.igP,vertex.color=
-       rainbow(max(fg.mP$membership))[fg.mP$membership])
-plot(Fstm.igP,vertex.color=
-       rainbow(max(sg.mP$membership))[sg.mP$membership])
+
 
 gclust <- fg.mP$membership
 names(gclust) <- rownames(Fst.mst)
@@ -82,5 +66,7 @@ gclust
 
 ### ENM
 
-gObs <- split(aphrud,gclust)
-Veiw(gObs)
+gObs <- split(gspecies,gclust)
+gObs <- lapply(gObs,matrix,ncol=2)
+# gObs <- lapply(gObs,function(x) matrix(x,ncol=2))
+for (i in 1:length(gObs)){colnames(gObs[[i]]) <- c("lon","lat")}
