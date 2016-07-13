@@ -15,3 +15,17 @@ box()
 
 
 ###
+
+#Plotting NED
+
+#NED.plot(NED = NED)
+#p.points(gspecies = gspecies)
+
+## 
+#Plotting clusters
+
+plot(Fstm.igP,vertex.color=rainbow(max(gclust))[gclust],
+     vertex.label=NA,vertex.size=2,vertex.frame.color=NA)
+
+points(do.call(rbind,gObs), col=rainbow(max(gclust)+1)[gclust], pch=20, cex=0.5)
+###

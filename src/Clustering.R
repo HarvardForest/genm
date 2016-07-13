@@ -16,21 +16,18 @@ library(igraph)
 ## Step 2. Setting Seed/N
 
 
+
 N <- ''
 
 ###########################################################################
 
 altDiff 
-hd <- transition(NED, altDiff, 8, symm=FALSE)
+hd <- transition(neClim$bio1, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
-adj <- adjacent(NED, cells=1:ncell(NED), pairs=TRUE, directions=8)
+adj <- adjacent(neClim$bio1, cells=1:ncell(neClim$bio1), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
-
-NED.plot(NED = NED)
-p.points(gspecies = gspecies)
-
 
 cd <- costDistance(Conductance, gspecies)
 scd <- symSum(cd)
@@ -70,3 +67,4 @@ gObs <- split(gspecies,gclust)
 gObs <- lapply(gObs,matrix,ncol=2)
 # gObs <- lapply(gObs,function(x) matrix(x,ncol=2))
 for (i in 1:length(gObs)){colnames(gObs[[i]]) <- c("lon","lat")}
+
