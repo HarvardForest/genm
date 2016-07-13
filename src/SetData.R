@@ -10,10 +10,10 @@
 wd <- '/Users/annacalderon/Desktop/gENM/data'
 setwd(wd)
 
-path <- ("") 
-if (path == ""){path <- "../data"}
-filename <- ("GspeciesBC_2.5.grd")
-croppeddata<- paste(path,filename, sep="/")
+# path <- ("") 
+# if (path == ""){path <- "../data"}
+# filename <- ("GspeciesBC_2.5.grd")
+# croppeddata<- paste(path,filename, sep="/")
 
 ## Step 1. Installing and loading Packages
 require(raster)
@@ -21,27 +21,16 @@ library(FedData)
 
 ## Step 2. Downloading BioClim Data
 
-leftlon <- -71.5
-rightlon <- -71.4
-lowerlat <- 42.5
-upperlat <- 42.56
+neClim <- stack("/Users/annacalderon/Desktop/gENM/data/neClim.grd")
 
-if (leftlon == ''){leftlon <- -71.5 }
-if (rightlon == ''){rightlon <- -71.4}
-if (lowerlat == ''){lowerlat <- 42.50}
-if (upperlat == ''){ upperlat <- 42.56}
-
-BClim = getData("worldclim", var="bio", res=2.5, path="")
-GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
-BClim = crop(BClim, GspeciesRange)
-writeRaster(BClim, filename=croppeddata, overwrite=T)
-BClim = brick(croppeddata)
+# BClim = getData("worldclim", var="bio", res=2.5, path="")
+# GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
+# BClim = crop(BClim, GspeciesRange)
+# writeRaster(BClim, filename=croppeddata, overwrite=T)
+# BClim = brick(croppeddata)
 
 
 ## Step 3. Downloading Elevation Data
-NEelev <- raster('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-17-neClim.gri')
-
-
 
 ## Step 4. Downloading Species Presence Data
 gspecies <- ''

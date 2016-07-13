@@ -35,7 +35,7 @@ random <- spsample(x@polygons, 1000, type='random', iter=1000)
 
 
 
-Gspecies_bc = extract(BClim, subs[,c("lon","lat")]) 
+Gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
 random_bc = extract(BClim, random) 
 Gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, Gspecies_bc)
 
