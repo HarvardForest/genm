@@ -13,10 +13,10 @@ setwd(wd)
 ## 2. Limiting Extent of Elevation Data
 #must replace '' with a numeric value
 
-leftlon <- -91
-rightlon <- -88
-lowerlat <- 37
-uppperlat <- 40
+leftlon <- ''
+rightlon <- ''
+lowerlat <- ''
+upperlat <- ''
 
 ## 3. Set Seed
 
@@ -37,24 +37,24 @@ N <- '' #number of individuals
 if (leftlon == ''){leftlon <- -71.45 }
 if (rightlon == ''){rightlon <- -71.322200}
 if (lowerlat == ''){lowerlat <- 42.400}
-if (uppperlat == ''){ uppperlat <- 42.45}
+if (upperlat == ''){ upperlat <- 42.45}
 
-vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, uppperlat),
+vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, upperlat),
                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
                  '../data/NED/EXTRACTIONS',label="HF",res='1',force.redo=TRUE)
 
 image(NED,  xlab="longitude", ylab= "latitude")
-r <- NED
+
 
 if (seed == ''){seed <- 123} 
 set.seed(seed)
 
 altDiff <- function(x){x[2] - x[1]}
-hd <- transition(r, altDiff, 8, symm=FALSE)
+hd <- transition(NED, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
-adj <- adjacent(r, cells=1:ncell(r), pairs=TRUE, directions=8)
+adj <- adjacent(NED, cells=1:ncell(r), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
@@ -82,7 +82,7 @@ p3top1 <- shortestPath(Conductance, p3, p1, output="SpatialLines")
 p2top3 <- shortestPath(Conductance, p2, p3, output="SpatialLines")
 p3top2 <- shortestPath(Conductance, p3, p2, output="SpatialLines")
 
-plot(r, xlab="x coordinate (m)", ylab="y coordinate (m)",
+plot(NED, xlab="x coordinate (m)", ylab="y coordinate (m)",
      legend.lab="Altitude (masl)")
 lines(p1top2, col="navy", lwd=3)
 lines(p2top1, col="aliceblue", lwd=1)

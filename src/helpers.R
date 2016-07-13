@@ -18,3 +18,15 @@ symSum <- function(x='matrix',zero.diag=TRUE){
 altDiff <- function(x){x[2] - x[1]}
 
 ###
+NED.plot <- function(NED){plot(NED, xlab="x coordinate (m)", ylab="y coordinate (m)",
+                               legend.lab="Altitude (masl)")}
+p.points <- function(gspecies){points(gspecies, col="black", pch=20, cex=.30)}
+
+###
+m <- function(scd){(1-(scd/max(scd)))}
+
+###
+
+
+
+###

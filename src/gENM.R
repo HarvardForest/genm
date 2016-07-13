@@ -56,7 +56,7 @@ if (genus == ''){genus <- 'Aphaenogaster';species <- 'picea'}
 
 ############################# gDistance Code ################################
 
-vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, uppperlat),
+vepPolygon <- polygon_from_extent(raster::extent(leftlon, rightlon, lowerlat, upperlat),
                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 NED <- get_ned(template=vepPolygon,raw.dir='../data/NED/RAW',extraction.dir=
