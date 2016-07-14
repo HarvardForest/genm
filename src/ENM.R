@@ -5,33 +5,29 @@
 #Part 2
 #11 July 2016
 
-## Step 1. Installing and loading Packages
+gcb1 <- gClust(x=gspecies, y=neClim$bio1)
+ 
 
-packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
-unlist(lapply(packs, require, character.only = TRUE))
 
-## Step 2. Limiting Extent
-
-leftlon <- -73.725 
-rightlon <- -66.958333333 
-lowerlat <- 40.995206022
-upperlat <- 47.453539355 
 
 ########################################################################################
 # create sequences of latitude and longitude values to define the grid
-longrid = seq(leftlon,rightlon,0.05)
-latgrid = seq(lowerlat, upperlat,0.05)
+longrid = seq(-73.725,-66.958333333 ,0.05)
+latgrid = seq(40.995206022, 47.453539355,0.05)
+
+x <- gcb1[[1]]
+x <- data.frame(x)
 
 subs = c()
 for(i in 1:(length(longrid)-1)){
   for(j in 1:(length(latgrid)-1)){
-    gridsq = subset(gObs$`1`, lat > latgrid[j] & lat < latgrid[j+1] & lon > longrid[i] & lon < longrid[i+1])    
+    gridsq = raster::subset(x, lat > latgrid[j] & lat < latgrid[j+1] 
+                    & lon > longrid[i] & lon < longrid[i+1])
     if(dim(gridsq)[1]>0){
       subs = rbind(subs, gridsq[sample(1:dim(gridsq)[1],1 ), ])
     }
   }
 }
-
 
 dim(subs) 
 
@@ -42,9 +38,9 @@ random <- spsample(x@polygons, 1000, type='random', iter=1000)
 
 
 
-Gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
-random_bc = extract(BClim, random) 
-Gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, Gspecies_bc)
+gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
+random_bc = extract(neClim, random) 
+gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, gspecies_bc)
 
 randompnts = random@coords
 colnames(randompnts) = c("lon","lat")

@@ -1,8 +1,5 @@
-library(gdistance)
-library(fossil)
-library(igraph)
-
-
+packs<-c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
+unlist(lapply(packs, require, character.only = TRUE))
 
 ### Creates a symmetric matrix comprised of 
 ### the sum of the upper and lower triangles.
@@ -77,11 +74,11 @@ Fst.ig <- graph.adjacency(Fst.mg,weighted=TRUE,mode='undirected')
                                         # Determine clusters using a graph theoretic 
                                         # module/cluster detection algorithm.
 fg.mP <- fastgreedy.community(Fst.ig)
-gclust <- fg.mP$membership
-names(gc) <- rownames(Fst.mst)
+gc <- fg.mP$membership
+names(gc) <- rownames(Fst)
                                         # Output observations in a format for the 
                                         # gENM. 
-gObs <- split(x,gcl)
+gObs <- split(x,gc)
 gObs <- lapply(gObs,matrix,ncol=2)
 for (i in 1:length(gObs)){colnames(gObs[[i]]) <- c("lon","lat")}
 return(gObs)
