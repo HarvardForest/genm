@@ -21,7 +21,8 @@ upperlat <- 47.453539355
 # create sequences of latitude and longitude values to define the grid
 longrid = seq(leftlon,rightlon,0.05)
 latgrid = seq(lowerlat, upperlat,0.05)
-
+lat <- gObs$`1`[,"lat"]
+lon <- gObs$`1`[,"lon"]
 subs = c()
 for(i in 1:(length(longrid)-1)){
   for(j in 1:(length(latgrid)-1)){
@@ -36,15 +37,14 @@ for(i in 1:(length(longrid)-1)){
 dim(subs) 
 
 x=circles(subs[,c("lon","lat")], d=50000, lonlat=T)
-plot(x@polygons, axes=T, col=rgb(0,0,0,0.1), border=NA, add=T)
 random <- spsample(x@polygons, 1000, type='random', iter=1000)
 
 
 
 
-Gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
-random_bc = extract(BClim, random) 
-Gspecies_bc = data.frame(lon=subs$lon, lat=subs$lat, Gspecies_bc)
+gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
+random_bc = extract(neClim, random) 
+gspecies_bc = data.frame(lon=subs[,"lon"], lat=subs[,"lat"], gspecies_bc)
 
 randompnts = random@coords
 colnames(randompnts) = c("lon","lat")
