@@ -10,15 +10,22 @@
 packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
 unlist(lapply(packs, require, character.only = TRUE))
 
+## Step 2. Limiting Extent
+
+leftlon <- -73.725 
+rightlon <- -66.958333333 
+lowerlat <- 40.995206022
+upperlat <- 47.453539355 
+
 ########################################################################################
 # create sequences of latitude and longitude values to define the grid
-longrid = seq(leftlon, rightlon,0.05)
+longrid = seq(leftlon,rightlon,0.05)
 latgrid = seq(lowerlat, upperlat,0.05)
 
 subs = c()
 for(i in 1:(length(longrid)-1)){
   for(j in 1:(length(latgrid)-1)){
-    gridsq = subset(cluster1, lat > latgrid[j] & lat < latgrid[j+1] & lon > longrid[i] & lon < longrid[i+1])    
+    gridsq = subset(gObs$`1`, lat > latgrid[j] & lat < latgrid[j+1] & lon > longrid[i] & lon < longrid[i+1])    
     if(dim(gridsq)[1]>0){
       subs = rbind(subs, gridsq[sample(1:dim(gridsq)[1],1 ), ])
     }
