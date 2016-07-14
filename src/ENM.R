@@ -21,6 +21,7 @@ upperlat <- 47.453539355
 # create sequences of latitude and longitude values to define the grid
 longrid = seq(leftlon,rightlon,0.05)
 latgrid = seq(lowerlat, upperlat,0.05)
+
 lat <- gObs$`1`[,"lat"]
 lon <- gObs$`1`[,"lon"]
 subs = c()
@@ -54,9 +55,9 @@ random_bc = random_bc[!is.na(random_bc$bio1), ]
 
 ####################################  BUILDIG YOUR SDM  ############################################
 
-me = maxent(BClim, Gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
-e = evaluate(Gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, BClim)
-pred_me = predict(me, BClim) 
+me = maxent(neClim, gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
+e = evaluate(gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, neClim)
+pred_me = predict(me, neClim) 
 
 
 
