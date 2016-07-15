@@ -101,9 +101,9 @@ clust_bc <-  data.frame(cbind(x,clust_bc))
                                     # with their resepctive coordinates, 
                                     # Then turns that matrix into a list. 
   
-  random_bc <- extract(p, random) 
-  random  <- random@coords
-  colnames(random) <- c("lon","lat")
+random_bc <- extract(p, random) 
+random  <- random@coords
+colnames(random) <- c("lon","lat")
                                     # Extracts the climate variables which 
                                     # which correspond to each random point
                                     # of a cluster. Coordinates of random are 
@@ -129,4 +129,6 @@ out <- list(eval = e, pred = pred_me, model = me)
 return(out)
 }
 ############
-g
+#source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
+#ddg.run("/Users/annacalderon/Desktop/gENM/src/BClimBug.R")
+
