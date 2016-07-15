@@ -1,4 +1,6 @@
-packs <- c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
+packs <- c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp",
+           "maptools","dismo","rJava","rgdal", "rgeos", "raster", "FedData")
+
 lapply(packs[!(packs %in% installed.packages()[,'Package'])],install.packages)
 all(unlist(lapply(packs, require, character.only = TRUE,quietly=TRUE)))
 
@@ -21,11 +23,6 @@ symSum <- function(x='matrix',zero.diag=TRUE){
 altDiff <- function(x){x[2] - x[1]}
 
 ###
-NED.plot <- function(NED){plot(NED, xlab="x coordinate (m)", ylab="y coordinate (m)",
-                               legend.lab="Altitude (masl)")}
-p.points <- function(gspecies){points(gspecies, col="black", pch=20, cex=.30)}
-
-###
 m <- function(scd){(1-(scd/max(scd)))}
 
 ###
@@ -37,7 +34,7 @@ m <- function(scd){(1-(scd/max(scd)))}
 ### MKLau and ACalderon - Summer 2016
 
 ### x = Distribution data for a given organism using lon and lat coordinates.
-### y = Environmental 
+### p = Environmental 
 ### N = effective population size
 
 gClust <- function(x='coordinates',p='predictor',N=1){
@@ -82,6 +79,17 @@ return(gc)
 
 ######
 
+### Creates an environmental niche model
+### based on MaxEnt alogrithims
+### to predict habitat suitability.
+
+### ACalderon and MKLau - 15July2016
+
+### x = Distribution data for a given organism using lon and lat coordinates.
+### p = Environmental predictor
+
+
+
 ENM <- function(x="coordinates", p="predictors"){
   
 circ=circles(x, d=50000, lonlat=T)
@@ -125,11 +133,29 @@ out <- list(eval = e, pred = pred_me, model = me)
 return(out)
 
 }
-############
 
-gENM <- funtion(x=gspecies, y=clust, p=neClim){
+########
 
-df.gspecies <- data.frame(gspecies)
-groups <-  split(df.gspecies, clust)
+### Applies an environmental niche model
+### to clusters of a population as well 
+### as to the entire species, and predicts
+### habitat suitability for each cluster. 
 
-(lapply(groups, ENM, p=neClim))
+### ACalderon and MKLau - 15July2016
+
+### x = Distribution data for a given organism using lon and lat coordinates.
+
+
+
+
+gENM <- function(x='coordinates'){
+  df.gspecies <- data.frame(x)
+  groups <-  split(df.gspecies, clust)
+  
+  analysis <- (lapply(groups, ENM, p=neClim))
+  
+  enm.all <- ENM(do.call(rbind,groups),neClim)
+  par(mfrow=c(3,2));plot(enm.all$pred);for (i in 1:length(analysis))
+  {plot(analysis[[i]]$pred)}
+  
+}

@@ -6,13 +6,14 @@
 #11 July 2016
 
 clust <- gClust(x=gspecies, p=neClim$bio1)
-set.seed(123)
-ENM(x=clust, p=neClim)
+
+
 
 #####################################################################################
 
 ENM <- function(x="genetic cluster coordinates"){
-                                          
+
+set.seed(123)                                          
 circ=circles(x, d=50000, lonlat=T)
 random <- spsample(circ@polygons, 1000, type='random', iter=1000)
                                   # Makes circles with a 5K radius of each
