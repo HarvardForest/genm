@@ -7,7 +7,7 @@
 
 ## Step 0. Set a working directory and File Paths
 
-wd <- '/Users/annacalderon/Desktop/gENM/data'
+wd <- '../data'
 setwd(wd)
 
 # path <- ("") 
@@ -21,7 +21,7 @@ library(FedData)
 
 ## Step 2. Downloading BioClim Data
 
-neClim <- stack("/Users/annacalderon/Desktop/gENM/data/neClim.grd")
+neClim <- stack("../data/neClim.grd")
 
 # BClim = getData("worldclim", var="bio", res=2.5, path="")
 # GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
@@ -32,9 +32,24 @@ neClim <- stack("/Users/annacalderon/Desktop/gENM/data/neClim.grd")
 
 ## Step 3. Downloading Elevation Data
 
+## Getting climate change projections
+library(maptools)
+vepPolygon <- polygon_from_extent(raster::extent(xmin, xmax, ymin, ymax),
+                                  proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
+IDs <- sapply(slot(vepPolygon, "polygons"), function(x) slot(x, "ID"))
+df <- data.frame(rep(0, length(IDs)), row.names=IDs)
+SPDFxx <- SpatialPolygonsDataFrame(vepPolygon, df)
+#tf <- tempfile()
+#writePolyShape(SPDFxx, tf)
+#getinfo.shape(tf)
+
+library(rgdal)
+## shape <- readOGR('../data/neExtent',layer='neExtent')
+writeOGR(SPDFxx,dsn='../data/neExtent',layer='neExtent',driver='ESRI Shapefile',overwrite_layer=TRUE)
+
+
 ## Step 4. Downloading Species Presence Data
 gspecies <- ''
-
 
 prespoints <- read.csv('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-13-antData_use4R_snappedToClim.csv')
 if (gspecies == ''){gspecies <- "aphrud"}

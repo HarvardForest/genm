@@ -5,62 +5,51 @@
 #Part 2
 #11 July 2016
 
-## Step 1. Installing and loading Packages
+clust <- gClust(x=gspecies, y=neClim$bio1)
+ENM(x=clust$`1`)
 
-packs<-c("rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
-unlist(lapply(packs, require, character.only = TRUE))
+#####################################################################################
 
-## Step 2. Limiting Extent
+ENM <- function(x="genetic cluster coordinates"){
+                                          
+circ=circles(x, d=50000, lonlat=T)
+random <- spsample(circ@polygons, 1000, type='random', iter=1000)
+                                  # Makes circles with a 5K radius of each
+                                  # point and adds 1000 randomized points.
 
-leftlon <- -73.725 
-rightlon <- -66.958333333 
-lowerlat <- 40.995206022
-upperlat <- 47.453539355 
+clust_bc <-  extract(neClim, x) 
+clust_bc <-  data.frame(cbind(x,clust_bc))
+                                  # Extracts the climate variables which 
+                                  # which correspond to each presence point
+                                  # of a cluster. Binds climate variables
+                                  # with their resepctive coordinates, 
+                                  # Then turns that matrix into a list. 
+                                  
+random_bc <- extract(neClim, random) 
+random  <- random@coords
+colnames(random) <- c("lon","lat")
+                                  # Extracts the climate variables which 
+                                  # which correspond to each random point
+                                  # of a cluster. Coordinates of random are 
+                                  # saved as a matrix. 
 
-########################################################################################
-# create sequences of latitude and longitude values to define the grid
-longrid = seq(leftlon,rightlon,0.05)
-latgrid = seq(lowerlat, upperlat,0.05)
+random_bc <-  data.frame(cbind(random,random_bc))
+random_bc  <-  random_bc[!is.na(random_bc[,"bio1"]), ] 
+                                  # Binds the random point coordinates and 
+                                  # and the extracted climate variables 
+                                  # that correspond to those random points
+                                  # in order to create a list. Also removes
+                                  # any NAs in the list. 
 
-lat <- gObs$`1`[,"lat"]
-lon <- gObs$`1`[,"lon"]
-subs = c()
-for(i in 1:(length(longrid)-1)){
-  for(j in 1:(length(latgrid)-1)){
-    gridsq = subset(gObs$`1`, lat > latgrid[j] & lat < latgrid[j+1] & lon > longrid[i] & lon < longrid[i+1])    
-    if(dim(gridsq)[1]>0){
-      subs = rbind(subs, gridsq[sample(1:dim(gridsq)[1],1 ), ])
-    }
-  }
+me <- maxent(neClim, clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
+e <- evaluate(clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, neClim)
+pred_me <- predict(me, neClim) 
+                                  # Build a "MaxEnt" (Maximum Entropy) species
+                                  # distribution model based on neCLim 
+                                  # and produces a model that is used by 
+                                  # the predic() fucntion to predict
+                                  # the suitability of other locations.
 }
-
-
-dim(subs) 
-
-x=circles(subs[,c("lon","lat")], d=50000, lonlat=T)
-random <- spsample(x@polygons, 1000, type='random', iter=1000)
-
-
-
-
-gspecies_bc = extract(neClim, subs[,c("lon","lat")]) 
-random_bc = extract(neClim, random) 
-gspecies_bc = data.frame(lon=subs[,"lon"], lat=subs[,"lat"], gspecies_bc)
-
-randompnts = random@coords
-colnames(randompnts) = c("lon","lat")
-random_bc = data.frame(cbind(randompnts,random_bc))
-length(which(is.na(random_bc$bio1))) 
-random_bc = random_bc[!is.na(random_bc$bio1), ] 
-
-####################################  BUILDIG YOUR SDM  ############################################
-
-me = maxent(neClim, gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
-e = evaluate(gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, neClim)
-pred_me = predict(me, neClim) 
-
-
-
-
+                                  
 #source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
 #ddg.run("/Users/annacalderon/Desktop/gENM/src/BClimBug.R")

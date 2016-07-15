@@ -1,70 +1,56 @@
-#Anna M Calderon
-#Matthew K Lau
-#Harvard Forest
-#gENM-Clustering
-#Part 1
-#8 July 2016
+# Anna M Calderon
+# Matthew K Lau
+# Harvard Forest
+# gENM-Clustering
+# Part 1
+# 8 July 2016
 
-## Step 1. Installing and loading Packages
+### x = Distribution data for a given organism using lon and lat coordinates.
+### y = Environmental 
+### N = effective population size
 
-#install.packages("fossil")
-library(gdistance)
-source("../src/helpers.R")
-library(fossil)
-library(igraph)
-
-## Step 2. Setting Seed/N
-
-
-
-N <- ''
-
-###########################################################################
-
-altDiff 
-hd <- transition(neClim$bio1, altDiff, 8, symm=FALSE)
+gClust <- function(x='distribution',y='environment',N=1){
+                                        # Conductance matrix is used to produce 
+                                        # an initial matrix of "flow" between observations
+hd <- transition(y, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
-adj <- adjacent(neClim$bio1, cells=1:ncell(neClim$bio1), pairs=TRUE, directions=8)
+adj <- adjacent(y, cells=1:ncell(y), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
-
-cd <- costDistance(Conductance, gspecies)
+cd <- costDistance(Conductance, x)
+                                        # Summing over assymmetry
 scd <- symSum(cd)
-m(scd)
-if (N == ''){N <- 1}
-Fst <- 0.20*(1/(1+4*N*m(scd))) #see Conner & Hartle pg. 84
-
-
-
-## returns a minimally connected graph
-Fst.mst <- Fst
-Fst.dm <- dino.mst(1-Fst)
-Fst.mst[Fst.dm == 0] <- 0 
-Fst.mstP <- Fst.mst
-Fst.mstP[Fst.mstP != 0] <- (1-Fst.mst[Fst.mst != 0])
-
-Fst.ig <- graph.adjacency(Fst,weighted=TRUE,mode='undirected')
-Fstm.ig <- graph.adjacency(Fst.mst,weighted=TRUE,mode='undirected')
-Fst.igP <- graph.adjacency((1-Fst),weighted=TRUE,mode='undirected')
-Fstm.igP <- graph.adjacency(Fst.mstP,weighted=TRUE,mode='undirected')
-
-fastgreedy.community(Fst.igP)
-fastgreedy.community(Fstm.ig)
-fg.mP <- fastgreedy.community(Fstm.igP)
-
-
-
-
+                                        # Re-scaling using basic population
+                                        # demography to approximate migration.
+                                        # N = effective population size, by 
+                                        # default this is set to one for mathematical
+                                        # convenience. The diagonal is set to zero 
+                                        # because each observation should be 
+                                        # genetically identical to itself.
+                                        # See Conner & Hartl pg. 84
+Fst <- 0.20*(1/(1+4*N*m(scd))) 
+diag(Fst) <- 0
+                                        # Invert Fst so that it is a similarity rather
+                                        # than a dissimilarity matrix and find
+                                        # the minimally connected graph to focus 
+                                        # on the most important connections.
+Fst.g <- 1-Fst
+diag(Fst.g) <- 0
+Fst.mg <- dino.mst(Fst.g)
+Fst.ig <- graph.adjacency(Fst.mg,weighted=TRUE,mode='undirected')
+                                        # Determine clusters using a graph theoretic 
+                                        # module/cluster detection algorithm.
+fg.mP <- fastgreedy.community(Fst.ig)
 gclust <- fg.mP$membership
-names(gclust) <- rownames(Fst.mst)
-
-gclust
-
-### ENM
-
-gObs <- split(gspecies,gclust)
+names(gc) <- rownames(Fst.mst)
+                                        # Output observations in a format for the 
+                                        # gENM. 
+gObs <- split(x,gcl)
 gObs <- lapply(gObs,matrix,ncol=2)
-# gObs <- lapply(gObs,function(x) matrix(x,ncol=2))
 for (i in 1:length(gObs)){colnames(gObs[[i]]) <- c("lon","lat")}
+return(gObs)
+}
+
+
 
