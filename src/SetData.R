@@ -19,6 +19,7 @@ setwd(wd)
 require(raster)
 library(FedData)
 
+
 ## Step 2. Downloading BioClim Data
 
 neClim <- stack("../data/neClim.grd")

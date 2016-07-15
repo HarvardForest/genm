@@ -6,7 +6,8 @@
 #11 July 2016
 
 clust <- gClust(x=gspecies, y=neClim$bio1)
-ENM(x=clust$`1`)
+set.seed(123)
+ENM(x=clust$`2`)
 
 #####################################################################################
 
@@ -49,6 +50,7 @@ pred_me <- predict(me, neClim)
                                   # and produces a model that is used by 
                                   # the predic() fucntion to predict
                                   # the suitability of other locations.
+plot(pred_me)
 }
                                   
 #source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
