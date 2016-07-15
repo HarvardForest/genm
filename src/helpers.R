@@ -1,5 +1,6 @@
-packs<-c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
-unlist(lapply(packs, require, character.only = TRUE))
+packs <- c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp","maptools","dismo","rJava","rgdal", "rgeos")
+lapply(packs[!(packs %in% installed.packages()[,'Package'])],install.packages)
+all(unlist(lapply(packs, require, character.only = TRUE,quietly=TRUE)))
 
 ### Creates a symmetric matrix comprised of 
 ### the sum of the upper and lower triangles.
@@ -29,8 +30,6 @@ m <- function(scd){(1-(scd/max(scd)))}
 
 ###
 
-
-
 ### gClust - models genetic clusters based on landscape features using circuit 
 ### theory based landscape resistance. Returns a list of observation matrices 
 ### grouped by the 'genetic' clusters.
@@ -41,12 +40,12 @@ m <- function(scd){(1-(scd/max(scd)))}
 ### y = Environmental 
 ### N = effective population size
 
-gClust <- function(x='distribution',y='environment',N=1){
+gClust <- function(x='coordinates',p='predictor',N=1){
                                         # Conductance matrix is used to produce 
                                         # an initial matrix of "flow" between observations
-hd <- transition(y, altDiff, 8, symm=FALSE)
+hd <- transition(p, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
-adj <- adjacent(y, cells=1:ncell(y), pairs=TRUE, directions=8)
+adj <- adjacent(p, cells=1:ncell(p), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
@@ -78,10 +77,7 @@ gc <- fg.mP$membership
 names(gc) <- rownames(Fst)
                                         # Output observations in a format for the 
                                         # gENM. 
-gObs <- split(x,gc)
-gObs <- lapply(gObs,matrix,ncol=2)
-for (i in 1:length(gObs)){colnames(gObs[[i]]) <- c("lon","lat")}
-return(gObs)
+return(gc)
 }
 
 ######
@@ -129,4 +125,4 @@ out <- list(eval = e, pred = pred_me, model = me)
 return(out)
 }
 ############
-g
+
