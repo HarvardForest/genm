@@ -97,9 +97,9 @@ clust_bc <-  data.frame(cbind(x,clust_bc))
                                     # with their resepctive coordinates, 
                                     # Then turns that matrix into a list. 
   
-  random_bc <- extract(p, random) 
-  random  <- random@coords
-  colnames(random) <- c("lon","lat")
+random_bc <- extract(p, random) 
+random  <- random@coords
+colnames(random) <- c("lon","lat")
                                     # Extracts the climate variables which 
                                     # which correspond to each random point
                                     # of a cluster. Coordinates of random are 
@@ -123,6 +123,13 @@ pred_me <- predict(me, p)
                                     # the suitability of other locations.
 out <- list(eval = e, pred = pred_me, model = me)
 return(out)
+
 }
 ############
 
+gENM <- funtion(x=gspecies, y=clust, p=neClim){
+
+df.gspecies <- data.frame(gspecies)
+groups <-  split(df.gspecies, clust)
+
+(lapply(groups, ENM, p=neClim))
