@@ -9,14 +9,14 @@ all(unlist(lapply(packs, require, character.only = TRUE,quietly=TRUE)))
 ### MKLau - 06July2016
 
 symSum <- function(x='matrix',zero.diag=TRUE){
-    if (zero.diag == TRUE){diag(x) <- 0}
-    sum.lu <- t(x)[lower.tri(x)]  + x[lower.tri(x)]
-    x[lower.tri(x)] <- sum.lu
-    x <- t(x)
-    x[lower.tri(x)] <- sum.lu
-    if (isSymmetric(x)){x}else{
-        warning('Output matrix is not symmetirc.')
-    }
+  if (zero.diag == TRUE){diag(x) <- 0}
+  sum.lu <- t(x)[lower.tri(x)]  + x[lower.tri(x)]
+  x[lower.tri(x)] <- sum.lu
+  x <- t(x)
+  x[lower.tri(x)] <- sum.lu
+  if (isSymmetric(x)){x}else{
+    warning('Output matrix is not symmetirc.')
+  }
 }
 
 ### 
@@ -75,6 +75,7 @@ names(gc) <- rownames(Fst)
                                         # Output observations in a format for the 
                                         # gENM. 
 return(gc)
+
 }
 
 ######
@@ -92,18 +93,18 @@ return(gc)
 
 ENM <- function(x="coordinates", p="predictors"){
   
-circ=circles(x, d=50000, lonlat=T)
-random <- spsample(circ@polygons, 1000, type='random', iter=1000)
-                                    # Makes circles with a 5K radius of each
-                                    # point and adds 1000 randomized points.
+  circ=circles(x, d=50000, lonlat=T)
+  random <- spsample(circ@polygons, 1000, type='random', iter=1000)
+  # Makes circles with a 5K radius of each
+  # point and adds 1000 randomized points.
   
-clust_bc <-  extract(p, x) 
-clust_bc <-  data.frame(cbind(x,clust_bc))
-                                    # Extracts the climate variables which 
-                                    # which correspond to each presence point
-                                    # of a cluster. Binds climate variables
-                                    # with their resepctive coordinates, 
-                                    # Then turns that matrix into a list. 
+  clust_bc <-  extract(p, x) 
+  clust_bc <-  data.frame(cbind(x,clust_bc))
+  # Extracts the climate variables which 
+  # which correspond to each presence point
+  # of a cluster. Binds climate variables
+  # with their resepctive coordinates, 
+  # Then turns that matrix into a list. 
   
 random_bc <- extract(p, random) 
 random  <- random@coords
@@ -131,6 +132,7 @@ pred_me <- predict(me, p)
                                     # the suitability of other locations.
 out <- list(eval = e, pred = pred_me, model = me)
 return(out)
+
 
 }
 

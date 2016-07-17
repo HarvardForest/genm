@@ -5,12 +5,6 @@
 #Part 2
 #11 July 2016
 
-clust <- gClust(x=gspecies, p=neClim$bio1)
-
-
-
-#####################################################################################
-
 ENM <- function(x="genetic cluster coordinates"){
 
 set.seed(123)                                          
@@ -56,3 +50,4 @@ plot(pred_me)
                                   
 #source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
 #ddg.run("/Users/annacalderon/Desktop/gENM/src/BClimBug.R")
+
