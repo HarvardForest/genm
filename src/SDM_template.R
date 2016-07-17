@@ -14,10 +14,10 @@ species <- ''
 
 ## 3. Select a window for the range 
 
-leftlon <- -91
-rightlon <- -88
-lowerlat <- 37
-upperlat <- 40
+leftlon <- -71
+rightlon <- -71.8
+lowerlat <- 42.5
+upperlat <- 42.8
 
 ## 4. Define filename and file paths
 path <- ("") #data folder path
@@ -127,8 +127,8 @@ random_bc = random_bc[!is.na(random_bc$bio1), ]
 
 ####################################  BUILDIG YOUR SDM  ############################################
 
-me = maxent(BClim, random_bc[,c("lon", "lat")], Gspecies_bc[,c("lon", "lat")])
-e = evaluate(random_bc[,c("lon", "lat")], Gspecies_bc[,c("lon", "lat")], me, BClim)
+me = maxent(BClim, Gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
+e = evaluate(Gspecies_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, BClim)
 e
 pred_me = predict(me, BClim) 
 me
