@@ -149,16 +149,29 @@ ENM <- function(x="coordinates", p="predictors"){
 
 
 
-gENM <- function(x='coordinates'){
+gENM <- function(x='coordinates', clust='gen clusters'){
   df.gspecies <- data.frame(x)
   groups <-  split(df.gspecies, clust)
   
   analysis <- (lapply(groups, ENM, p=neClim))
-  
-  enm.all <- ENM(do.call(rbind,groups),neClim)
-  par(mfrow=c(3,2))
-  
-  plot(enm.all$pred, main= "A.rudis", xlab= "lon", ylab="lat", asp = 1)
-  for (i in 1:length(analysis)){plot(analysis[[i]]$pred, asp= 1, main = paste("cluster", i, split = ""))}
-  
+  enm.all <- list(ENM(do.call(rbind,groups),neClim))
+  out <- append(enm.all, analysis)
+ 
 }
+
+gAnalysis <- function(x="gENM output"){
+
+jpeg(filename = "/Users/annacalderon/Desktop/Rplot.jpeg", width = 1700, height = 1700,
+     units = "px", pointsize = 35, quality = 90,
+     bg="white")
+  
+  par(mfrow=c(3,2), oma=rep(0,4),omi=rep(0,4), bty = 'n')
+  for(i in 1: length(x)){zoom(x[[i]]$pred, ext=extent(-73.70833, -66.95833, 41, 47.45833),
+         xaxt='n', yaxt='n', new=FALSE, asp=1)}
+  
+dev.off()
+
+
+  }
+
+
