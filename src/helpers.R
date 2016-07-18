@@ -92,6 +92,7 @@ gClust <- function(x='coordinates',p='predictor',N=1){
 
 ENM <- function(x="coordinates", p="predictors"){
   
+  set.seed(123)
   circ=circles(x, d=50000, lonlat=T)
   random <- spsample(circ@polygons, 1000, type='random', iter=1000)
   # Makes circles with a 5K radius of each
@@ -155,7 +156,9 @@ gENM <- function(x='coordinates'){
   analysis <- (lapply(groups, ENM, p=neClim))
   
   enm.all <- ENM(do.call(rbind,groups),neClim)
-  par(mfrow=c(3,2));plot(enm.all$pred);for (i in 1:length(analysis))
-  {plot(analysis[[i]]$pred)}
+  par(mfrow=c(3,2))
+  
+  plot(enm.all$pred, main= "A.rudis", xlab= "lon", ylab="lat", asp = 1)
+  for (i in 1:length(analysis)){plot(analysis[[i]]$pred, asp= 1, main = paste("cluster", i, split = ""))}
   
 }
