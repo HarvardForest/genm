@@ -37,12 +37,13 @@ m <- function(scd){(1-(scd/max(scd)))}
 ### p = Environmental 
 ### N = effective population size
 
-gClust <- function(x='coordinates',p='predictor',N=1){
-                                        # Conductance matrix is used to produce 
+gClust <- function(x='coordinates',vp='vector predictor',N=1){
+                                        # Conductance matrix  used to produce 
                                         # an initial matrix of "flow" between observations
-hd <- transition(p, altDiff, 8, symm=FALSE)
+if (!(is.matrix(x))){x <- as.matrix(x)}
+hd <- transition(vp, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
-adj <- adjacent(p, cells=1:ncell(p), pairs=TRUE, directions=8)
+adj <- adjacent(vp, cells=1:ncell(vp), pairs=TRUE, directions=8)
 speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
@@ -91,50 +92,46 @@ return(gc)
 
 
 
-ENM <- function(x="coordinates", p="predictors"){
-  
-  set.seed(123)
-  circ=circles(x, d=50000, lonlat=T)
-  random <- spsample(circ@polygons, 1000, type='random', iter=1000)
-                                                  # Makes circles with a 5K radius of each
-                                                  # point and adds 1000 randomized points.
-  
-  clust_bc <-  extract(p, x) 
-  clust_bc <-  data.frame(cbind(x,clust_bc))
-                                                  # Extracts the climate variables which 
-                                                  # which correspond to each presence point
-                                                  # of a cluster. Binds climate variables
-                                                  # with their resepctive coordinates, 
-                                                  # Then turns that matrix into a list. 
-  
-random_bc <- extract(p, random) 
-random  <- random@coords
-colnames(random) <- c("lon","lat")
-                                                  # Extracts the climate variables which 
-                                                  # which correspond to each random point
-                                                  # of a cluster. Coordinates of random are 
-                                                  # saved as a matrix. 
-  
-random_bc <-  data.frame(cbind(random,random_bc))
-random_bc  <-  random_bc[!is.na(random_bc[,"bio1"]), ] 
-                                                  # Binds the random point coordinates and 
-                                                  # and the extracted climate variables 
-                                                  # that correspond to those random points
-                                                  # in order to create a list. Also removes
-                                                  # any NAs in the list. 
-                                    
-me <- maxent(p, clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
-e <- evaluate(clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
-pred_me <- predict(me, p) 
-                                                # Build a "MaxEnt" (Maximum Entropy) species
-                                                # distribution model based on predictors 
-                                                # and produces a model that is used by 
-                                                # the predic() fucntion to predict
-                                                # the suitability of other locations.
-out <- list(eval = e, pred = pred_me, model = me)
-return(out)
-
-
+ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
+    set.seed(seed)
+    circ <- circles(x, d=c.rad, lonlat=T)
+    random <- spsample(circ@polygons, n, type='random', iter=100)
+                                        # Makes circles with a 5K radius of each
+                                        # point and adds 1000 randomized points.
+    clust_bc <-  extract(p, x) 
+    clust_bc <-  data.frame(cbind(x,clust_bc))
+                                        # Extracts the climate variables which 
+                                        # which correspond to each presence point
+                                        # of a cluster. Binds climate variables
+                                        # with their resepctive coordinates, 
+                                        # Then turns that matrix into a list. 
+    
+    random_bc <- extract(p, random) 
+    random  <- random@coords
+    colnames(random) <- c("lon","lat")
+                                        # Extracts the climate variables which 
+                                        # which correspond to each random point
+                                        # of a cluster. Coordinates of random are 
+                                        # saved as a matrix. 
+    
+    random_bc <-  data.frame(cbind(random,random_bc))
+    random_bc  <-  random_bc[!is.na(random_bc[,"bio1"]), ] 
+                                        # Binds the random point coordinates and 
+                                        # and the extracted climate variables 
+                                        # that correspond to those random points
+                                        # in order to create a list. Also removes
+                                        # any NAs in the list. 
+    
+    me <- maxent(p, clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
+    e <- evaluate(clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
+    pred_me <- predict(me, p) 
+                                        # Build a "MaxEnt" (Maximum Entropy) species
+                                        # distribution model based on predictors 
+                                        # and produces a model that is used by 
+                                        # the predic() fucntion to predict
+                                        # the suitability of other locations.
+    out <- list(eval = e, pred = pred_me, model = me)
+    return(out)
 }
 
 ########
@@ -153,28 +150,21 @@ return(out)
 gENM <- function(x='coordinates', clust='gen clusters'){
   df.gspecies <- data.frame(x)
   groups <-  split(df.gspecies, clust)
-  
   analysis <- (lapply(groups, ENM, p=neClim))
   enm.all <- list(ENM(do.call(rbind,groups),neClim))
   out <- append(enm.all, analysis)
- 
 }
 
-gAnalysis <- function(x="gENM output", filename= ""){
-
-jpeg(filename = "../results/gENM.jpeg", width = 1700, height = 1700,
-     units = "px", pointsize = 35, quality = 90,
-     bg="white")
-  
-  par(mfrow=c(3,2), oma=rep(0,4),omi=rep(0,4), bty = 'n')
-  for(i in 1: length(x)){zoom(x[[i]]$pred, ext=extent(-73.70833, -66.95833, 41, 47.45833),
-         xaxt='n', yaxt='n', new=FALSE, asp=1)}
-  
-
-dev.off()
-
-
-  }
-
-
-
+gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",mfrow=c(3,2),ext=extent(-73.70833, -66.95833, 41, 47.45833),open.file=TRUE){
+    jpeg(filename = filename, width = 1700, height = 1700,
+         units = "px", pointsize = 35, quality = 90,
+         bg="white")
+    par(mfrow=mfrow, oma=rep(0,4),omi=rep(0,4), bty = 'n',mar=rep(0.01,4),mai=rep(0,4))
+    for(i in 1: length(x)){zoom(x[[i]]$pred, ext=ext, xaxt='n', yaxt='n', new=FALSE, asp=1)}
+    dev.off()
+    auc <- unlist(lapply(x,function(x) x$eval@auc))
+    cor <- unlist(lapply(x,function(x) x$eval@cor))
+    out <- data.frame(auc,cor)
+    return(out)
+    if (open.file){system(paste('open',filename))}
+}
