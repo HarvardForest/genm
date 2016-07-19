@@ -47,6 +47,6 @@ if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 ## Step 5. Making Clusters and running gENMs
 
 clust <- gClust(x=gspecies, p=neClim$bio1)
-gENM(x=gspecies, clust=clust)
+out <- gENM(x=gspecies, clust=clust)
 gAnalysis(x=out)
 

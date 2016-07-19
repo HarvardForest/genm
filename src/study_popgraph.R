@@ -1,7 +1,10 @@
+## library(RDataTracker)
+## ddg.run("study_popgraph.R",load = TRUE)
+
 ### Studying popgraph package for use in the gENM
 ### project. Main question is can we determine 
 ### genetic clusters using an Fst matrix.
-installed.packages("popgraph")
+### installed.packages("popgraph")
 library(popgraph)
 require(ggplot2)
 require(gstudio) # install_github('dyerlab/gstudio')
@@ -151,6 +154,3 @@ e
 
 Latitude <- seq(ymin(e),ymax(e),length.out=length(Elevation))
 qplot( Latitude, Elevation, geom="line" )
-
-source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
-ddg.run("study_popgraph.R",load = TRUE)

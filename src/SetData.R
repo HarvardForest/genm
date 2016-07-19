@@ -7,7 +7,7 @@
 
 ## Step 0. Set a working directory and File Paths
 
-wd <- '../data'
+wd <- '../src'
 setwd(wd)
 
 # path <- ("") 
