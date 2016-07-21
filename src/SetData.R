@@ -58,8 +58,30 @@ colnames(prespoints) = c("spcode", "lon","lat")
 gspecies <- prespoints[grep(gspecies,as.character(prespoints$spcode)),]
 gspecies$spcode <- NULL
 
+gspecies <- read.csv('../data/gspecies.csv')
+
 if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
 if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 
 
+### Getting state data
+gsp <- gspecies[,-1]
+us <- getData('GADM',country='usa',level=1)
+ne <- c('Connecticut','Maine','Massachusetts','New Hampshire','Rhode Island','Vermont')
+keep <- c('Maine','Connecticut','Rhode Island')
+dont <- c('Massachusetts','New Hampshire','Vermont') 
+newengland <- us[us$NAME_1 %in% ne,]
+ne.keep <- newengland[newengland$NAME_1 %in% keep,]
 
+pkp <- logical()
+for (i in 1:nrow(gsp)){
+    print(i/nrow(gsp))
+    pkp[i] <- inMap(gsp[i,],ne.keep)
+}
+
+nan.mart <- c() # what are the values for the points in nantucket and martha's vineyard?
+gsp.k <- gsp[pkp | ((1:nrow(gsp)) %in% nant.mart),]
+
+plot(ne.keep)
+points(gsp.k,pch=20,cex=0.5,col='pink')
+text(gsp.k,labels=(1:nrow(gsp.k)),cex=0.5)

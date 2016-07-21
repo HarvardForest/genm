@@ -64,7 +64,7 @@ diag(Fst) <- 0
                                         # than a dissimilarity matrix and find
                                         # the minimally connected graph to focus 
                                         # on the most important connections.
-Fst.g <- 1-Fst
+Fst.g <- 1  - Fst
 diag(Fst.g) <- 0
 Fst.mg <- dino.mst(Fst.g)
 Fst.ig <- graph.adjacency(Fst.mg,weighted=TRUE,mode='undirected')
@@ -167,4 +167,11 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",mfrow=c(
     out <- data.frame(auc,cor)
     return(out)
     if (open.file){system(paste('open',filename))}
+}
+
+### inMap: Is a point in a polygon?
+
+inMap <- function(x,y){
+    x <- SpatialPoints(x,proj4string=CRS(proj4string(y)))
+    gContains(y,x)
 }
