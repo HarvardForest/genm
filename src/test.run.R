@@ -44,6 +44,7 @@ gspecies$spcode <- NULL
 if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
 if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 
+GSPECIES <-subset(gspecies, lon 
 ## Step 5. Making Clusters and running gENMs
 
 clust <- gClust(x=gspecies, p=neClim$bio1)
