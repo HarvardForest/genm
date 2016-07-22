@@ -17,20 +17,19 @@ source("helpers.R")
 neClim <- stack("../data/neClim.grd")
 
 ## Step 3.  Getting climate change projections
-# library(maptools)
-# vepPolygon <- polygon_from_extent(raster::extent(xmin, xmax, ymin, ymax),
-#                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
-# IDs <- sapply(slot(vepPolygon, "polygons"), function(x) slot(x, "ID"))
-# df <- data.frame(rep(0, length(IDs)), row.names=IDs)
-# SPDFxx <- SpatialPolygonsDataFrame(vepPolygon, df)
-# #tf <- tempfile()
-# #writePolyShape(SPDFxx, tf)
-# #getinfo.shape(tf)
-# 
-# library(rgdal)
-# ## shape <- readOGR('../data/neExtent',layer='neExtent')
-# writeOGR(SPDFxx,dsn='../data/neExtent',layer='neExtent',driver='ESRI Shapefile',overwrite_layer=TRUE)
-# 
+library(maptools)
+library(rgdal)
+vepPolygon <- polygon_from_extent(raster::extent(-73.70833, -66.95833, 41, 47.45833),
+                                  proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
+IDs <- sapply(slot(vepPolygon, "polygons"), function(x) slot(x, "ID"))
+df <- data.frame(rep(0, length(IDs)), row.names=IDs)
+SPDFxx <- SpatialPolygonsDataFrame(vepPolygon, df)
+#tf <- tempfile()
+#writePolyShape(SPDFxx, tf)
+#getinfo.shape(tf)
+
+## shape <- readOGR('../data/neExtent',layer='neExtent')
+writeOGR(SPDFxx,dsn='../data/neExtent',layer='neExtent',driver='ESRI Shapefile',overwrite_layer=TRUE)
 
 ## Step 4. Downloading Species Presence Data
 gspecies <- ''

@@ -7,7 +7,7 @@
 
 ## Step 0. Set a working directory and File Paths
 
-wd <- '../src'
+wd <- '/Users/annacalderon/Desktop/gENM/src'
 setwd(wd)
 
 # path <- ("") 
@@ -58,8 +58,37 @@ colnames(prespoints) = c("spcode", "lon","lat")
 gspecies <- prespoints[grep(gspecies,as.character(prespoints$spcode)),]
 gspecies$spcode <- NULL
 
+#gspecies <- read.csv('../data/gspecies.csv')
+
 if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
 if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 
 
+### Getting state data
+gsp <- gspecies
+us <- getData('GADM',country='usa',level=1)
+ne <- c('Connecticut','Maine','Massachusetts','New Hampshire','Rhode Island','Vermont')
+keep <- c('Maine','Connecticut','Rhode Island')
+dont <- c('Massachusetts','New Hampshire','Vermont') 
+newengland <- us[us$NAME_1 %in% ne,]
+ne.keep <- newengland[newengland$NAME_1 %in% keep,]
 
+# pkp <- logical()
+# for (i in 1:nrow(gsp)){
+#     print(i/nrow(gsp))
+#     pkp[i] <- inMap(gsp[i,],ne.keep) 
+    #I think this doesn't work because gContains is expecting
+    # spatialpoints as y. I converted gsp to a datafram and then coverted into SpatialPoints
+    
+}
+
+nan.mart <- c((-70.62917, -70.63000, -70.63750, -70.73750, -70.79583, -70.65000), 
+              (41.35771,41.37000, 41.36604, 41.36604, 41.31604, 41.45000))         
+             # what are the values for the points in nantucket and martha's vineyard?
+             
+             
+gsp.k <- gsp[pkp | ((1:nrow(gsp)) %in% nant.mart),]
+
+plot(ne.keep)
+points(gsp.k,pch=20,cex=0.5,col='pink')
+text(gsp.k,labels=(1:nrow(gsp.k)),cex=0.5)

@@ -47,7 +47,7 @@ if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 GSPECIES <-subset(gspecies, lon 
 ## Step 5. Making Clusters and running gENMs
 
-clust <- gClust(x=gspecies, p=neClim$bio1)
+clust <- gClust(x=gspecies, vp=neClim$bio1)
 out <- gENM(x=gspecies, clust=clust)
 gAnalysis(x=out)
 
