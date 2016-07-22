@@ -174,4 +174,7 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",mfrow=c(
 inMap <- function(x,y){
     x <- SpatialPoints(x,proj4string=CRS(proj4string(y)))
     gContains(y,x)
+    
+    
+   
 }
