@@ -37,9 +37,10 @@ m <- function(scd){(1-(scd/max(scd)))}
 ### p = Environmental 
 ### N = effective population size
 
-gClust <- function(x='coordinates',vp='vector predictor',N=1){
-                                        # Conductance matrix  used to produce 
-                                        # an initial matrix of "flow" between observations
+gClust <- function(x='coordinates',vp='vector predictor',N=1,km=TRUE,kcmax=10,kcstart=10,kcthresh=0.005){
+
+if (!km){
+                                        # Conductance matrix  used to produce                                        # an initial matrix of "flow" between observations
 if (!(is.matrix(x))){x <- as.matrix(x)}
 hd <- transition(vp, altDiff, 8, symm=FALSE)
 slope <- geoCorrection(hd)
@@ -73,10 +74,20 @@ Fst.ig <- graph.adjacency(Fst.mg,weighted=TRUE,mode='undirected')
 fg.mP <- fastgreedy.community(Fst.ig)
 gc <- fg.mP$membership
 names(gc) <- rownames(Fst)
+}else{
+    y <- extract(vp,x)
+    kc <- lapply(1:kcmax,kmeans,x=y,nstart=kcstart)
+    wss <- unlist(lapply(kc,function(x) x$tot.withinss))
+    dw <- abs(diff(wss / max(wss)))
+    if (all(dw > kcthresh)){nc <- kcmax}else{
+        nc <- max((1:(kcmax - 1))[dw >= kcthresh])
+    }
+    kc <- kc[[nc]]
+    gc <- kc$cluster
+}
                                         # Output observations in a format for the 
                                         # gENM. 
 return(gc)
-
 }
 
 ######
@@ -93,14 +104,14 @@ return(gc)
 
 
 ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
+    if (class(p) == 'RasterLayer'){p <- stack(p)}
     set.seed(seed)
     circ <- circles(x, d=c.rad, lonlat=T)
     random <- spsample(circ@polygons, n, type='random', iter=100)
                                         # Makes circles with a 5K radius of each
                                         # point and adds 1000 randomized points.
     gsp_bc <-  extract(p, x) 
-    gsp_bc <-  data.frame(cbind(x,gsp_bc))
-    
+    gsp_bc <-  data.frame(cbind(x,env=gsp_bc))
                                         # Extracts the climate variables which 
                                         # correspond to each presence point
                                         # of a cluster. Binds climate variables
@@ -108,7 +119,6 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
                                         # then turns that matrix into a list. 
                                         # And renames the columnames as 
                                         # "lon", "lat", and "clim.var"
-    
     random_bc <- extract(p, random) 
     random  <- random@coords
     colnames(random) <- c("lon","lat")
@@ -116,10 +126,8 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
                                         # which correspond to each random point
                                         # of a cluster. Coordinates of random are 
                                         # saved as a matrix. 
-    
-    random_bc <-  data.frame(cbind(random,random_bc))
+    random_bc <-  data.frame(cbind(random,env=random_bc))
     random_bc  <-  random_bc[!is.na(random_bc[,3]), ] 
-    
                                         # Binds the random point coordinates and 
                                         # and the extracted climate variables 
                                         # that correspond to those random points
@@ -127,7 +135,6 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
                                         # And renames the columnames as 
                                         # "lon", "lat", and "clim.var"
                                         # Also removes any NAs in the list. 
-    
     me <- maxent(p, gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
     e <- evaluate(gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
     pred_me <- predict(me, p) 
