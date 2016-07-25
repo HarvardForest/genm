@@ -98,13 +98,16 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
     random <- spsample(circ@polygons, n, type='random', iter=100)
                                         # Makes circles with a 5K radius of each
                                         # point and adds 1000 randomized points.
-    clust_bc <-  extract(p, x) 
-    clust_bc <-  data.frame(cbind(x,clust_bc))
+    gsp_bc <-  extract(p, x) 
+    gsp_bc <-  data.frame(cbind(x,gsp_bc))
+    
                                         # Extracts the climate variables which 
-                                        # which correspond to each presence point
+                                        # correspond to each presence point
                                         # of a cluster. Binds climate variables
                                         # with their resepctive coordinates, 
-                                        # Then turns that matrix into a list. 
+                                        # then turns that matrix into a list. 
+                                        # And renames the columnames as 
+                                        # "lon", "lat", and "clim.var"
     
     random_bc <- extract(p, random) 
     random  <- random@coords
@@ -115,20 +118,23 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
                                         # saved as a matrix. 
     
     random_bc <-  data.frame(cbind(random,random_bc))
-    random_bc  <-  random_bc[!is.na(random_bc[,"bio1"]), ] 
+    random_bc  <-  random_bc[!is.na(random_bc[,3]), ] 
+    
                                         # Binds the random point coordinates and 
                                         # and the extracted climate variables 
                                         # that correspond to those random points
-                                        # in order to create a list. Also removes
-                                        # any NAs in the list. 
+                                        # in order to create a list.
+                                        # And renames the columnames as 
+                                        # "lon", "lat", and "clim.var"
+                                        # Also removes any NAs in the list. 
     
-    me <- maxent(p, clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
-    e <- evaluate(clust_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
+    me <- maxent(p, gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
+    e <- evaluate(gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
     pred_me <- predict(me, p) 
                                         # Build a "MaxEnt" (Maximum Entropy) species
                                         # distribution model based on predictors 
                                         # and produces a model that is used by 
-                                        # the predic() fucntion to predict
+                                        # the predict() fucntion to predict
                                         # the suitability of other locations.
     out <- list(eval = e, pred = pred_me, model = me)
     return(out)
@@ -147,15 +153,28 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
 ### clust = genetic clusters simulated from the gClust function
 
 
-gENM <- function(x='coordinates', clust='gen clusters'){
-  df.gspecies <- data.frame(x)
-  groups <-  split(df.gspecies, clust)
-  analysis <- (lapply(groups, ENM, p=neClim))
-  enm.all <- list(ENM(do.call(rbind,groups),neClim))
+gENM <- function(x='coordinates', clust='gen clusters', p="Environmental"){
+  df.gsp <- data.frame(x)
+  groups <-  split(df.gsp, clust)
+  analysis <- (lapply(groups, ENM, p))
+  enm.all <- list(ENM(do.call(rbind,groups),p))
   out <- append(enm.all, analysis)
 }
 
-gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",mfrow=c(3,2),ext=extent(-73.70833, -66.95833, 41, 47.45833),open.file=TRUE){
+########
+
+### Applies an environmental niche model
+### to clusters of a population as well 
+### as to the entire species, and predicts
+### habitat suitability for each cluster. 
+
+### ACalderon and MKLau - 15July2016
+
+### x = Distribution data for a given organism using lon and lat coordinates.
+### clust = genetic clusters simulated from the gClust function
+
+gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",
+    mfrow=c(3,3),ext=extent(-73.70833, -66.95833, 41, 47.45833),open.file=TRUE){
     jpeg(filename = filename, width = 1700, height = 1700,
          units = "px", pointsize = 35, quality = 90,
          bg="white")
@@ -169,12 +188,7 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",mfrow=c(
     if (open.file){system(paste('open',filename))}
 }
 
-### inMap: Is a point in a polygon?
 
-inMap <- function(x,y){
-    x <- SpatialPoints(x,proj4string=CRS(proj4string(y)))
-    gContains(y,x)
     
     
    
-}

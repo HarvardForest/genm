@@ -10,10 +10,6 @@
 wd <- '/Users/annacalderon/Desktop/gENM/src'
 setwd(wd)
 
-# path <- ("") 
-# if (path == ""){path <- "../data"}
-# filename <- ("GspeciesBC_2.5.grd")
-# croppeddata<- paste(path,filename, sep="/")
 
 ## Step 1. Installing and loading Packages
 require(raster)
@@ -24,11 +20,9 @@ library(FedData)
 
 neClim <- stack("../data/neClim.grd")
 
-# BClim = getData("worldclim", var="bio", res=2.5, path="")
-# GspeciesRange = extent(leftlon, rightlon,lowerlat, upperlat)
-# BClim = crop(BClim, GspeciesRange)
-# writeRaster(BClim, filename=croppeddata, overwrite=T)
-# BClim = brick(croppeddata)
+mintemp.2006  <- raster("../data/01_01_2006.tiff")
+mintemp.2050 <- raster("../data/01_01_2050.tiff")
+mintemp.2099 <- raster("../data/01_01_2099.tiff")
 
 
 ## Step 3. Downloading Elevation Data
@@ -49,18 +43,9 @@ library(rgdal)
 writeOGR(SPDFxx,dsn='../data/neExtent',layer='neExtent',driver='ESRI Shapefile',overwrite_layer=TRUE)
 
 
-## Step 4. Downloading Species Presence Data
-gspecies <- ''
+## Step 4. Import Species Presence Data
 
-prespoints <- read.csv('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-13-antData_use4R_snappedToClim.csv')
-if (gspecies == ''){gspecies <- "aphrud"}
-colnames(prespoints) = c("spcode", "lon","lat")
-gspecies <- prespoints[grep(gspecies,as.character(prespoints$spcode)),]
-gspecies$spcode <- NULL
-
-#gspecies <- read.csv('../data/gspecies.csv')
-
-if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
+gspecies <-read.csv("../data/RICTMEdukesnantucket.csv")
 if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
 
 
@@ -80,11 +65,9 @@ ne.keep <- newengland[newengland$NAME_1 %in% keep,]
     #I think this doesn't work because gContains is expecting
     # spatialpoints as y. I converted gsp to a datafram and then coverted into SpatialPoints
     
-}
 
-nan.mart <- c((-70.62917, -70.63000, -70.63750, -70.73750, -70.79583, -70.65000), 
-              (41.35771,41.37000, 41.36604, 41.36604, 41.31604, 41.45000))         
-             # what are the values for the points in nantucket and martha's vineyard?
+
+
              
              
 gsp.k <- gsp[pkp | ((1:nrow(gsp)) %in% nant.mart),]
