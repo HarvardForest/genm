@@ -6,47 +6,33 @@
 #8 July 2016
 
 ## Step 0. Set a working directory and File Paths
-
 wd <- '/Users/annacalderon/Desktop/gENM/src'
 setwd(wd)
 
 ## Step 1. Source Helpers Script
 source("helpers.R")
 
+
 ## Step 2. Importing Climate Variables for NE
 neClim <- stack("../data/neClim.grd")
 
-## Step 3.  Getting climate change projections
-# library(maptools)
-# vepPolygon <- polygon_from_extent(raster::extent(xmin, xmax, ymin, ymax),
-#                                   proj4string="+proj=longlat +ellps=WGS84 +datum=WGS84")
-# IDs <- sapply(slot(vepPolygon, "polygons"), function(x) slot(x, "ID"))
-# df <- data.frame(rep(0, length(IDs)), row.names=IDs)
-# SPDFxx <- SpatialPolygonsDataFrame(vepPolygon, df)
-# #tf <- tempfile()
-# #writePolyShape(SPDFxx, tf)
-# #getinfo.shape(tf)
-# 
-# library(rgdal)
-# ## shape <- readOGR('../data/neExtent',layer='neExtent')
-# writeOGR(SPDFxx,dsn='../data/neExtent',layer='neExtent',driver='ESRI Shapefile',overwrite_layer=TRUE)
-# 
+mintemp.2006  <- raster("../data/01_01_2006.tiff")
+mintemp.2050 <- raster("../data/01_01_2050.tiff")
+mintemp.2099 <- raster("../data/01_01_2099.tiff")
 
-## Step 4. Downloading Species Presence Data
-gspecies <- ''
+mintemp_06 <- as(mintemp.2006, 'SpatialGridDataFrame')
+mintemp_50 <- as(mintemp.2050, 'SpatialGridDataFrame')
+mintemp_99 <- as(mintemp.2099, 'SpatialGridDataFrame')
 
-prespoints <- read.csv('http://harvardforest.fas.harvard.edu/data/p14/hf147/hf147-13-antData_use4R_snappedToClim.csv')
-if (gspecies == ''){gspecies <- "aphrud"}
-colnames(prespoints) = c("spcode", "lon","lat")
-gspecies <- prespoints[grep(gspecies,as.character(prespoints$spcode)),]
-gspecies$spcode <- NULL
 
-if (identical(colnames(gspecies),c( "lat", "lon"))){gspecies <- gspecies[,c('lon','lat')]}
-if (is.matrix(gspecies) == FALSE){gspecies <- data.matrix(gspecies)}
+## Step 3. Import Species Presence Data
+gsp <-read.csv("../data/RICTMEdukesnantucket.csv")
+if (is.matrix(gsp) == FALSE){gsp <- data.matrix(gsp)}
+
 
 ## Step 5. Making Clusters and running gENMs
 
-clust <- gClust(x=gspecies, vp=neClim$bio1)
-out <- gENM(x=gspecies, clust=clust)
+clust <- gClust(x=gsp, vp=mintemp.2006)
+out <- gENM(x=gsp, clust=clust, p=mintemp_06) #p must be a raster brick!
 gAnalysis(x=out)
 
