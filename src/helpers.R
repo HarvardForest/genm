@@ -101,8 +101,6 @@ return(gc)
 ### x = Distribution data for a given organism using lon and lat coordinates.
 ### p = Environmental predictor
 
-
-
 ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
     if (class(p) == 'RasterLayer'){p <- stack(p)}
     set.seed(seed)
