@@ -25,6 +25,8 @@ mintemp.2050 <- raster("../data/01_01_2050.tiff")
 mintemp.2099 <- raster("../data/01_01_2099.tiff")
 
 
+
+
 ## Step 3. Downloading Elevation Data
 
 ## Getting climate change projections

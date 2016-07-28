@@ -49,28 +49,28 @@ gClust <- function(x='coordinates',vp='vector predictor',N=1,km=TRUE,kcmax=10,kc
     speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
     Conductance <- geoCorrection(speed)
     cd <- costDistance(Conductance, x)
-    # Summing over assymmetry
+                                          # Summing over assymmetry
     scd <- symSum(cd)
-    # Re-scaling using basic population
-    # demography to approximate migration.
-    # N = effective population size, by 
-    # default this is set to one for mathematical
-    # convenience. The diagonal is set to zero 
-    # because each observation should be 
-    # genetically identical to itself.
-    # See Conner & Hartl pg. 84
+                                          # Re-scaling using basic population
+                                          # demography to approximate migration.
+                                          # N = effective population size, by 
+                                          # default this is set to one for mathematical
+                                          # convenience. The diagonal is set to zero 
+                                          # because each observation should be 
+                                          # genetically identical to itself.
+                                          # See Conner & Hartl pg. 84
     Fst <- 0.20*(1/(1+4*N*m(scd))) 
     diag(Fst) <- 0
-    # Invert Fst so that it is a similarity rather
-    # than a dissimilarity matrix and find
-    # the minimally connected graph to focus 
-    # on the most important connections.
+                                          # Invert Fst so that it is a similarity rather
+                                          # than a dissimilarity matrix and find
+                                          # the minimally connected graph to focus 
+                                          # on the most important connections.
     Fst.g <- 1  - Fst
     diag(Fst.g) <- 0
     Fst.mg <- dino.mst(Fst.g)
     Fst.ig <- graph.adjacency(Fst.mg,weighted=TRUE,mode='undirected')
-    # Determine clusters using a graph theoretic 
-    # module/cluster detection algorithm.
+                                        # Determine clusters using a graph theoretic 
+                                        # module/cluster detection algorithm.
     fg.mP <- fastgreedy.community(Fst.ig)
     gc <- fg.mP$membership
     names(gc) <- rownames(Fst)
@@ -85,8 +85,8 @@ gClust <- function(x='coordinates',vp='vector predictor',N=1,km=TRUE,kcmax=10,kc
     kc <- kc[[nc]]
     gc <- kc$cluster
   }
-  # Output observations in a format for the 
-  # gENM. 
+                                        # Output observations in a format for the 
+                                        # gENM. 
   return(gc)
 }
 
@@ -108,41 +108,45 @@ ENM <- function(x="coordinates", p="predictors",c.rad=50000,seed=123,n=1000){
   set.seed(seed)
   circ <- circles(x, d=c.rad, lonlat=T)
   random <- spsample(circ@polygons, n, type='random', iter=100)
-  # Makes circles with a 5K radius of each
-  # point and adds 1000 randomized points.
+                                              # Makes circles with a 5K radius of each
+                                              # point and adds 1000 randomized points.
+  
   gsp_bc <-  extract(p, x) 
   gsp_bc <-  data.frame(cbind(x,env=gsp_bc))
-  # Extracts the climate variables which 
-  # correspond to each presence point
-  # of a cluster. Binds climate variables
-  # with their resepctive coordinates, 
-  # then turns that matrix into a list. 
-  # And renames the columnames as 
-  # "lon", "lat", and "clim.var"
+                                              # Extracts the climate variables which 
+                                              # correspond to each presence point
+                                              # of a cluster. Binds climate variables
+                                              # with their resepctive coordinates, 
+                                              # then turns that matrix into a list. 
+                                              # And renames the columnames as 
+                                              # "lon", "lat", and "clim.var"
+  
   random_bc <- extract(p, random) 
   random  <- random@coords
   colnames(random) <- c("lon","lat")
-  # Extracts the climate variables which 
-  # which correspond to each random point
-  # of a cluster. Coordinates of random are 
-  # saved as a matrix. 
+                                              # Extracts the climate variables which 
+                                              # which correspond to each random point
+                                              # of a cluster. Coordinates of random are 
+                                              # saved as a matrix. 
+  
   random_bc <-  data.frame(cbind(random,env=random_bc))
   random_bc  <-  random_bc[!is.na(random_bc[,3]), ] 
-  # Binds the random point coordinates and 
-  # and the extracted climate variables 
-  # that correspond to those random points
-  # in order to create a list.
-  # And renames the columnames as 
-  # "lon", "lat", and "clim.var"
-  # Also removes any NAs in the list. 
+                                              # Binds the random point coordinates and 
+                                              # and the extracted climate variables 
+                                              # that correspond to those random points
+                                              # in order to create a list.
+                                              # And renames the columnames as 
+                                              # "lon", "lat", and "clim.var"
+                                              # Also removes any NAs in the list. 
+  
   me <- maxent(p, gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")])
   e <- evaluate(gsp_bc[,c("lon", "lat")], random_bc[,c("lon", "lat")], me, p)
   pred_me <- predict(me, p) 
-  # Build a "MaxEnt" (Maximum Entropy) species
-  # distribution model based on predictors 
-  # and produces a model that is used by 
-  # the predict() fucntion to predict
-  # the suitability of other locations.
+                                              # Build a "MaxEnt" (Maximum Entropy) species
+                                              # distribution model based on predictors 
+                                              # and produces a model that is used by 
+                                              # the predict() fucntion to predict
+                                              # the suitability of other locations.
   out <- list(eval = e, pred = pred_me, model = me)
   return(out)
 }
@@ -194,6 +198,7 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",
   return(out)
   if (open.file){system(paste('open',filename))}
 }
+
 
 
 
