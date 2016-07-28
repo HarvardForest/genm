@@ -20,19 +20,13 @@ mintemp.2006  <- raster("../data/01_01_2006.tiff")
 mintemp.2050 <- raster("../data/01_01_2050.tiff")
 mintemp.2099 <- raster("../data/01_01_2099.tiff")
 
-mintemp_06 <- as(mintemp.2006, 'SpatialGridDataFrame')
-mintemp_50 <- as(mintemp.2050, 'SpatialGridDataFrame')
-mintemp_99 <- as(mintemp.2099, 'SpatialGridDataFrame')
-
-
 ## Step 3. Import Species Presence Data
 gsp <-read.csv("../data/RICTMEdukesnantucket.csv")
 if (is.matrix(gsp) == FALSE){gsp <- data.matrix(gsp)}
 
-
 ## Step 5. Making Clusters and running gENMs
 
 clust <- gClust(x=gsp, vp=mintemp.2006)
-out <- gENM(x=gsp, clust=clust, p=mintemp_06) #p must be a raster brick!
+out <- gENM(x=gsp, clust=clust, p=mintemp.2006) 
 gAnalysis(x=out)
 
