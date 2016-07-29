@@ -196,5 +196,31 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",
   return(out)
   if (open.file){system(paste('open',filename))}
 }
- #####
 
+##### gDensCurv: plots density curves
+
+gDensCurv <- function(x='coordinates',  p='mintemp.2006',pr='temp for range',gc='clusters'){
+    mt.2006 <- extract(p,x)
+    mt.c <- split(mt.2006,gc)
+    mt.r <- extract(pr,x)
+    r.c <- split(mt.r,gc)
+    mt.range <- do.call(rbind,lapply(r.c,range))
+    mt.range <- melt(mt.range)
+    mt.range <- data.frame(mt.range)
+    mt.range[,1:2] <- apply(mt.range[,1:2],2,factor)
+    mt.mc <- melt(mt.c)
+    colnames(mt.mc) <- c('MinTemp','Cluster')
+                                        #    
+    mt.mcplot <- ggplot(mt.mc, aes(MinTemp,colour = Cluster, fill=Cluster)) +
+        geom_density(alpha = 0.7) +
+        theme(panel.background = element_rect(fill = "gray8"),
+              panel.grid.major = element_blank(),
+              panel.grid.minor = element_blank(),
+              legend.position = "none",
+              axis.line = element_line(colour = "white"),
+              axis.title = element_text(size = 20, color = "white"),
+              axis.ticks = element_line(colour = "white"),
+              axis.text = element_text(colour = "white"))
+                                        #
+    mt.mcplot + geom_vline(data=mt.range,aes(xintercept=value,colour=Var1))
+}
