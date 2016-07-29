@@ -21,3 +21,9 @@ ggplot(mt.mc, aes(MinTemp, fill = Cluster, colour = Cluster)) +
     geom_density(alpha = 0.1) 
 
 
+pdf('~/Desktop/minTcompare.pdf',height=8,width=12)
+par(mfrow=c(2,3))
+plot(mintemp.2050);plot(mintemp.2006);plot(mintemp.2099)
+plot(mintemp.2006-mintemp.2006);plot(mintemp.2006-mintemp.2050);plot(mintemp.2006-mintemp.2099)
+dev.off()
+system('open ~/Desktop/minTcompare.pdf')
