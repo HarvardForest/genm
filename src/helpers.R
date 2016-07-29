@@ -1,5 +1,5 @@
 packs <- c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp",
-           "maptools","dismo","rJava","rgdal", "rgeos", "raster", "FedData")
+           "maptools","dismo","rJava","rgdal", "rgeos", "raster", "reshape2", "ggplot2","FedData")
 
 lapply(packs[!(packs %in% installed.packages()[,'Package'])],install.packages)
 all(unlist(lapply(packs, require, character.only = TRUE,quietly=TRUE)))
@@ -38,7 +38,7 @@ m <- function(scd){(1-(scd/max(scd)))}
 ### N = effective population size
 
 gClust <- function(x='coordinates',vp='vector predictor',N=1,km=TRUE,kcmax=10,kcstart=10,kcthresh=0.005){
-  
+  set.seed(1)
   if (!km){
     # Conductance matrix  used to produce                                        # an initial matrix of "flow" between observations
     if (!(is.matrix(x))){x <- as.matrix(x)}
@@ -196,7 +196,5 @@ gAnalysis <- function(x="gENM output", filename= "../results/gENM.jpeg",
   return(out)
   if (open.file){system(paste('open',filename))}
 }
-
-
-
+ #####
 

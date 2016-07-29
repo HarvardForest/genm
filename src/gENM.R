@@ -35,4 +35,5 @@ out <- gENM(x=gsp, clust=clust, p=mintemp.2006)
 gAnalysis(x=out)
 
 #HISTOGRAMS and GRAPHS
+gDensCurv(x=gsp, p=mintemp.2006)
 
