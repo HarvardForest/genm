@@ -20,10 +20,10 @@ setwd(wd)
 source("helpers.R")
 
 #IMPORTING DATA
-neClim <- stack("../data/neClim.grd")
+#neClim <- stack("../data/neClim.grd")
 mintemp.2006  <- raster("../data/01_01_2006.tiff")
-mintemp.2050 <- raster("../data/01_01_2050.tiff")
-mintemp.2099 <- raster("../data/01_01_2099.tiff")
+# mintemp.2050 <- raster("../data/01_01_2050.tiff")
+# mintemp.2099 <- raster("../data/01_01_2099.tiff")
 
 gsp <-read.csv("../data/RICTMEdukesnantucket.csv")
 if (is.matrix(gsp) == FALSE){gsp <- data.matrix(gsp)}

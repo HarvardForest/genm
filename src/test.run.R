@@ -14,7 +14,7 @@ source("helpers.R")
 
 
 ## Step 2. Importing Climate Variables for NE
-neClim <- stack("../data/neClim.grd")
+#neClim <- stack("../data/neClim.grd")
 
 mintemp.2006  <- raster("../data/01_01_2006.tiff")
 mintemp.2050 <- raster("../data/01_01_2050.tiff")
@@ -28,7 +28,7 @@ if (is.matrix(gsp) == FALSE){gsp <- data.matrix(gsp)}
 ## Step 5. Making Clusters and running gENMs
 
 clust <- gClust(x=gsp, vp=mintemp.2006)
-invisible(out <- gENM(x=gsp, clust=clust, p=neClim))
+invisible(out <- gENM(x=gsp, clust=clust, p=mintemp.2099))
 gAnalysis(x=out)
 
 test <- list()
