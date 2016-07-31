@@ -213,14 +213,18 @@ gDensCurv <- function(x='coordinates',  p='mintemp.2006',pr='temp for range',gc=
                                         #    
     mt.mcplot <- ggplot(mt.mc, aes(MinTemp,colour = Cluster, fill=Cluster)) +
         geom_density(alpha = 0.7) +
-        theme(panel.background = element_rect(fill = "gray8"),
+    scale_x_continuous(breaks=seq(250.8, 275.9, 4))+
+    scale_color_manual(values=c("greenyellow", "pink2", "lightskyblue1"))+
+    scale_fill_manual(values=c("chartreuse", "lightcoral", "steelblue1"))+
+    theme(panel.background = element_rect(fill = "gray8"),
               panel.grid.major = element_blank(),
               panel.grid.minor = element_blank(),
               legend.position = "none",
               axis.line = element_line(colour = "white"),
-              axis.title = element_text(size = 20, color = "white"),
-              axis.ticks = element_line(colour = "white"),
-              axis.text = element_text(colour = "white"))
-                                        #
-    mt.mcplot + geom_vline(data=mt.range,aes(xintercept=value,colour=Var1))
+              axis.title = element_text(color = "white"),
+              axis.ticks = element_line(size = 2, colour = "black"),
+              axis.text = element_text(colour = "white"),
+              axis.text.x = element_text(colour="black",size=15),
+              axis.text.y = element_text(colour="black",size=15))
+     mt.mcplot + geom_vline(data=mt.range,aes(xintercept=value,colour=Var1))
 }
