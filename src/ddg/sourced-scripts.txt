@@ -1,2 +1,1 @@
-snum	sname
-0	/Users/annacalderon/Desktop/gENM/src/SDM_template.R
+

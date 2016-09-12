@@ -48,6 +48,5 @@ pred_me <- predict(me, p)
 plot(pred_me)
 }
                                   
-#source("/Users/annacalderon/Desktop/gENM/src/RDataTracker.R")
-#ddg.run("/Users/annacalderon/Desktop/gENM/src/BClimBug.R")
+
 
