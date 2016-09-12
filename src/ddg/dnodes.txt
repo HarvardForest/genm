@@ -1,35 +1,3 @@
 ddg.type	ddg.num	ddg.name	ddg.value	ddg.scope	ddg.from.env	ddg.time	ddg.loc	ddg.current
-Data	1	wd	\".\"	R_GlobalEnv	FALSE			TRUE
-Data	2	genus	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	3	species	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	4	leftlon	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	5	rightlon	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	6	lowerlat	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	7	upperlat	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	8	path	NotRecorded	R_GlobalEnv	FALSE			TRUE
-Data	9	path	\"../data\"	R_GlobalEnv	FALSE			TRUE
-Data	10	filename	\"GspeciesBC_2.5.grd\"	R_GlobalEnv	FALSE			TRUE
-Data	11	croppeddata	\"../data/GspeciesBC_2.5.grd\"	R_GlobalEnv	FALSE			TRUE
-Snapshot	12	packs	/Users/annacalderon/Desktop/gENM/src/ddg/12-packs.csv	R_GlobalEnv	FALSE	2016-06-28T12.53.30EDT		TRUE
-Exception	13	warning.msg	\"In  pacman::p_load(packs) :  Failed to install/load: packs\"	ddg.library	FALSE			TRUE
-Data	14	leftlon	-99.2	R_GlobalEnv	FALSE			TRUE
-Data	15	rightlon	-63	R_GlobalEnv	FALSE			TRUE
-Data	16	lowerlat	23.6	R_GlobalEnv	FALSE			TRUE
-Data	17	upperlat	45.5	R_GlobalEnv	FALSE			TRUE
-Data	18	genus	\"Aphaenogaster\"	R_GlobalEnv	FALSE			TRUE
-Data	19	species	\"picea\"	R_GlobalEnv	FALSE			TRUE
-Snapshot	20	rawdata	/Users/annacalderon/Desktop/gENM/src/ddg/20-rawdata-PARTIAL.csv	R_GlobalEnv	FALSE	2016-06-28T12.53.37EDT		TRUE
-Snapshot	21	Gspecies	/Users/annacalderon/Desktop/gENM/src/ddg/21-Gspecies.csv	R_GlobalEnv	FALSE	2016-06-28T12.53.37EDT		TRUE
-Data	22	stateMapEnv	\"R_MAP_DATA_DIR\"	R_GlobalEnv	TRUE			TRUE
-Snapshot	23	longrid	/Users/annacalderon/Desktop/gENM/src/ddg/23-longrid.csv	R_GlobalEnv	FALSE	2016-06-28T12.53.38EDT		TRUE
-Snapshot	24	latgrid	/Users/annacalderon/Desktop/gENM/src/ddg/24-latgrid.csv	R_GlobalEnv	FALSE	2016-06-28T12.53.38EDT		TRUE
-Data	25	subs	NULL	R_GlobalEnv	FALSE			TRUE
-Data	26	i	724	R_GlobalEnv	TRUE			TRUE
-Data	27	j	438	R_GlobalEnv	TRUE			TRUE
-Snapshot	28	gridsq	/Users/annacalderon/Desktop/gENM/src/ddg/28-gridsq.csv	R_GlobalEnv	TRUE	2016-06-28T12.54.33EDT		TRUE
-Snapshot	29	subs	/Users/annacalderon/Desktop/gENM/src/ddg/29-subs.txt	R_GlobalEnv	FALSE	2016-06-28T12.54.33EDT		TRUE
-Snapshot	30	gridsq	/Users/annacalderon/Desktop/gENM/src/ddg/30-gridsq.txt	R_GlobalEnv	FALSE	2016-06-28T12.54.33EDT		TRUE
-Snapshot	31	x	/Users/annacalderon/Desktop/gENM/src/ddg/31-x.txt	R_GlobalEnv	FALSE	2016-06-28T12.54.33EDT		TRUE
-Snapshot	32	bg	/Users/annacalderon/Desktop/gENM/src/ddg/32-bg.txt	R_GlobalEnv	FALSE	2016-06-28T12.54.35EDT		TRUE
-File	33	dev.off.33.pdf	/Users/annacalderon/Desktop/gENM/src/ddg/33-dev.off.33.pdf	undefined	FALSE	2016-06-28T12.56.55EDT	/Users/annacalderon/Desktop/gENM/src/dev.off.33.pdf	TRUE
-Exception	34	error.msg	\"No procedure node found for SDM_template.R\"	ddg.library	FALSE			TRUE
+Exception	1	error.msg	\"No binding for .ddg.source.parsed . DDG may be incorrect!\"	ddg.library	FALSE			TRUE
+Exception	2	error.msg	\"No binding for .ddg.sourced.scripts . DDG may be incorrect!\"	ddg.library	FALSE			TRUE
