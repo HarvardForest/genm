@@ -1,0 +1,34 @@
+---
+title: "GENM bibliobraphic analysis"
+output: md_document
+---
+
+### Make a table of the articles
+    
+### review, year, author, title, keywords
+library(bibliometrix)
+bib.df  <-  convert2df("../docs/bib/combined.bib", dbsource = "wos", format = "bibtex")
+                                        # restrict to articles
+bib.df <- bib.df[bib.df[, "DT"] == "ARTICLE", ]
+author <- sapply(bib.df[, "AU"], function(x) strsplit(x, ";")[[1]][1], USE.NAMES = FALSE)
+review <- grepl("REVIEW", bib.df[, "TI"], ignore.case = TRUE) | 
+    grepl("REVIEW", bib.df[, "DE"], ignore.case = TRUE) | 
+    grepl("REVIEW", bib.df[, "ID"], ignore.case = TRUE) | 
+    grepl("REVIEW", bib.df[, "web.of.science.categories."], ignore.case = TRUE)
+review <- as.numeric(review)
+gene <- as.numeric(gene)
+year  <- bib.df[, "PY"]
+ead <- do.call(rbind, strsplit(bib.df[, "early.access.date"], " "))[, 2]
+year[is.na(year)] <- ead[is.na(year)]
+kw <- apply(bib.df[, c("DE", "ID")], 1, paste, collapse = "; ")
+kw <- gsub(";;", ";", kw)
+kw <- gsub(";;;", ";", kw)
+kw <- lapply(kw, function(x) unique(strsplit(x, split = "; ")[[1]]))
+kw  <- unlist(lapply(kw, paste, collapse = "; "))
+kw <- as.character(kw)
+gene <- grepl("gene", bib.df[, "TI"], ignore.case = TRUE) | 
+    grepl("gene", kw, ignore.case = TRUE) | 
+    grepl("gene", bib.df[, "web.of.science.categories."], ignore.case = TRUE)
+out <- data.frame(year, author, title = bib.df[, "TI"], review, gene, kw)
+out <- out[order(as.numeric(out[, "year"]), decreasing = TRUE),]
+write.csv(file = "../data/genm_biblio.csv", out, row.names = FALSE)
