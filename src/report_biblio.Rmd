@@ -54,7 +54,7 @@ if (!(any(dir("../data/") == "genm_biblio.csv"))){
 # Figures
 
 
-```{R, cache = TRUE, results = hide}
+```{R, cache = TRUE, results = "hide"}
 
 
 NetMatrix <- biblioNetwork(bib.df, analysis = "co-occurrences", 
@@ -72,7 +72,7 @@ net
 ```
 
 
-```{R, results = hide}
+```{R, results = "hide"}
 
 CS <- conceptualStructure(bib.df, field="ID", method="CA", minDegree=4, clust=5, 
                           stemming=FALSE, labelsize=10, documents=20)
@@ -87,7 +87,7 @@ CS
 ```
 
 
-```{R, cache = TRUE, results = hide}
+```{R, cache = TRUE, results = "hide"}
 
 options(width=130)
 M <- metaTagExtraction(bib.df, Field = "AU_CO", sep = ";")
