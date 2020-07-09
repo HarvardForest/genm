@@ -1,6 +1,8 @@
 ---
 title: "GENM bibliobraphic analysis"
 output: md_document
+fig_widtth: 12
+fig_height: 12 
 ---
 
 ### Make a table of the articles
@@ -73,7 +75,7 @@ CS <- conceptualStructure(bib.df, field="ID", method="CA", minDegree=4, clust=5,
 ```
 
 
-```{R, cache = TRUE}
+```{R, cache = TRUE, fig.height = 12, fig.width = 20}
 
 
 options(width=130)
