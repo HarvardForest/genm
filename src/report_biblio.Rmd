@@ -80,7 +80,7 @@ CS <- conceptualStructure(bib.df, field="ID", method="CA", minDegree=4, clust=5,
 ```
 
 
-```{R, cache = TRUE}
+```{R, fig.height = 12, fig.width = 20}
 
 CS
 
