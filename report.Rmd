@@ -1,0 +1,32 @@
+---
+title: "Genetics-based Environmental Niche Modeling"
+output: 
+html_document: 
+keep_md: yes
+
+---
+
+# Data Summary
+
+
+# Results Summary
+
+
+# Analysis and Results
+
+
+## Dependencies
+
+
+## Load Data
+
+- Use datasets HF147-12 and HF147-15 
+- Data are hosted by the Environmental Data Initiative and the HF Archive
+- Make sure to remove duplicated rows (see `unique()`)
+- Relevant species are:
+  - *Aphaenogaster picea*
+  - *A. fulva*
+  - *A. tenneseensis*
+  - *A. treatae*
+  - *A. rudis*
+  - aphNA = un-assignable specimens
