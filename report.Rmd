@@ -14,6 +14,10 @@ keep_md: yes
 
 # Analysis and Results
 
+## Input/Outputs
+
+
+
 
 ## Dependencies
 
@@ -22,6 +26,7 @@ keep_md: yes
 
 - Use datasets HF147-12 and HF147-15 
 - Data are hosted by the Environmental Data Initiative and the HF Archive
+- EDI has an API for R !(EDIutils)[https://github.com/EDIorg/EDIutils]
 - Make sure to remove duplicated rows (see `unique()`)
 - Relevant species are:
   - *Aphaenogaster picea*
