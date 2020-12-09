@@ -27,3 +27,10 @@ if (any(!(gh.pkgs.names %in% installed.packages()[, 1]))){
 ## Load libraries
 sapply(c(cran.pkgs, gh.pkgs.names), 
        library, quietly = TRUE, character.only = TRUE)
+
+## ENM Packages (copied from helpers.R)
+packs <- c("gdistance", "fossil" , "igraph", "rgbif","mapproj","mapdata","sp", "reader", "dplyr",
+           "maptools","dismo","rJava","rgdal", "rgeos", "raster", "reshape2", "ggplot2","FedData")
+
+lapply(packs[!(packs %in% installed.packages()[,'Package'])],install.packages)
+all(unlist(lapply(packs, require, character.only = TRUE,quietly=TRUE)))
