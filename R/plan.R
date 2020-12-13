@@ -6,4 +6,7 @@ plan <- drake_plan{
     select(latitude, longitude, ant.genus, ant.species) %>% 
     as.data.frame() %>% na.omit() %>% filter(ant.genus=="Aphaenogaster") %>%
     select(-ant.genus)
+  
+  BClim = brick("C:/Users/12094/Desktop/apENM/data/YbrevBC_2.5.grd")
+  
 }
