@@ -25,8 +25,12 @@ plan <- drake_plan(
     labs(title="Aphaenogaster Sampling Distribution by Year"), 
   
   data.loess <- loess(Year ~ longitude * latitude, data = Data),     
+  xgrid <-  seq(min(Data$longitude), max(Data$longitude), 0.5),
+  ygrid <-  seq(min(Data$latitude), max(Data$latitude), 0.5),
+  data.fit <-  expand.grid(longitude = xgrid, latitude = ygrid), 
+  mtrx3d <-  predict(data.loess, newdata = data.fit), 
+  contour(x = xgrid, y = ygrid, z = mtrx3d, xlab="longitude", ylab="latitude"), 
   
-
   BClim = brick("data/YbrevBC_2.5.grd")
   
 )
