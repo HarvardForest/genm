@@ -1,12 +1,12 @@
-plan <- drake_plan{
-  files = list.files(path="C:/Users/12094/Desktop/apENM/data", pattern = "^hf147-1(.*).csv$", 
-                     full.names = TRUE)
+plan <- drake_plan(
+  files = list.files(path="data", pattern = "^hf147-1(.*).csv$", 
+                     full.names = TRUE),
   
   Data = sapply(files, read.csv, simplify=FALSE) %>% bind_rows(.id = "id") %>% 
     select(latitude, longitude, ant.genus, ant.species) %>% 
     as.data.frame() %>% na.omit() %>% filter(ant.genus=="Aphaenogaster") %>%
-    select(-ant.genus)
+    select(-ant.genus),
 
-  BClim = brick("C:/Users/12094/Desktop/apENM/data/YbrevBC_2.5.grd")
+  BClim = brick("data/YbrevBC_2.5.grd")
   
-}
+)
