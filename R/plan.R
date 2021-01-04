@@ -17,6 +17,15 @@ plan <- drake_plan(
   Data[1828, c("Month", "Day", "Year")]<- c(07,14,1899),
   
   Data <- transform(Data, Year = as.numeric(Year)),
+  
+  Data$Year_Bin <- cut(Data$Year, 28),
+  
+  sampling_distribution_yr = ggplot(Data, aes(x=longitude, y=latitude, color=factor(Year_Bin))) +
+    geom_point(shape=16, size=2) +
+    labs(title="Aphaenogaster Sampling Distribution by Year"), 
+  
+  data.loess <- loess(Year ~ longitude * latitude, data = Data),     
+  
 
   BClim = brick("data/YbrevBC_2.5.grd")
   
