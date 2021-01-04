@@ -8,11 +8,29 @@ keep_md: yes
 
 # Data Summary
 
+```{r data-prev, echo = FALSE}
+
+loadd(Data)
+head(Data)
+table(Data[, "ant.species"])
+
+```
+
+```{r map-picea, echo = FALSE}
+
+map_occurrences(Data[Data[, "ant.species"] == "picea", ], 
+                range(Data[Data[, "ant.species"] == "picea", "longitude"]), 
+                range(Data[Data[, "ant.species"] == "picea", "latitude"]), 
+                title = "A. picea Presence") 
+                
+
+```
 
 # Results Summary
 
 
 # Analysis and Results
+
 
 ## Input/Outputs
 
