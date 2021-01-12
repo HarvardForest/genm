@@ -6,6 +6,7 @@ keep_md: no
 
 ---
 
+
 # Data Summary
 
 - Use datasets HF147-12 and HF147-15 
@@ -21,7 +22,6 @@ keep_md: no
   - *A. treatae*
   - *A. rudis*
   - aphNA = un-assignable specimens
-
 
 ```{r data-prev, echo = FALSE}
 
@@ -45,14 +45,29 @@ map_occurrences(Data[Data[, "ant.species"] == "picea", ],
 # Modeling and Analyses 
 
 
+## Data Cleaning
+
+- Check species naming errors
+- Check location errors
+- Fix errors
+- Remove problem data
+- Check data
 
 ## Input/Outputs
 
+- Ant data
+- Climate data
+- Landscape data
 
+| Input            | Description | Output |
+|:-----------------|:------------|:-------|
+| Ant distribution |             |        |
+| Climate          |             |        |
+| Landscape        |             |        |
+|                  |             |        |
 
 
 ## Dependencies
-
 
 
 
@@ -61,5 +76,18 @@ map_occurrences(Data[Data[, "ant.species"] == "picea", ],
 
 
 
+
+
+
+# Assess Sampling Coverage and Depth
+
+# Species Distribution Models
+
 # Results
+
+- Assess patterns of distribution for each species
+- Assess co-distribution patterns
+- Assess mutualist distributions
+- Assess conservation edges
+
 
