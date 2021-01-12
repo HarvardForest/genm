@@ -1,12 +1,27 @@
 ---
 title: "Genetics-based Environmental Niche Modeling"
 output: 
-html_document: 
-keep_md: yes
+pdf_document: 
+keep_md: no
 
 ---
 
 # Data Summary
+
+- Use datasets HF147-12 and HF147-15 
+- Data are hosted by the Environmental Data Initiative and the HF Archive
+- EDI has an API for R !(EDIutils)[https://github.com/EDIorg/EDIutils]
+- Data from HF archive can be sourced with URL, this is less desirable
+  as URLS could change
+- Make sure to remove duplicated rows (see `unique()`)
+- Relevant species are:
+  - *Aphaenogaster picea*
+  - *A. fulva*
+  - *A. tenneseensis*
+  - *A. treatae*
+  - *A. rudis*
+  - aphNA = un-assignable specimens
+
 
 ```{r data-prev, echo = FALSE}
 
@@ -26,10 +41,9 @@ map_occurrences(Data[Data[, "ant.species"] == "picea", ],
 
 ```
 
-# Results Summary
 
+# Modeling and Analyses 
 
-# Analysis and Results
 
 
 ## Input/Outputs
@@ -40,18 +54,12 @@ map_occurrences(Data[Data[, "ant.species"] == "picea", ],
 ## Dependencies
 
 
-## Load Data
 
-- Use datasets HF147-12 and HF147-15 
-- Data are hosted by the Environmental Data Initiative and the HF Archive
-- EDI has an API for R !(EDIutils)[https://github.com/EDIorg/EDIutils]
-- Data from HF archive can be sourced with URL, this is less desirable
-  as URLS could change
-- Make sure to remove duplicated rows (see `unique()`)
-- Relevant species are:
-  - *Aphaenogaster picea*
-  - *A. fulva*
-  - *A. tenneseensis*
-  - *A. treatae*
-  - *A. rudis*
-  - aphNA = un-assignable specimens
+
+
+## Check: Sampling Depth
+
+
+
+# Results
+
