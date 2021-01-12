@@ -19,7 +19,7 @@ speed <- slope
 speed[adj] <- 6 * exp(-3.5 * abs(slope[adj] + 0.05))
 Conductance <- geoCorrection(speed)
 cd <- costDistance(Conductance, x)
-                                        # Summing over assymmetry
+                                        # Summing over asymmetry
 scd <- symSum(cd)
                                         # Re-scaling using basic population
                                         # demography to approximate migration.
